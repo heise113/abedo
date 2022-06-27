@@ -16,8 +16,9 @@
     </div>
     <div class="cafe-list">
       <CafeItems
-          v-for="cafeItem in cafeList"
+          v-for="(cafeItem, index) in cafeList"
           :cafeItem="cafeItem"
+          :key = index
       />
     </div>
     <button class="loading">
@@ -50,7 +51,10 @@ export default {
         {cafeName: 'Винчензо', cafeDescription: 'Вкусно и точка'},
       ]
     }
-  }
+  },
+  methods: {
+
+  },
 }
 
 </script>

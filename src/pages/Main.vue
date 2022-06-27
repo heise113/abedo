@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
     <Header/>
+    <Categories/>
     <main class="content">
-      <Categories/>
       <Stocks/>
       <Cafe/>
     </main>
@@ -36,12 +36,14 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #F7F7F9;
 }
+
 
 .content {
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #E5E5E5;
 }
+
 
 </style>
