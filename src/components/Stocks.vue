@@ -1,14 +1,9 @@
 <template>
-
-  <div class="stocks">
-    <div class="stocks-header">
-      <div class="stocks-text">
-        Акции
-      </div>
-      <div class="all-stocks">
-        <div class="all-stocks-text">
-          Все акции
-        </div>
+  <div class="stocks-mobile">
+    <div class="stocks-mobile__header">
+      <div class="stocks-mobile__header__text">Акции</div>
+      <div class="stocks-mobile__header__all-stocks">
+        <div class="stocks-mobile__header__all-stocks__text">Все акции</div>
         <svg height="10" width="6">
           <use xlink:href="@/assets/images/icons.svg#arrow"></use>
         </svg>
@@ -16,6 +11,24 @@
     </div>
 
     <swiper
+      class=".swiper"
+      :modules="modules"
+      :slides-per-view="1"
+      :space-between="50"
+      :pagination="{ clickable: true }"
+      @swiper="onSwiper"
+      @slideChange="onSlideChange"
+    >
+      <swiper-slide>slide 1</swiper-slide>
+      <swiper-slide>slide 2</swiper-slide>
+      <swiper-slide>slide 3</swiper-slide>
+      ...
+    </swiper>
+  </div>
+
+  <div class="stocks-desktop">
+    <div class="stocks-desktop__container">
+      <swiper
         class=".swiper"
         :modules="modules"
         :slides-per-view="1"
@@ -23,27 +36,24 @@
         :pagination="{ clickable: true }"
         @swiper="onSwiper"
         @slideChange="onSlideChange"
-    >
-      <swiper-slide>slide 1</swiper-slide>
-      <swiper-slide>slide 2</swiper-slide>
-      <swiper-slide>slide 3</swiper-slide>
-      ...
-    </swiper>
-
+      >
+        <swiper-slide>slide 1</swiper-slide>
+        <swiper-slide>slide 2</swiper-slide>
+        <swiper-slide>slide 3</swiper-slide>
+      </swiper>
+    </div>
   </div>
-
 </template>
 
 <script>
-
 // import Swiper core and required modules
-import {Pagination} from 'swiper';
+import { Pagination } from "swiper";
 
 // Import Swiper Vue.js components
-import {Swiper, SwiperSlide} from 'swiper/vue';
+import { Swiper, SwiperSlide } from "swiper/vue";
 
 // Import all styles
-import 'swiper/css/bundle';
+import "swiper/css/bundle";
 
 export default {
   components: {
@@ -55,7 +65,7 @@ export default {
       // console.log(swiper);
     };
     const onSlideChange = () => {
-      console.log('slide change');
+      console.log("slide change");
     };
     return {
       onSwiper,
@@ -64,44 +74,73 @@ export default {
     };
   },
 };
-
 </script>
 
 <style lang="scss" scoped>
+@media (max-width: 769px) {
+  .stocks-desktop {
+    display: none;
+  }
 
-.stocks-header {
-  display: flex;
-  justify-content: space-between;
+  .stocks-mobile {
+    &__header {
+      display: flex;
+      justify-content: space-between;
+
+      &__text {
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: 700;
+        color: #454545;
+      }
+
+      &__all-stocks {
+        display: flex;
+        align-items: center;
+
+        &__text {
+          margin-right: 10px;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 17px;
+          color: #454545;
+        }
+      }
+    }
+  }
+
+  .swiper {
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+
+  .swiper-slide {
+    padding: 15px;
+    background-color: red;
+  }
 }
 
-.swiper {
-  margin-top: 20px;
-  border-radius: 20px;
-}
+@media(min-width: 769px) {
+  .stocks-mobile {
+    display: none;
+  }
 
-.swiper-slide {
-  padding: 15px;
-  background-color: red;
-}
+  .stocks-desktop {
+    &__container {
+      max-width: 1270px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
 
-.stocks-text {
-  font-size: 20px;
-  line-height: 20px;
-  font-weight: 700;
-  color: #454545;
-}
+  .swiper {
+    margin-top: 20px;
+    border-radius: 20px;
+  }
 
-.all-stocks {
-  display: flex;
-  align-items: center;
+  .swiper-slide {
+    padding: 15px;
+    background-color: red;
+  }
 }
-
-.all-stocks-text {
-  margin-right: 10px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  color: #454545;
-}
-
 </style>

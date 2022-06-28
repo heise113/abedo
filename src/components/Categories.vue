@@ -1,7 +1,7 @@
 <template>
   <div class="categories-mobile">
-    <p class="category-title">Категории</p>
-    <div class="categories-list">
+    <p class="categories-mobile__title">Категории</p>
+    <div class="categories-mobile__list">
       <CategoriesItem
         v-for="item in categories"
         :category="item"
@@ -11,21 +11,20 @@
   </div>
 
   <div class="categories-desktop">
-    <div class="input-block">
-      <div class="input-title">Маркетплейс РСО-Алания</div>
+    <div class="categories-desktop__container">
+      <div class="categories-desktop__container__title">Маркетплейс РСО-Алания</div>
       <input
+        class="categories-desktop__container__input"
         type="text"
-        class="input"
         placeholder="Найти магазин товар или услугу"
       />
-    </div>
-
-    <div class="categories-list">
-      <CategoriesItem
-        v-for="item in categories"
-        :category="item"
-        :key="item.id"
-      />
+      <div class="categories-desktop__container__list">
+        <CategoriesItem
+          v-for="item in categories"
+          :category="item"
+          :key="item.id"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -46,8 +45,7 @@ export default {
   mounted() {
     axios
       .get("https://abedo.ru/api/cuisines/get")
-      .then(response => this.categories = response.data.cuisines.data);
-      
+      .then((response) => (this.categories = response.data.cuisines.data));
   },
 };
 </script>
@@ -64,20 +62,20 @@ export default {
     padding-left: 20px;
     padding-top: 30px;
     margin-bottom: 30px;
-  }
 
-  .categories-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-  }
+    &__title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 20px;
+      color: #454545;
+      margin-bottom: 20px;
+    }
 
-  .category-title {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 20px;
-    color: #454545;
-    margin-bottom: 20px;
+    &__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
   }
 }
 
@@ -92,31 +90,37 @@ export default {
     padding-bottom: 40px;
     padding-right: 20px;
     padding-left: 20px;
-  }
 
-  .input {
-    padding: 25px;
-    margin-bottom: 40px;
-    width: 730px;
-    height: 60px;
-    margin-top: 55px;
-    background: #ffffff;
-    box-shadow: 0px 10px 50px -30px #000000;
-    border-radius: 50px;
-    border: none;
-  }
-
-  .input-title {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 49px;
-    color: #454545;
-  }
-
-  .categories-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px;
+    &__container {
+      max-width: 1270px;
+      width: 100%;
+      margin: 0 auto;
+    
+      &__input {
+        padding: 25px;
+        margin-bottom: 40px;
+        width: 730px;
+        height: 60px;
+        margin-top: 55px;
+        background: #ffffff;
+        box-shadow: 0px 10px 50px -30px #000000;
+        border-radius: 50px;
+        border: none;
+      }
+  
+      &__title {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 49px;
+        color: #454545;
+      }
+  
+      &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+      }
+    }
   }
 }
 
@@ -131,31 +135,45 @@ export default {
     padding-bottom: 40px;
     padding-right: 20px;
     padding-left: 20px;
-  }
 
-  .input {
-    padding: 25px;
-    margin-bottom: 40px;
-    width: 730px;
-    height: 60px;
-    margin-top: 55px;
-    background: #ffffff;
-    box-shadow: 0px 10px 50px -30px #000000;
-    border-radius: 50px;
-    border: none;
+    &__container {
+      max-width: 1270px;
+      width: 100%;
+      margin: 0 auto;
+    
+      &__input {
+        padding: 25px;
+        margin-bottom: 40px;
+        width: 730px;
+        height: 60px;
+        margin-top: 55px;
+        background: #ffffff;
+        box-shadow: 0px 10px 50px -30px #000000;
+        border-radius: 50px;
+        border: none;
+      }
+  
+      &__title {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 49px;
+        color: #454545;
+      }
+  
+      &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 15px;
+      }
+    }
   }
+}
 
-  .input-title {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 49px;
-    color: #454545;
-  }
-
-  .categories-list {
+@media (min-width: 550px) {
+  .categories-mobile__list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 15px;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
   }
 }
 </style>

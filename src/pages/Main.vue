@@ -16,7 +16,7 @@ import Header from '@/components/Header'
 import Categories from '@/components/Categories'
 import Stocks from "@/components/Stocks"
 import Cafe from "@/components/Cafe"
-import Footer from "@/components/Footer"
+import Footer from "@/components/footer/Footer"
 
 export default {
   components: {
