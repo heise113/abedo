@@ -1,22 +1,49 @@
 <template>
-  <div class="cafe">
-    <div class="cafe__header">
-      <div class="cafe__header__title">Заведения</div>
-      <div class="cafe__header__filter">
+  <div class="cafe-mobile">
+    <div class="cafe-mobile__header">
+      <div class="cafe-mobile__header__title">Заведения</div>
+      <div class="cafe-mobile__header__filter">
         <svg height="20" width="20">
           <use xlink:href="@/assets/images/icons.svg#cafe-filter"></use>
         </svg>
-        <div class="cafe__header__filter__text">Фильтры</div>
+        <div class="cafe-mobile__header__filter__text">Фильтры</div>
       </div>
     </div>
-    <div class="cafe__list">
+    <div class="cafe-mobile__list">
       <CafeItems
         v-for="(cafeItem, index) in cafeList"
         :cafeItem="cafeItem"
         :key="index"
       />
     </div>
-    <div class="cafe__loading">Загрузить еще</div>
+    <div class="cafe-mobile__loading">Загрузить еще</div>
+  </div>
+
+  <div class="cafe-desktop">
+    <div class="cafe-desktop__container">
+      <div class="cafe-desktop__container__header">
+        <div class="cafe-desktop__container__header__title">Заведения</div>
+        <div class="cafe-desktop__container__header__filter">
+          <svg height="20" width="20">
+            <use xlink:href="@/assets/images/icons.svg#cafe-filter"></use>
+          </svg>
+          <div class="cafe-desktop__container__header__filter__text">
+            Фильтры
+          </div>
+          
+        </div>
+        
+      </div>
+      <div class="cafe-desktop__container__list">
+        
+        <CafeItems
+          v-for="(cafeItem, index) in cafeList"
+          :cafeItem="cafeItem"
+          :key="index"
+        />
+      </div>
+      <div class="cafe-desktop__container__loading">Загрузить еще</div>
+    </div>
   </div>
 </template>
 
@@ -45,64 +72,137 @@ export default {
   mounted() {
     axios
       .get("https://abedo.ru/api/shops", { params: { cuisine: 1 } })
-      .then((response) => (this.cafeList = response.data.shops.data))
+      .then((response) => (this.cafeList = response.data.shops.data));
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.cafe {
-  margin-top: 30px;
-  margin-bottom: 15px;
+@import "@/assets/variables.scss";
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+@media (max-width: $MOBILE) {
+  .cafe-desktop {
+    display: none;
+  }
 
-    &__title {
-      font-weight: 700;
-      font-size: 20px;
-      line-height: 20px;
-      color: #454545;
+  .cafe-mobile {
+    margin-top: 30px;
+    margin-bottom: 15px;
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      &__title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        color: #454545;
+      }
+
+      &__filter {
+        display: flex;
+        align-items: center;
+
+        &__text {
+          margin-left: 10px;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 17px;
+          color: #454545;
+        }
+      }
     }
 
-    &__filter {
-      display: flex;
-      align-items: center;
+    &__loading {
+      color: white;
+      text-align: center;
+      margin: 15px auto;
+      width: 228px;
+      background: #5c6784;
+      border: 1px solid #5c6784;
+      border-radius: 50px;
+      padding: 10px 36px 10px 36px;
+    }
+  }
+}
 
-      &__text {
-        margin-left: 10px;
+@media (min-width: $MOBILE) {
+  .cafe-mobile {
+    display: none;
+  }
+
+  .cafe-desktop {
+
+    margin-top: 40px;
+
+    &__container {
+
+      max-width: $CONTAINER-WIDTH;
+      width: 100%;
+      margin: 0 auto;
+
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        &__title {
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 20px;
+          color: #454545;
+        }
+
+        &__filter {
+          display: flex;
+          align-items: center;
+
+          &__text {
+            margin-left: 10px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #454545;
+          }
+        }
+      }
+
+      &__loading {
+        cursor: pointer;
+        width: 306px;
+        text-align: center;
+        margin: 0 auto;
         font-weight: 400;
         font-size: 14px;
         line-height: 17px;
         color: #454545;
+        background: #ffffff;
+        border: 1px solid #5c6784;
+        border-radius: 50px;
+        padding: 10px 50px 10px 50px;
+      }
+
+      &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 30px;
+        column-gap: 40px;
       }
     }
   }
-
-  &__loading {
-    color: white;
-    text-align: center;
-    margin: 15px auto;
-    width: 228px;
-    background: #5c6784;
-    border: 1px solid #5c6784;
-    border-radius: 50px;
-    padding: 10px 36px 10px 36px;
-  }
 }
 
-@media (min-width: 769px) {
-  .cafe__loading {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    color: #454545;
-    background: #ffffff;
-    border: 1px solid #5c6784;
-    border-radius: 50px;
-    padding: 10px 50px 10px 50px;
+@media (min-width: $TABLET) {
+
+  .cafe-mobile {
+    display: none;
+  }
+
+
+  .cafe-desktop__container__list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 </style>

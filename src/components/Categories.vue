@@ -12,12 +12,19 @@
 
   <div class="categories-desktop">
     <div class="categories-desktop__container">
-      <div class="categories-desktop__container__title">Маркетплейс РСО-Алания</div>
-      <input
-        class="categories-desktop__container__input"
-        type="text"
-        placeholder="Найти магазин товар или услугу"
-      />
+      <div class="categories-desktop__container__title">
+        Маркетплейс РСО-Алания
+      </div>
+      <div class="categories-desktop__container__input-block">
+        <svg height="20" width="20">
+          <use xlink:href="@/assets/images/icons.svg#input-search"></use>
+        </svg>
+        <input
+          class="categories-desktop__container__input-block__input"
+          type="text"
+          placeholder="Найти магазин товар или услугу"
+        />
+      </div>
       <div class="categories-desktop__container__list">
         <CategoriesItem
           v-for="item in categories"
@@ -51,13 +58,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@media (max-width: 769px) {
+@import "@/assets/variables.scss";
+
+@media (max-width: $MOBILE) {
   .categories-desktop {
     display: none;
   }
 
   .categories-mobile {
-    background-color: #f7f7f9;
+    background-color: $PEARL;
     padding-right: 20px;
     padding-left: 20px;
     padding-top: 30px;
@@ -67,7 +76,7 @@ export default {
       font-weight: 600;
       font-size: 20px;
       line-height: 20px;
-      color: #454545;
+      color: $MACHINE-GUN-METAL;
       margin-bottom: 20px;
     }
 
@@ -79,13 +88,13 @@ export default {
   }
 }
 
-@media (min-width: 770px) and (max-width: 1024px) {
+@media (min-width: $MOBILE) {
   .categories-mobile {
     display: none;
   }
 
   .categories-desktop {
-    background-color: #dde2f2;
+    background-color: $VAGUELY-VIOLET;
     padding-top: 85px;
     padding-bottom: 40px;
     padding-right: 20px;
@@ -95,26 +104,32 @@ export default {
       max-width: 1270px;
       width: 100%;
       margin: 0 auto;
-    
-      &__input {
-        padding: 25px;
-        margin-bottom: 40px;
+
+      &__input-block {
         width: 730px;
-        height: 60px;
-        margin-top: 55px;
-        background: #ffffff;
-        box-shadow: 0px 10px 50px -30px #000000;
         border-radius: 50px;
-        border: none;
+        background: $WHITE;
+        margin-bottom: 40px;
+        margin-top: 55px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+
+        &__input {
+          box-shadow: 0px 10px 50px -30px $BLACK;
+          border: none;
+          outline: none;
+          flex: 1;
+          margin-left: 15px;
+        }
       }
-  
       &__title {
         font-weight: 700;
         font-size: 40px;
         line-height: 49px;
-        color: #454545;
+        color: $MACHINE-GUN-METAL;
       }
-  
+
       &__list {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -124,56 +139,19 @@ export default {
   }
 }
 
-@media (min-width: 1024px) {
-  .categories-mobile {
-    display: none;
-  }
-
-  .categories-desktop {
-    background-color: #dde2f2;
-    padding-top: 85px;
-    padding-bottom: 40px;
-    padding-right: 20px;
-    padding-left: 20px;
-
-    &__container {
-      max-width: 1270px;
-      width: 100%;
-      margin: 0 auto;
-    
-      &__input {
-        padding: 25px;
-        margin-bottom: 40px;
-        width: 730px;
-        height: 60px;
-        margin-top: 55px;
-        background: #ffffff;
-        box-shadow: 0px 10px 50px -30px #000000;
-        border-radius: 50px;
-        border: none;
-      }
-  
-      &__title {
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 49px;
-        color: #454545;
-      }
-  
-      &__list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 15px;
-      }
-    }
+@media (min-width: $TABLET) {
+  .categories-desktop__container__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
   }
 }
 
 @media (min-width: 550px) {
   .categories-mobile__list {
     display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
   }
 }
 </style>

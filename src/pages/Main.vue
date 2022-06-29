@@ -3,7 +3,7 @@
     <Header/>
     <Categories/>
     <main class="content">
-      <Stocks/>
+      <!-- <Stocks/> -->
       <Cafe/>
     </main>
     <Footer/>

@@ -10,9 +10,11 @@
 
   <header class="header-desktop">
     <div class="header-desktop__container">
-      <svg height="30" width="107">
-        <use xlink:href="@/assets/images/icons.svg#logo"></use>
-      </svg>
+      <a class="header-desktop__container__logo" href="#">
+        <svg height="30" width="107">
+          <use xlink:href="@/assets/images/icons.svg#logo"></use>
+        </svg>
+      </a>
 
       <div class="header-desktop__container__button">
         <svg height="24" width="24">
@@ -26,17 +28,17 @@
           <svg height="28" width="28">
             <use xlink:href="@/assets/images/icons.svg#profile"></use>
           </svg>
-          <div class="header-desktop__container__profile-stocks__profile__text">
+          <a class="header-desktop__container__profile-stocks__profile__text" href="#">
             Кабинет
-          </div>
+          </a>
         </div>
         <div class="header-desktop__container__profile-stocks__stocks">
           <svg height="24" width="24">
             <use xlink:href="@/assets/images/icons.svg#header-msg"></use>
           </svg>
-          <div class="header-desktop__container__profile-stocks__stocks__text">
+          <a class="header-desktop__container__profile-stocks__stocks__text" href="#">
             Акции магазинов
-          </div>
+          </a>
         </div>
       </div>
 
@@ -51,20 +53,26 @@
             <use xlink:href="@/assets/images/icons.svg#header-likes"></use>
           </svg>
         </div>
-        <div class="header-desktop__container__icons__basket">
-          <svg height="20" width="20">
-            <use xlink:href="@/assets/images/icons.svg#header-basket"></use>
-          </svg>
-        </div>
+      </div>
+
+      <div class="header-desktop__container__basket">
+        <svg height="20" width="20">
+          <use xlink:href="@/assets/images/icons.svg#header-basket"></use>
+        </svg>
       </div>
     </div>
   </header>
 </template>
 
-<script></script>
+<script>
+
+</script>
 
 <style lang="scss" scoped>
-@media (max-width: 769px) {
+
+@import '@/assets/styles.scss';
+
+@media (max-width: $MOBILE) {
   .header-desktop {
     display: none;
   }
@@ -73,24 +81,24 @@
     padding: 15px 20px 20px 15px;
     display: flex;
     justify-content: space-between;
-    background-color: #ffffff;
+    background-color: $WHITE;
   }
 }
 
-@media (min-width: 770px) {
+@media (min-width: $MOBILE) {
   .header-mobile {
     display: none;
   }
 
   .header-desktop {
-    background-color: #ffffff;
+    background-color: $WHITE;
 
     &__container {
-      max-width: 1270px;
+      max-width: $CONTAINER-WIDTH;
       width: 100%;
       margin: 0 auto;
       padding: 15px 20px 20px 15px;
-      background-color: #ffffff;
+      background-color: $WHITE;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -99,15 +107,22 @@
         padding: 10px 30px 10px 30px;
         display: flex;
         align-items: center;
-        background: #5c6784;
+        background: $SPACEMAN;
         border-radius: 50px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $PHYSALIS;
+        }
 
         &__text {
           margin-left: 10px;
           font-weight: 500;
           font-size: 16px;
           line-height: 20px;
-          color: #ffffff;
+          color: $WHITE;
+          cursor: pointer;
+          user-select: none;
         }
       }
 
@@ -119,26 +134,38 @@
           margin-right: 10px;
           display: flex;
           align-items: center;
+          cursor: pointer;
 
           &__text {
             margin-left: 10px;
             font-weight: 400;
             font-size: 16px;
             line-height: 20px;
-            color: #212121;
+            color: $LEAD;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
 
         &__stocks {
           display: flex;
           align-items: center;
+          cursor: pointer;
 
           &__text {
             margin-left: 10px;
             font-weight: 400;
             font-size: 16px;
             line-height: 20px;
-            color: #212121;
+            color: $LEAD;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -146,15 +173,28 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        
-        &__search, &__likes, &__basket {
+
+        &__search,
+        &__likes {
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 15px;
-          border: 1px solid #878787;
+          border: 1px solid $MITHRIL;
           border-radius: 50px;
+          cursor: pointer;
+          margin-right: 15px;
         }
+      }
+
+      &__basket {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        border: 1px solid $MITHRIL;
+        border-radius: 50px;
+        cursor: pointer;
       }
     }
   }

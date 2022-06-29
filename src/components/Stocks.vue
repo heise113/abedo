@@ -126,6 +126,8 @@ export default {
   }
 
   .stocks-desktop {
+    margin-top: 70px;
+
     &__container {
       max-width: 1270px;
       width: 100%;
@@ -134,7 +136,6 @@ export default {
   }
 
   .swiper {
-    margin-top: 20px;
     border-radius: 20px;
   }
 

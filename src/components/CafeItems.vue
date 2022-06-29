@@ -21,7 +21,23 @@
   </div>
 
   <div class="item-desktop">
-    <div class="item-desktop__image" :style="{ backgroundImage: `url(https://abedo.ru${ cafeItem.image.original})` }">
+    <div class="item-desktop__image">
+      <img
+        v-if="cafeItem.image.length"
+        class="item-desktop__image__background"
+        :src="`https://abedo.ru${cafeItem.image[0].original}`"
+        alt="#"
+      />
+      <div class="item-desktop__image__shadow"></div>
+      <img
+        v-if="cafeItem.logo"
+        class="item-desktop__image__logo"
+        :src="`https://abedo.ru${cafeItem.logo.original}`"
+        alt=""
+      />
+      <svg class="item-desktop__image__likes" height="23" width="23">
+        <use xlink:href="@/assets/images/icons.svg#likes-cafe-item"></use>
+      </svg>
     </div>
     <div class="item-desktop__text">
       <div class="item-desktop__text__title">
@@ -60,7 +76,6 @@ export default {
     border-radius: 10px;
     margin-bottom: 15px;
 
-
     &__left-side {
       display: flex;
       align-items: center;
@@ -87,9 +102,85 @@ export default {
   }
 }
 
-@media(min-width: 769px) {
+@media (min-width: 769px) {
   .item-mobile {
     display: none;
+  }
+
+  .item-desktop {
+    &__image {
+      position: relative;
+      height: 230px;
+      border-radius: 20px;
+      overflow: hidden;
+
+      &__background {
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &__shadow {
+        z-index: 1;
+        position: absolute;
+        background: linear-gradient(
+          360deg,
+          rgba(0, 0, 0, 0.8) 0%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      &__logo {
+        position: absolute;
+        z-index: 2;
+        width: 120px;
+        height: 60px;
+        left: 10px;
+        bottom: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 5px;
+      }
+
+      &__likes {
+        position: absolute;
+        z-index: 2;
+        border: 2px solid white;
+        border-radius: 50%;
+        right: 10px;
+        bottom: 10px;
+        padding: 10px;
+        width: 45px;
+        height: 45px;
+      }
+    }
+    &__text {
+      margin-top: 15px;
+
+      &__title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: #212121;
+      }
+
+      &__description {
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #454545;
+      }
+    }
   }
 }
 </style>
