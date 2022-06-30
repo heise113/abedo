@@ -1,11 +1,13 @@
 <template>
   <div class="item-mobile">
     <div class="item-mobile__left-side">
-      <svg height="30" width="30">
-        <use xlink:href="@/assets/images/icons.svg#cafe-heart"></use>
-      </svg>
+      <div class="item-mobile__left-side__cafe-heart-svg">
+        <svg height="16" width="16">
+          <use xlink:href="@/assets/images/icons.svg#cafe-heart"></use>
+        </svg>
+      </div>
       <div class="item-mobile__left-side__description">
-        <div class="item-mobile__left-side__description__name">
+        <div class="item-mobile__left-side__description__cafe-name">
           {{ cafeItem.name }}
         </div>
         <div class="item-mobile__left-side__description__cafe-description">
@@ -14,9 +16,11 @@
       </div>
     </div>
     <div class="item-mobile__right-side">
-      <svg height="15" width="15">
-        <use xlink:href="@/assets/images/icons.svg#cafe-arrow"></use>
-      </svg>
+      <div class="item-mobile__right-side__cafe-arrow-svg">
+        <svg height="15" width="15">
+          <use xlink:href="@/assets/images/icons.svg#cafe-arrow"></use>
+        </svg>
+      </div>
     </div>
   </div>
 
@@ -62,6 +66,8 @@ export default {
 
 <style lang="scss" scoped>
 
+@import '@/assets/styles.scss';
+
 @media (max-width: 769px) {
   .item-desktop {
     display: none;
@@ -76,10 +82,41 @@ export default {
     border: 1px solid #dde2f2;
     border-radius: 10px;
     margin-bottom: 15px;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      background-color: $SPACEMAN;
+      .item-mobile__left-side__description__cafe-name{
+        color: $WHITE;
+      }
+      .item-mobile__left-side__description__cafe-description{
+        color: $WHITE;
+      }
+      .item-mobile__left-side__cafe-heart-svg {
+        border-color: $WHITE;
+      }
+      .item-mobile__left-side__cafe-heart-svg svg {
+        stroke: $WHITE; 
+      }
+      .item-mobile__right-side__cafe-arrow-svg {
+        stroke: $WHITE;
+        fill: $WHITE;
+      }
+    }
 
     &__left-side {
       display: flex;
       align-items: center;
+
+      &__cafe-heart-svg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $SPACEMAN;
+        padding: 6px;
+        border-radius: 50%;
+      }
 
       &__description {
         margin-left: 14px;
@@ -98,6 +135,13 @@ export default {
           line-height: 16px;
           color: #5c6784;
         }
+      }
+    }
+    &__right-side {
+      &__cafe-arrow-svg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }

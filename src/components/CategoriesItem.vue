@@ -52,12 +52,28 @@ export default {
     border-radius: 10px;
     overflow: hidden;
     transition-duration: 0.3s;
+    cursor: pointer;
+
+    .mobile-item-block__grayblock {
+        transition-duration: 0.3s;
+        transform: scale(1, 1);
+      }
 
     &:hover {
       .mobile-item-block__grayblock {
-        width: 100%;
+        transition-duration: 0.3s;
+        transform: scale(10, 1);
       }
     }
+
+    @keyframes increase {
+        0% {
+          width: 20%;
+        }
+        100%{
+          width: 100%;
+        }
+      }
 
     &__background {
       position: absolute;
@@ -115,7 +131,7 @@ export default {
     border-radius: 30px;
     align-items: center;
     cursor: pointer;
-    transition-duration: 0.5s;
+    transition-duration: 0.4s;
 
     &:hover {
       background-color: $PHYSALIS;

@@ -2,10 +2,9 @@
   <div class="wrapper">
     <Header/>
     <Categories/>
-    <main class="content">
       <!-- <Stocks/> -->
-      <Cafe/>
-    </main>
+    <Cafe/>
+    <InfoText/>
     <Footer/>
   </div>
 </template>
@@ -16,7 +15,8 @@ import Header from '@/components/Header'
 import Categories from '@/components/Categories'
 import Stocks from "@/components/Stocks"
 import Cafe from "@/components/Cafe"
-import Footer from "@/components/footer/Footer"
+import Footer from "@/components/footer/Item"
+import InfoText from "@/components/infotext/Item.vue"
 
 export default {
   components: {
@@ -25,6 +25,7 @@ export default {
     Stocks,
     Cafe,
     Footer,
+    InfoText,
   }
 }
 

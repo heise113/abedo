@@ -1,8 +1,10 @@
 <template>
   <header class="header-mobile">
-    <svg height="30" width="107">
-      <use xlink:href="@/assets/images/icons.svg#logo"></use>
-    </svg>
+    <a href="#">
+      <svg height="30" width="107">
+        <use xlink:href="@/assets/images/icons.svg#logo"></use>
+      </svg>
+    </a>
     <svg height="28" width="28">
       <use xlink:href="@/assets/images/icons.svg#profile"></use>
     </svg>
@@ -110,6 +112,7 @@
         background: $SPACEMAN;
         border-radius: 50px;
         cursor: pointer;
+        transition-duration: 0.3s;
 
         &:hover {
           background-color: $PHYSALIS;

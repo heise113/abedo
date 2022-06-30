@@ -87,7 +87,9 @@ export default {
 
   .cafe-mobile {
     margin-top: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 90px;
+    padding-left: 20px;
+    padding-right: 20px;
 
     &__header {
       display: flex;
@@ -121,12 +123,12 @@ export default {
       text-align: center;
       margin: 15px auto;
       width: 228px;
-      background: #5c6784;
+      background-color: #5c6784;
       border: 1px solid #5c6784;
       border-radius: 50px;
       padding: 10px 36px 10px 36px;
       cursor: pointer;
-      transition-duration: 0.5s;
+      transition-duration: 0.4s;
 
       &:hover {
         background-color: $BLUISH-GREEN;
@@ -149,6 +151,8 @@ export default {
       max-width: $CONTAINER-WIDTH;
       width: 100%;
       margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
 
       &__header {
         display: flex;
@@ -186,7 +190,7 @@ export default {
         font-size: 14px;
         line-height: 17px;
         color: #454545;
-        background: #ffffff;
+        background-color: #E5E5E5;;
         border: 1px solid #5c6784;
         border-radius: 50px;
         padding: 10px 50px 10px 50px;
