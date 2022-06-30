@@ -61,6 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 @media (max-width: 769px) {
   .item-desktop {
     display: none;
@@ -108,6 +109,9 @@ export default {
   }
 
   .item-desktop {
+
+    cursor: pointer;
+
     &__image {
       position: relative;
       height: 230px;

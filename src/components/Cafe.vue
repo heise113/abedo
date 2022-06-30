@@ -104,6 +104,7 @@ export default {
       &__filter {
         display: flex;
         align-items: center;
+        cursor: pointer;
 
         &__text {
           margin-left: 10px;
@@ -124,6 +125,12 @@ export default {
       border: 1px solid #5c6784;
       border-radius: 50px;
       padding: 10px 36px 10px 36px;
+      cursor: pointer;
+      transition-duration: 0.5s;
+
+      &:hover {
+        background-color: $BLUISH-GREEN;
+      }
     }
   }
 }
@@ -146,7 +153,7 @@ export default {
       &__header {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 20px;
+        margin-bottom: 35px;
 
         &__title {
           font-weight: 700;
@@ -158,6 +165,7 @@ export default {
         &__filter {
           display: flex;
           align-items: center;
+          cursor: pointer;
 
           &__text {
             margin-left: 10px;
@@ -173,7 +181,7 @@ export default {
         cursor: pointer;
         width: 306px;
         text-align: center;
-        margin: 0 auto;
+        margin: 60px auto;
         font-weight: 400;
         font-size: 14px;
         line-height: 17px;
@@ -182,6 +190,12 @@ export default {
         border: 1px solid #5c6784;
         border-radius: 50px;
         padding: 10px 50px 10px 50px;
+        transition-duration: 0.3s;
+
+        &:hover {
+          background-color: $BLUISH-GREEN;
+          color: $WHITE;
+        }
       }
 
       &__list {

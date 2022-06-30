@@ -51,6 +51,7 @@ export default {
     padding: 21px 25px 14px 13px;
     border-radius: 10px;
     overflow: hidden;
+    transition-duration: 0.3s;
 
     &:hover {
       .mobile-item-block__grayblock {
@@ -114,7 +115,8 @@ export default {
     border-radius: 30px;
     align-items: center;
     cursor: pointer;
-    
+    transition-duration: 0.5s;
+
     &:hover {
       background-color: $PHYSALIS;
 
