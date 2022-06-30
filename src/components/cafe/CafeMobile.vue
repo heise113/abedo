@@ -1,0 +1,100 @@
+<template>
+  <div class="cafe-mobile">
+    <div class="cafe-mobile__header">
+      <div class="cafe-mobile__header__title">Заведения</div>
+      <div class="cafe-mobile__header__filter">
+        <svg height="20" width="20">
+          <use xlink:href="@/assets/images/icons.svg#cafe-filter"></use>
+        </svg>
+        <div class="cafe-mobile__header__filter__text">Фильтры</div>
+      </div>
+    </div>
+    <div class="cafe-mobile__list">
+      <CafeMobileItems
+          v-for="(cafeItem, index) in cafeList"
+          :cafeItem="cafeItem"
+          :key="index"
+      />
+    </div>
+    <div class="cafe-mobile__loading">Загрузить еще</div>
+  </div>
+</template>
+
+<script>
+import CafeMobileItems from "@/components/cafe/CafeMobileItems";
+import axios from "axios";
+
+export default {
+  components: {
+    CafeMobileItems,
+  },
+
+  data() {
+    return {
+      cafeList: [],
+    };
+  },
+  mounted() {
+    axios
+        .get("https://abedo.ru/api/shops", {params: {cuisine: 1}})
+        .then((response) => (this.cafeList = response.data.shops.data));
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+@import "@/assets/variables.scss";
+
+.cafe-mobile {
+  margin-top: 30px;
+  margin-bottom: 90px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    &__title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 20px;
+      color: #454545;
+    }
+
+    &__filter {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &__text {
+        margin-left: 10px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #454545;
+      }
+    }
+  }
+
+  &__loading {
+    color: white;
+    text-align: center;
+    margin: 15px auto;
+    width: 228px;
+    background-color: #5c6784;
+    border: 1px solid #5c6784;
+    border-radius: 50px;
+    padding: 10px 36px 10px 36px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+
+    &:hover {
+      background-color: $BLUISH-GREEN;
+    }
+  }
+}
+
+
+</style>

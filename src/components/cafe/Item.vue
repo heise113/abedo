@@ -1,20 +1,20 @@
 <template>
-  <FooterDesktop
-    v-if="width > 768"
+  <CafeDesktop
+      v-if="width > 768"
   />
-  <FooterMobile
-    v-else
+  <CafeMobile
+      v-else
   />
 </template>
 
 <script>
-import FooterMobile from "@/components/footer/FooterMobile";
-import FooterDesktop from "@/components/footer/FooterDesktop";
+import CafeMobile from "@/components/cafe/CafeMobile";
+import CafeDesktop from "@/components/cafe/CafeDesktop";
 
 export default {
   components: {
-    FooterMobile,
-    FooterDesktop,
+    CafeMobile,
+    CafeDesktop,
   },
 
   data() {
