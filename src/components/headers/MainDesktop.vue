@@ -2,11 +2,11 @@
 
   <header class="header-desktop">
     <div class="header-desktop__container">
-      <a class="header-desktop__container__logo" href="#">
+      <router-link to="/" class="header-desktop__container__logo" href="#">
         <svg height="30" width="107">
           <use xlink:href="@/assets/images/icons.svg#logo"></use>
         </svg>
-      </a>
+      </router-link>
 
       <div class="header-desktop__container__button">
         <svg height="24" width="24">

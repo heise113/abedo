@@ -46,10 +46,8 @@ export default {
 @import "@/assets/variables.scss";
 
 .cafe-mobile {
-  margin-top: 30px;
-  margin-bottom: 90px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 30px 20px 90px 20px;
+  background-color: $PEARL;
 
   &__header {
     display: flex;

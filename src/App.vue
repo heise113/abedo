@@ -1,14 +1,18 @@
 <template>
-  <Main/>
+  <!-- <Main/> -->
+  <!-- <AllCafe/> -->
+  <router-view></router-view>
 </template>
 
 <script>
 
-import Main from './pages/Main'
+import AllCafe from "./pages/AllCafe"
+import Main from "./pages/Main"
 
 export default {
   components: {
-    Main
+    Main,
+    AllCafe,
   }
 }
 

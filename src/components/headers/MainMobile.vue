@@ -1,10 +1,10 @@
 <template>
   <header class="header-mobile">
-    <a href="#">
+    <router-link to="/" href="#">
       <svg height="30" width="107">
         <use xlink:href="@/assets/images/icons.svg#logo"></use>
       </svg>
-    </a>
+    </router-link>
     <svg height="28" width="28">
       <use xlink:href="@/assets/images/icons.svg#profile"></use>
     </svg>

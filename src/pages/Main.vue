@@ -11,10 +11,10 @@
 
 <script>
 
-import Header from '@/components/Header'
-import Categories from '@/components/Categories'
-import Stocks from "@/components/Stocks"
-import Cafe from "@/components/Cafe"
+import Header from '@/components/header/Item'
+import Categories from '@/components/categories/Item'
+import Stocks from "@/components/stocks/Stocks.vue"
+import Cafe from "@/components/cafe/Item"
 import Footer from "@/components/footer/Item"
 import InfoText from "@/components/infotext/Item.vue"
 

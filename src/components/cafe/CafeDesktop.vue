@@ -19,7 +19,7 @@
             :key="index"
         />
       </div>
-      <div class="cafe-desktop__container__loading">Загрузить еще</div>
+      <div @click="$router.push('/partners')" class="cafe-desktop__container__loading">Все заведения</div>
     </div>
   </div>
 </template>
