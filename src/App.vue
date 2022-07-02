@@ -6,7 +6,7 @@
 
 <script>
 
-import AllCafe from "./pages/AllCafe"
+import AllCafe from "./pages/Partners"
 import Main from "./pages/Main"
 
 export default {

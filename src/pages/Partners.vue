@@ -1,14 +1,16 @@
 <template>
   <div class="wrapper">
-    <HeaderDesktop 
-      v-if="width > 768" 
+
+    <HeaderMainDesktop
+      v-if="width > 768"
     />
-    <GoBack 
-      v-else 
+    <HeaderPartnersMobile
+      v-else
     />
 
     <div class="wrapper__content">
-      <CafeMobile />
+      <CafePartnersDesktop v-if="width > 768" />
+      <CafeMobile v-else />
     </div>
 
     <Footer />
@@ -16,16 +18,18 @@
 </template>
 
 <script>
-import HeaderDesktop from "@/components/header/HeaderDesktop";
-import GoBack from "@/components/GoBack";
+import HeaderPartnersMobile from "@/components/headers/HeaderPartnersMobile";
+import HeaderMainDesktop  from "@/components/headers/HeaderMainDesktop"
 import CafeMobile from "@/components/cafe/CafeMobile.vue";
+import CafePartnersDesktop from "@/components/cafe/CafePartnersDesktop"
 import Footer from "@/components/footer/Item";
 
 export default {
   components: {
-    HeaderDesktop,
-    GoBack,
+    HeaderPartnersMobile,
+    HeaderMainDesktop,
     CafeMobile,
+    CafePartnersDesktop,
     Footer,
   },
   data() {

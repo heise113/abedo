@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import CafeDesktopItems from "@/components/cafe/CafeDesktopItems";
+import CafeDesktopItems from "@/components/cafe/CafeDesktopItem";
 import axios from "axios";
 
 export default {

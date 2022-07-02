@@ -11,7 +11,7 @@
 
 <script>
 
-import Header from '@/components/header/Item'
+import Header from '@/components/headers/HeaderMainItem'
 import Categories from '@/components/categories/Item'
 import Stocks from "@/components/stocks/Stocks.vue"
 import Cafe from "@/components/cafe/Item"

@@ -1,6 +1,6 @@
 import {createRouter, createWebHistory} from "vue-router";
 import Main from "@/pages/Main";
-import AllCafe from "@/pages/AllCafe"
+import AllCafe from "@/pages/Partners"
 
 const routes = [
     {

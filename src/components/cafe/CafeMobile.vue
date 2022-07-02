@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import CafeMobileItems from "@/components/cafe/CafeMobileItems";
+import CafeMobileItems from "@/components/cafe/CafeMobileItem";
 import axios from "axios";
 
 export default {

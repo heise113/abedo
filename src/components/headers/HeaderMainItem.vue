@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import HeaderMobile from "@/components/header/HeaderMobile";
-import HeaderDesktop from "@/components/header/HeaderDesktop";
+import HeaderMobile from "@/components/headers/HeaderMainMobile";
+import HeaderDesktop from "@/components/headers/HeaderMainDesktop";
 
 export default {
   components: {
