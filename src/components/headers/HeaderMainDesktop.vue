@@ -8,7 +8,7 @@
         </svg>
       </router-link>
 
-      <div class="header-desktop__container__button">
+      <div @click="$router.push('/partners')" class="header-desktop__container__button">
         <svg height="24" width="24">
           <use xlink:href="@/assets/images/icons.svg#header-shop"></use>
         </svg>
@@ -28,9 +28,9 @@
           <svg height="24" width="24">
             <use xlink:href="@/assets/images/icons.svg#header-msg"></use>
           </svg>
-          <a class="header-desktop__container__profile-stocks__stocks__text" href="#">
+          <router-link to="/stocks" class="header-desktop__container__profile-stocks__stocks__text" href="#">
             Акции магазинов
-          </a>
+          </router-link>
         </div>
       </div>
 

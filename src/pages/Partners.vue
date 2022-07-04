@@ -1,19 +1,23 @@
 <template>
   <div class="wrapper">
 
-    <HeaderMainDesktop
-      v-if="width > 768"
-    />
-    <HeaderPartnersMobile
-      v-else
-    />
+    <header class="wrapper__header">
+      <HeaderMainDesktop
+        v-if="width > 768"
+      />
+      <HeaderPartnersMobile
+        v-else
+      />
+    </header>
 
     <div class="wrapper__content">
       <CafePartnersDesktop v-if="width > 768" />
       <CafeMobile v-else />
     </div>
 
-    <Footer />
+    <footer class="wrapper__footer">
+      <Footer />
+    </footer>
   </div>
 </template>
 
@@ -59,10 +63,17 @@ export default {
 @import "@/assets/styles.scss";
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
   height: 100%;
+
   &__content {
     background-color: $PEARL;
-    height: 100%;
+    flex: 1 0 auto;
+  }
+
+  &__footer {
+    flex: 0 0 auto;
   }
 }
 

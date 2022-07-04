@@ -5,8 +5,11 @@
         <div class="wrapper__container__header__title">
           <span>Список заведений</span>
         </div>
-        <div class="wrapper__container__header__list-partners__filter">
-          <span>Фильтр</span>
+        <div class="wrapper__container__header__filter">
+          <svg height="24" width="24">
+            <use xlink:href="@/assets/images/icons.svg#filter-vertical"></use>
+          </svg>
+          <span class="wrapper__container__header__filter__text">Фильтр</span>
         </div>
       </div>
       <div class="wrapper__container__main">
@@ -31,7 +34,7 @@
         </div>
       </div>
       <div class="wrapper__container__loading">
-        Загрузить еще
+        ЗАГРУЗИТЬ ЕЩЕ
       </div>
     </div>
   </div>
@@ -86,7 +89,29 @@ export default {
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      &__title {
+        // font-family: 'Montserrat';
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 39px;
+        color: $MACHINE-GUN-METAL;
+      }
+
+      &__filter {
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+        background-color: $WHITE;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &__text {
+          margin-left: 10px;
+        }
+      }
     }
+
 
     &__main {
       margin-top: 72px;
@@ -103,6 +128,8 @@ export default {
         background-color: $WHITE;
         padding: 20px;
         border-radius: 20px;
+        width: 295px;
+        flex-shrink: 0;
 
         &__title {
           font-weight: 600;
@@ -131,11 +158,27 @@ export default {
       color: $MACHINE-GUN-METAL;
       text-align: center;
 
-      //border: 2px solid black;
-      margin-top: 57px;
-      padding: 20px 86px 20px 86px;
+      width: 306px;
+      border: 2px solid black;
+      margin: 57px auto;
+      padding: 10px 0 10px 0;
       background-color: $PEARL;
+      border: 1px solid $SPACEMAN;
+      border-radius: 50px;
+      cursor: pointer;
+      transition-duration: 0.3s;
+
+      &:hover {
+        background-color: $BLUISH-GREEN;
+        color: $WHITE;
+      }
     }
+  }
+}
+
+@media (max-width: 950px) {
+  .wrapper__container__main__list-partners {
+    grid-template-columns: 1fr 1fr;
   }
 }
 

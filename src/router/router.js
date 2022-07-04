@@ -1,6 +1,8 @@
 import {createRouter, createWebHistory} from "vue-router";
 import Main from "@/pages/Main";
-import AllCafe from "@/pages/Partners"
+import Partners from "@/pages/Partners"
+import Stocks from "@/pages/Stocks"
+
 
 const routes = [
     {
@@ -9,8 +11,12 @@ const routes = [
     },
     {
         path: '/partners',
-        component: AllCafe
+        component: Partners
     },
+    {
+        path: '/stocks',
+        component: Stocks,
+    }
 ]
 
 const router = createRouter({

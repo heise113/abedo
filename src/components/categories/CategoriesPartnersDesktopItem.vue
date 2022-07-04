@@ -4,13 +4,17 @@
 <!--      <div class="item-wrapper__left__logo">-->
 <!--        <img :src='`https://abedo.ru${category.image.resized}`' alt="#">-->
 <!--      </div>-->
-      <div class="item-wrapper__left__logo"></div>
+      <div class="item-wrapper__left__logo">
+        <img src="@/assets/images/category-logo.png" alt="">
+      </div>
       <div class="item-wrapper__left__name">
         {{ category.name }}
       </div>
     </div>
     <div class="item-wrapper__right">
-      Стрелка
+      <svg height="10" width="6">
+          <use xlink:href="@/assets/images/icons.svg#category-arrow"></use>
+      </svg>
     </div>
   </div>
 </template>
@@ -44,6 +48,7 @@ export default {
     align-items: center;
 
     &__logo {
+      flex: 0 0 auto;
       margin-right: 10px;
       width: 30px;
       height: 30px;
@@ -55,6 +60,13 @@ export default {
       margin-right: 10px;
     }
 
+  }
+
+  &__right {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 

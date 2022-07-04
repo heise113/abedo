@@ -64,6 +64,7 @@
 
       &__logo {
         &__copyright {
+          margin-top: 10px;
           font-weight: 400;
           font-size: 12px;
           line-height: 15px;
@@ -103,6 +104,7 @@
         }
 
         &__sentence {
+          margin-top: 10px;
           color: $WHITE;
           font-weight: 400;
           font-size: 14px;

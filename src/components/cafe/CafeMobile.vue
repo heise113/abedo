@@ -16,7 +16,7 @@
           :key="index"
       />
     </div>
-    <div class="cafe-mobile__loading">Загрузить еще</div>
+    <div @click="$router.push('/partners')" class="cafe-mobile__loading">ВСЕ ЗАВЕДЕНИЯ</div>
   </div>
 </template>
 
@@ -77,6 +77,8 @@ export default {
   }
 
   &__loading {
+    display: block;
+    text-decoration: none;
     color: white;
     text-align: center;
     margin: 15px auto;

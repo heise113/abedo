@@ -14,9 +14,11 @@
           :src="`https://abedo.ru${cafeItem.logo.original}`"
           alt=""
       />
-      <svg class="item-desktop__image__likes" height="23" width="23">
-        <use xlink:href="@/assets/images/icons.svg#likes-cafe-item"></use>
-      </svg>
+      <div class="item-desktop__image__likes">
+        <svg class="item-desktop__image__likes__svg" height="23" width="23">
+          <use xlink:href="@/assets/images/icons.svg#likes-cafe-item"></use>
+        </svg>
+      </div>
     </div>
     <div class="item-desktop__text">
       <div class="item-desktop__text__title">
@@ -110,7 +112,7 @@ export default {
       font-weight: 600;
       font-size: 16px;
       line-height: 20px;
-      color: #212121;
+      color: $LEAD;
     }
 
     &__description {
@@ -118,7 +120,7 @@ export default {
       font-weight: 400;
       font-size: 14px;
       line-height: 17px;
-      color: #454545;
+      color: $MACHINE-GUN-METAL;
     }
   }
 }

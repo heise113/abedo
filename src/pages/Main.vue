@@ -13,7 +13,7 @@
 
 import Header from '@/components/headers/HeaderMainItem'
 import Categories from '@/components/categories/Item'
-import Stocks from "@/components/stocks/Stocks.vue"
+import Stocks from "@/components/stocks/StocksMain.vue"
 import Cafe from "@/components/cafe/Item"
 import Footer from "@/components/footer/Item"
 import InfoText from "@/components/infotext/Item.vue"
@@ -33,11 +33,13 @@ export default {
 
 <style lang="scss" scoped>
 
+@import "@/assets/styles.scss";
+
 .wrapper {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #F7F7F9;
+  background-color: $PEARL;
 }
 
 

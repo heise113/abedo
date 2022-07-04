@@ -20,6 +20,8 @@
 @import '@/assets/styles.scss';
 
 .info-text {
+  background-color: $MA-WHITE;
+  
   &__container {
     padding-left: 20px;
     padding-right: 20px;
@@ -28,7 +30,6 @@
     margin: 0 auto;
     padding-top: 80px;
     padding-bottom: 80px;
-    background-color: $MA-WHITE;
     &__top, &__bottom {
       font-weight: 400;
       font-size: 16px;

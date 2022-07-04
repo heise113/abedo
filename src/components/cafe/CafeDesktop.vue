@@ -4,12 +4,12 @@
       <div class="cafe-desktop__container__header">
         <div class="cafe-desktop__container__header__title">Заведения</div>
         <div class="cafe-desktop__container__header__filter">
-          <svg height="20" width="20">
-            <use xlink:href="@/assets/images/icons.svg#cafe-filter"></use>
+          <svg height="24" width="24">
+            <use xlink:href="@/assets/images/icons.svg#filter-vertical"></use>
           </svg>
-          <div class="cafe-desktop__container__header__filter__text">
+          <span class="cafe-desktop__container__header__filter__text">
             Фильтры
-          </div>
+          </span>
         </div>
       </div>
       <div class="cafe-desktop__container__list">
@@ -19,7 +19,7 @@
             :key="index"
         />
       </div>
-      <div @click="$router.push('/partners')" class="cafe-desktop__container__loading">Все заведения</div>
+      <div @click="$router.push('/partners')" class="cafe-desktop__container__loading">ВСЕ ЗАВЕДЕНИЯ</div>
     </div>
   </div>
 </template>
@@ -51,6 +51,7 @@ export default {
 
 .cafe-desktop {
   margin-top: 40px;
+  background-color: $PEARL;
 
   &__container {
     max-width: $CONTAINER-WIDTH;
@@ -65,23 +66,23 @@ export default {
       margin-bottom: 35px;
 
       &__title {
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 20px;
-        color: #454545;
+        // font-family: 'Montserrat';
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 39px;
+        color: $MACHINE-GUN-METAL;
       }
 
       &__filter {
         display: flex;
         align-items: center;
+        padding: 5px 10px;
+        background-color: $WHITE;
+        border-radius: 5px;
         cursor: pointer;
 
         &__text {
           margin-left: 10px;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 17px;
-          color: #454545;
         }
       }
     }
@@ -94,11 +95,11 @@ export default {
       font-weight: 400;
       font-size: 14px;
       line-height: 17px;
-      color: #454545;
-      background-color: #E5E5E5;;
-      border: 1px solid #5c6784;
+      color: $MACHINE-GUN-METAL;
+      background-color: $PEARL;
+      border: 1px solid $SPACEMAN;
       border-radius: 50px;
-      padding: 10px 50px 10px 50px;
+      padding: 10px 0 10px 0;
       transition-duration: 0.3s;
 
       &:hover {

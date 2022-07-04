@@ -2,7 +2,7 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <a href="#"><svg height="24" width="24"><use xlink:href="@/assets/images/icons.svg#footer-main"></use></svg></a>
+      <router-link to="/" href="#"><svg height="24" width="24"><use xlink:href="@/assets/images/icons.svg#footer-main"></use></svg></router-link>
       <a href="#"><svg height="18" width="20"><use xlink:href="@/assets/images/icons.svg#footer-likes"></use></svg></a>
       <a href="#"><svg height="20" width="20"><use xlink:href="@/assets/images/icons.svg#footer-basket"></use></svg></a>
       <a href="#"><svg height="19" width="19"><use xlink:href="@/assets/images/icons.svg#footer-search"></use></svg></a>
@@ -28,6 +28,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 999;
 }
 
 .footer-inner {
