@@ -64,6 +64,7 @@
 
       &__logo {
         &__copyright {
+          font-family: 'Montserrat';
           margin-top: 10px;
           font-weight: 400;
           font-size: 12px;
@@ -77,6 +78,7 @@
         flex-wrap: wrap;
 
         &__text {
+          font-family: 'Montserrat';
           text-decoration: none;
           margin: 0 10px 0 10px;
           font-weight: 400;
@@ -92,6 +94,7 @@
 
       &__contact {
         &__email {
+          font-family: 'Montserrat';
           text-decoration: none;
           color: $WHITE;
           font-weight: 600;
@@ -104,6 +107,7 @@
         }
 
         &__sentence {
+          font-family: 'Montserrat';
           margin-top: 10px;
           color: $WHITE;
           font-weight: 400;
@@ -120,6 +124,7 @@
       justify-content: center;
 
       &__terms a{
+        font-family: 'Montserrat';
         text-decoration: none;
         font-weight: 400;
         font-size: 14px;
@@ -132,6 +137,7 @@
       }
 
       &__policies a{
+        font-family: 'Montserrat';
         text-decoration: none;
         font-weight: 400;
         font-size: 14px;
@@ -146,6 +152,10 @@
       &__terms, &__policies {
         margin-right: 20px;
         margin-left: 20px;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }

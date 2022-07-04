@@ -48,6 +48,7 @@ export default {
 .item-desktop {
 
   cursor: pointer;
+  overflow: hidden;
 
   &__image {
     position: relative;
@@ -55,15 +56,23 @@ export default {
     border-radius: 20px;
     overflow: hidden;
 
+    &:hover {
+      .item-desktop__image__background {
+        transition-duration: 0.4s;
+        transform: scale(1.1, 1.1);
+      }
+    }
+
+
     &__background {
       z-index: 0;
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition-duration: 0.4s;
     }
 
     &__shadow {
@@ -102,6 +111,13 @@ export default {
       padding: 10px;
       width: 45px;
       height: 45px;
+      transition-duration: 0.4s;
+
+      &:hover {
+        background-color: $ORANGE-SODA;
+        border-color: $ORANGE-SODA;
+        transition-duration: 0.4s;
+      }
     }
   }
 
@@ -109,6 +125,7 @@ export default {
     margin-top: 15px;
 
     &__title {
+      font-family: 'Montserrat';
       font-weight: 600;
       font-size: 16px;
       line-height: 20px;
@@ -116,6 +133,7 @@ export default {
     }
 
     &__description {
+      font-family: 'SF';
       margin-top: 10px;
       font-weight: 400;
       font-size: 14px;

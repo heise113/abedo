@@ -3,8 +3,8 @@
   <header class="header-desktop">
     <div class="header-desktop__container">
       <router-link to="/" class="header-desktop__container__logo" href="#">
-        <svg height="30" width="107">
-          <use xlink:href="@/assets/images/icons.svg#logo"></use>
+        <svg height="44" width="156">
+          <use xlink:href="@/assets/images/icons.svg#logo-header-desktop"></use>
         </svg>
       </router-link>
 
@@ -12,7 +12,7 @@
         <svg height="24" width="24">
           <use xlink:href="@/assets/images/icons.svg#header-shop"></use>
         </svg>
-        <span class="header-desktop__container__button__text"> Магазины </span>
+        <span class="header-desktop__container__button__text"> Заведения </span>
       </div>
 
       <div class="header-desktop__container__profile-stocks">
@@ -78,7 +78,7 @@
     align-items: center;
 
     &__button {
-      padding: 10px 30px 10px 30px;
+      padding: 14px 30px 14px 30px;
       display: flex;
       align-items: center;
       background: $SPACEMAN;
@@ -91,13 +91,14 @@
       }
 
       &__text {
+        font-family: 'Montserrat', sans-serif;
         margin-left: 10px;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 16px;
         line-height: 20px;
-        color: $WHITE;
         cursor: pointer;
         user-select: none;
+        color: $WHITE;
       }
     }
 
@@ -112,6 +113,7 @@
         cursor: pointer;
 
         &__text {
+          font-family: 'Montserrat';
           margin-left: 10px;
           font-weight: 400;
           font-size: 16px;
@@ -131,6 +133,7 @@
         cursor: pointer;
 
         &__text {
+          font-family: 'Montserrat';
           margin-left: 10px;
           font-weight: 400;
           font-size: 16px;
@@ -160,6 +163,15 @@
         border-radius: 50px;
         cursor: pointer;
         margin-right: 15px;
+
+        &:hover {
+          border-color: $SPACEMAN;
+
+          & svg {
+            //fill: $SPACEMAN;
+            stroke: $SPACEMAN;
+          }
+        }
       }
     }
 
@@ -174,5 +186,9 @@
     }
   }
 }
+
+//@media (max-width: 900px) {
+//
+//}
 
 </style>

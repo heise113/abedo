@@ -156,7 +156,7 @@
     margin-bottom: 40px;
 
     &__title {
-      // font-family: 'Montserrat';
+       font-family: 'Montserrat';
       font-weight: 600;
       font-size: 32px;
       line-height: 39px;
@@ -166,7 +166,6 @@
 
   &__stocks-list {
     display: grid;
-    // grid-template-columns: 374px;
     grid-template-columns: 1fr 1fr;
 
     column-gap: 20px;
@@ -199,7 +198,7 @@
           top: 35px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -212,7 +211,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -257,7 +256,7 @@
           top: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -270,7 +269,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -315,7 +314,7 @@
           top: 35px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -328,7 +327,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -373,7 +372,7 @@
           top: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -386,7 +385,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -431,7 +430,7 @@
           top: 35px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -444,7 +443,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -489,7 +488,7 @@
           top: 35px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -502,7 +501,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -547,7 +546,7 @@
           top: 35px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -560,7 +559,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -605,7 +604,7 @@
           top: 35px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -618,7 +617,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -656,7 +655,7 @@
           top: 35px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -669,7 +668,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+           font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;

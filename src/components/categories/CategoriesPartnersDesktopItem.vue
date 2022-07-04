@@ -17,6 +17,7 @@
       </svg>
     </div>
   </div>
+<!--  <hr class="line">-->
 </template>
 
 <script>
@@ -25,8 +26,9 @@ export default {
   props: {
     category: {
       type: Object
-    }
-  }
+    },
+    key: {}
+  },
 }
 
 </script>
@@ -57,7 +59,12 @@ export default {
     }
 
     &__name {
-      margin-right: 10px;
+      font-family: 'SF';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 18px;
+      color: $MACHINE-GUN-METAL;
     }
 
   }
@@ -68,6 +75,10 @@ export default {
     align-items: center;
     justify-content: space-between;
   }
+}
+
+.line {
+  border: 1px solid $VAGUELY-VIOLET;
 }
 
 

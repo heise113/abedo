@@ -2,7 +2,7 @@
   <header class="header-mobile">
     <router-link to="/" href="#">
       <svg height="30" width="107">
-        <use xlink:href="@/assets/images/icons.svg#logo"></use>
+        <use xlink:href="@/assets/images/icons.svg#logo-header-mobile"></use>
       </svg>
     </router-link>
     <svg height="28" width="28">

@@ -28,6 +28,7 @@ export default {
 
 
 .mobile-item-block {
+  font-family: 'SF';
   position: relative;
   min-width: 160px;
   height: 62px;

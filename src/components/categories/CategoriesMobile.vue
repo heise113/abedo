@@ -45,6 +45,7 @@ export default {
   margin-bottom: 30px;
 
   &__title {
+    font-family: 'SF';
     font-weight: 600;
     font-size: 20px;
     line-height: 20px;

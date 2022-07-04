@@ -66,7 +66,7 @@ export default {
       margin-bottom: 35px;
 
       &__title {
-        // font-family: 'Montserrat';
+        font-family: 'Montserrat';
         font-weight: 600;
         font-size: 32px;
         line-height: 39px;
@@ -82,12 +82,15 @@ export default {
         cursor: pointer;
 
         &__text {
+          font-family: 'SF';
+          font-weight: 600;
           margin-left: 10px;
         }
       }
     }
 
     &__loading {
+      font-family: 'SF';
       cursor: pointer;
       width: 306px;
       text-align: center;

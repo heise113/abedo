@@ -93,6 +93,7 @@ export default {
       margin-left: 14px;
 
       &__cafe-name {
+        font-family: 'SF';
         font-weight: 400;
         font-size: 15px;
         line-height: 18px;

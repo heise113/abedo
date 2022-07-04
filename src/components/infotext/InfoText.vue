@@ -31,6 +31,7 @@
     padding-top: 80px;
     padding-bottom: 80px;
     &__top, &__bottom {
+      font-family: 'SF';
       font-weight: 400;
       font-size: 16px;
       line-height: 24px;

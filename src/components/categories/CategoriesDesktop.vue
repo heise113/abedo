@@ -73,6 +73,8 @@ export default {
       align-items: center;
 
       &__input {
+        font-family: 'SF';
+        font-weight: 400;
         box-shadow: 0px 10px 50px -30px $BLACK;
         border: none;
         outline: none;
@@ -82,6 +84,7 @@ export default {
     }
 
     &__title {
+      font-family: 'Montserrat';
       font-weight: 700;
       font-size: 40px;
       line-height: 49px;

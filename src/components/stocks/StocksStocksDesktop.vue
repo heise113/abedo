@@ -20,7 +20,8 @@
           <span class="ssd-wrapper__container__stocks-list__item-1__description">
             Получайте 1% бонусами и скидку до 99%
           </span>
-          <img src="@/assets/images/stocks-background.png" alt="" class="ssd-wrapper__container__stocks-list__item-1__background">
+          <img src="@/assets/images/stocks-background.png" alt=""
+               class="ssd-wrapper__container__stocks-list__item-1__background">
 
         </div>
 
@@ -32,7 +33,8 @@
           <span class="ssd-wrapper__container__stocks-list__item-2__description">
             Получайте 1% бонусами и скидку до 99% 
           </span>
-          <img src="@/assets/images/stocks-background.png" alt="" class="ssd-wrapper__container__stocks-list__item-2__background">
+          <img src="@/assets/images/stocks-background.png" alt=""
+               class="ssd-wrapper__container__stocks-list__item-2__background">
 
         </div>
 
@@ -47,7 +49,8 @@
           <span class="ssd-wrapper__container__stocks-list__item-3__description">
             Получайте 1% бонусами и скидку до 99% 
           </span>
-          <img src="@/assets/images/stocks-background.png" alt="" class="ssd-wrapper__container__stocks-list__item-3__background">
+          <img src="@/assets/images/stocks-background.png" alt=""
+               class="ssd-wrapper__container__stocks-list__item-3__background">
 
         </div>
 
@@ -59,7 +62,8 @@
           <span class="ssd-wrapper__container__stocks-list__item-4__description">
             Получайте 1% бонусами и скидку до 99% 
           </span>
-          <img src="@/assets/images/stocks-background.png" alt="" class="ssd-wrapper__container__stocks-list__item-4__background">
+          <img src="@/assets/images/stocks-background.png" alt=""
+               class="ssd-wrapper__container__stocks-list__item-4__background">
 
         </div>
 
@@ -74,7 +78,8 @@
           <span class="ssd-wrapper__container__stocks-list__item-5__description">
             Получайте 1% бонусами и скидку до 99% 
           </span>
-          <img src="@/assets/images/stocks-background.png" alt="" class="ssd-wrapper__container__stocks-list__item-5__background">
+          <img src="@/assets/images/stocks-background.png" alt=""
+               class="ssd-wrapper__container__stocks-list__item-5__background">
 
         </div>
 
@@ -89,7 +94,8 @@
           <span class="ssd-wrapper__container__stocks-list__item-6__description">
             Получайте 1% бонусами и скидку до 99% 
           </span>
-          <img src="@/assets/images/stocks-background.png" alt="" class="ssd-wrapper__container__stocks-list__item-6__background">
+          <img src="@/assets/images/stocks-background.png" alt=""
+               class="ssd-wrapper__container__stocks-list__item-6__background">
 
         </div>
 
@@ -104,7 +110,8 @@
           <span class="ssd-wrapper__container__stocks-list__item-7__description">
             Получайте 1% бонусами и скидку до 99% 
           </span>
-          <img src="@/assets/images/stocks-background.png" alt="" class="ssd-wrapper__container__stocks-list__item-7__background">
+          <img src="@/assets/images/stocks-background.png" alt=""
+               class="ssd-wrapper__container__stocks-list__item-7__background">
 
         </div>
 
@@ -145,7 +152,6 @@
 <script>
 
 
-
 </script>
 
 <style scoped lang="scss">
@@ -174,7 +180,7 @@
       margin-bottom: 70px;
 
       &__title {
-        // font-family: 'Montserrat';
+        font-family: 'Montserrat';
         font-weight: 600;
         font-size: 32px;
         line-height: 39px;
@@ -197,7 +203,7 @@
       }
 
       &__item-1 {
-        &::before{
+        &::before {
           content: "";
           position: absolute;
           top: 0;
@@ -214,7 +220,7 @@
           top: 35px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -227,7 +233,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -256,7 +262,7 @@
       }
 
       &__item-2 {
-        &::before{
+        &::before {
           content: "";
           position: absolute;
           top: 0;
@@ -273,7 +279,7 @@
           top: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -286,7 +292,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -315,7 +321,7 @@
       }
 
       &__item-3 {
-        &::before{
+        &::before {
           content: "";
           position: absolute;
           top: 0;
@@ -332,7 +338,7 @@
           top: 35px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -345,7 +351,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -374,7 +380,7 @@
       }
 
       &__item-4 {
-        &::before{
+        &::before {
           content: "";
           position: absolute;
           top: 0;
@@ -391,7 +397,7 @@
           top: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -404,7 +410,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -433,7 +439,7 @@
       }
 
       &__item-5 {
-        &::before{
+        &::before {
           content: "";
           position: absolute;
           top: 0;
@@ -450,7 +456,7 @@
           top: 35px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -463,7 +469,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -492,7 +498,7 @@
       }
 
       &__item-6 {
-        &::before{
+        &::before {
           content: "";
           position: absolute;
           top: 0;
@@ -509,7 +515,7 @@
           top: 35px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -522,7 +528,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -551,7 +557,7 @@
       }
 
       &__item-7 {
-        &::before{
+        &::before {
           content: "";
           position: absolute;
           top: 0;
@@ -568,7 +574,7 @@
           top: 35px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -581,7 +587,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -610,7 +616,7 @@
       }
 
       &__item-8 {
-        &::before{
+        &::before {
           content: "";
           position: absolute;
           top: 0;
@@ -627,7 +633,7 @@
           top: 35px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -640,7 +646,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -662,7 +668,7 @@
       }
 
       &__item-9 {
-        &::before{
+        &::before {
           content: "";
           position: absolute;
           top: 0;
@@ -679,7 +685,7 @@
           top: 35px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 22px;
@@ -692,7 +698,7 @@
           bottom: 20px;
           z-index: 3;
 
-          // font-family: 'Montserrat';
+          font-family: 'Montserrat';
           font-weight: 600;
           font-size: 18px;
           line-height: 26px;
@@ -715,6 +721,7 @@
     }
   }
 }
+
 @media (max-width: 1100px) {
   .ssd-wrapper__container__stocks-list {
     justify-content: center;

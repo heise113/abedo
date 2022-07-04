@@ -1,12 +1,12 @@
 <template>
-  <div class="wrapper-stocks">
-    <div class="wrapper-stocks__header">
+  <div class="wrapper">
+    <div class="wrapper__header">
       <Header/>
     </div>
-    <div class="wrapper-stocks__content">
+    <div class="wrapper__content">
       <StocksStocksItem/>
     </div>
-    <div class="wrapper-stocks__footer">
+    <div class="wrapper__footer">
       <Footer/>
     </div>
   </div>
@@ -32,7 +32,7 @@ export default {
 
 @import "@/assets/styles.scss";
 
-  .wrapper-stocks {
+  .wrapper {
     height: 100%;
     background-color: $PEARL;
     // border: 4px solid red;

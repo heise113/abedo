@@ -91,7 +91,7 @@ export default {
       justify-content: space-between;
 
       &__title {
-        // font-family: 'Montserrat';
+         font-family: 'Montserrat';
         font-weight: 600;
         font-size: 32px;
         line-height: 39px;
@@ -107,6 +107,8 @@ export default {
         cursor: pointer;
 
         &__text {
+          font-family: 'SF';
+          font-weight: 600;
           margin-left: 10px;
         }
       }
@@ -115,15 +117,11 @@ export default {
 
     &__main {
       margin-top: 72px;
-      //display: grid;
-      //grid-template-columns: 1fr 3fr;
-      //column-gap: 30px;
       display: flex;
       align-items: start;
       justify-content: space-between;
 
       &__sidebar {
-        //border: 2px solid black;
         margin-right: 30px;
         background-color: $WHITE;
         padding: 20px;
@@ -132,6 +130,7 @@ export default {
         flex-shrink: 0;
 
         &__title {
+          font-family: 'SF';
           font-weight: 600;
           font-size: 20px;
           line-height: 24px;
@@ -152,6 +151,7 @@ export default {
     }
 
     &__loading {
+      font-family: 'SF';
       font-weight: 400;
       font-size: 14px;
       line-height: 17px;

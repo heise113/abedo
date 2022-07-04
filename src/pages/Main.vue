@@ -1,11 +1,17 @@
 <template>
   <div class="wrapper">
-    <Header/>
-    <Categories/>
+    <div class="wrapper__header">
+      <Header/>
+    </div>
+    <div class="wrapper__content">
+      <Categories/>
       <!-- <Stocks/> -->
-    <Cafe/>
-    <InfoText/>
-    <Footer/>
+      <Cafe/>
+      <InfoText/>
+    </div>
+    <div class="wrapper__footer">
+      <Footer/>
+    </div>
   </div>
 </template>
 
@@ -40,13 +46,17 @@ export default {
   display: flex;
   flex-direction: column;
   background-color: $PEARL;
+
+  &__content {
+    background-color: $PEARL;
+    flex: 1 0 auto;
+  }
+
+  &__footer {
+    flex: 0 0 auto;
+  }
 }
 
-
-.content {
-  padding-left: 20px;
-  padding-right: 20px;
-}
 
 
 </style>

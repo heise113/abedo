@@ -16,7 +16,7 @@
           :key="index"
       />
     </div>
-    <div @click="$router.push('/partners')" class="cafe-mobile__loading">ВСЕ ЗАВЕДЕНИЯ</div>
+    <div @click="$router.push('/partners')" class="cafe-mobile__loading">Все заведения</div>
   </div>
 </template>
 
@@ -55,6 +55,7 @@ export default {
     margin-bottom: 20px;
 
     &__title {
+      font-family: 'SF';
       font-weight: 700;
       font-size: 20px;
       line-height: 20px;
@@ -67,6 +68,7 @@ export default {
       cursor: pointer;
 
       &__text {
+        font-family: 'SF';
         margin-left: 10px;
         font-weight: 400;
         font-size: 14px;
@@ -77,6 +79,7 @@ export default {
   }
 
   &__loading {
+    font-family: 'SF';
     display: block;
     text-decoration: none;
     color: white;
