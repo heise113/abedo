@@ -1,17 +1,17 @@
 <template>
-  <div class="item-desktop">
+  <div class="item-desktop" @click="$router.push('/cafe-cart')">
     <div class="item-desktop__image">
       <img
           v-if="cafeItem.image.length"
           class="item-desktop__image__background"
-          :src="`https://abedo.ru${cafeItem.image[0].original}`"
+          :src="`https://admin.abedo.ru${cafeItem.image[0].original}`"
           alt="#"
       />
       <div class="item-desktop__image__shadow"></div>
       <img
           v-if="cafeItem.logo"
           class="item-desktop__image__logo"
-          :src="`https://abedo.ru${cafeItem.logo.original}`"
+          :src="`https://admin.abedo.ru${cafeItem.logo.original}`"
           alt=""
       />
       <div class="item-desktop__image__likes">

@@ -1,6 +1,6 @@
 <template>
   <div class="mobile-item-block">
-    <img class="mobile-item-block__background" :src='`https://abedo.ru${category.image.original}`' alt="#">
+    <img class="mobile-item-block__background" :src='`https://admin.abedo.ru${category.image.original}`' alt="#">
     <div class="mobile-item-block__grayblock"></div>
     <div class="mobile-item-block__shadow"></div>
     <div class="mobile-item-block__text">

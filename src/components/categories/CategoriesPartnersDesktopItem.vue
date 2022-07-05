@@ -2,7 +2,7 @@
   <div class="item-wrapper">
     <div class="item-wrapper__left">
 <!--      <div class="item-wrapper__left__logo">-->
-<!--        <img :src='`https://abedo.ru${category.image.resized}`' alt="#">-->
+<!--        <img :src='`https://admin.abedo.ru${category.image.resized}`' alt="#">-->
 <!--      </div>-->
       <div class="item-wrapper__left__logo">
         <img src="@/assets/images/category-logo.png" alt="">

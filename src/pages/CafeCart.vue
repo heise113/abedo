@@ -1,0 +1,52 @@
+<template>
+  
+<div class="wrapper">
+  <div class="wrapper__header">
+    <Header/>
+  </div>
+  <div class="wrapper__content">
+    <CafeCart/>
+  </div>
+  <div class="wrapper__footer">
+    <Footer/>
+  </div>
+</div>
+
+</template>
+
+<script>
+
+import Header from "@/components/headers/HeaderMainItem.vue"
+import CafeCart from "@/components/cafe/CafeCartItem.vue"
+import Footer from "@/components/footer/Item.vue"
+
+export default {
+  components: {
+    Header,
+    CafeCart,
+    Footer,
+  }
+}
+
+</script>
+
+<style scoped lang="scss">
+
+@import "@/assets/styles.scss";
+
+.wrapper {
+  background-color: $PEARL;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    flex: 1 0 auto;
+  }
+
+  &__footer {
+    flex: 0 0 auto;
+  }
+}
+
+</style>

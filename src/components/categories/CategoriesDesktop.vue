@@ -40,7 +40,7 @@ export default {
   },
   mounted() {
     axios
-        .get("https://abedo.ru/api/cuisines/get")
+        .get("https://admin.abedo.ru/api/cuisines/get")
         .then((response) => (this.categories = response.data.cuisines.data));
   },
 };

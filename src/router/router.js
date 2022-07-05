@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from "vue-router";
 import Main from "@/pages/Main";
 import Partners from "@/pages/Partners"
 import Stocks from "@/pages/Stocks"
+import CafeCart from "@/pages/CafeCart"
 
 
 const routes = [
@@ -16,6 +17,10 @@ const routes = [
     {
         path: '/stocks',
         component: Stocks,
+    },
+    {
+        path: '/cafe-cart',
+        component: CafeCart,
     }
 ]
 

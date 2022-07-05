@@ -1,6 +1,6 @@
 <template>
   <div class="desktop-item-block">
-    <img :src='`https://abedo.ru${category.image.resized}`' alt="#" class="desktop-item-block__icon">
+    <img :src='`https://admin.abedo.ru${category.image.resized}`' alt="#" class="desktop-item-block__icon">
     <div class="desktop-item-block__text">
       {{ category.name }}
     </div>

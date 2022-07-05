@@ -22,11 +22,11 @@
 </template>
 
 <script>
-import HeaderPartnersMobile from "@/components/headers/HeaderPartnersMobile";
+import HeaderPartnersMobile from "@/components/headers/HeaderPartnersMobile"
 import HeaderMainDesktop  from "@/components/headers/HeaderMainDesktop"
-import CafeMobile from "@/components/cafe/CafeMobile.vue";
+import CafeMobile from "@/components/cafe/CafeMobile.vue"
 import CafePartnersDesktop from "@/components/cafe/CafePartnersDesktop"
-import Footer from "@/components/footer/Item";
+import Footer from "@/components/footer/Item"
 
 export default {
   components: {

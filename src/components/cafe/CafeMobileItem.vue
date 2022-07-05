@@ -1,5 +1,5 @@
 <template>
-  <div class="item-mobile">
+  <div class="item-mobile" @click="$router.push('/cafe-cart')">
     <div class="item-mobile__left-side">
       <div class="item-mobile__left-side__cafe-heart-svg">
         <svg height="16" width="16">

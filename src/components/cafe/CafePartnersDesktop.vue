@@ -60,11 +60,11 @@ export default {
   },
   mounted() {
     axios
-        .get("https://abedo.ru/api/shops", {params: {cuisine: 1}})
+        .get("https://admin.abedo.ru/api/shops", {params: {cuisine: 1}})
         .then((response) => (this.cafeList = response.data.shops.data));
 
     axios
-        .get("https://abedo.ru/api/cuisines/get")
+        .get("https://admin.abedo.ru/api/cuisines/get")
         .then((response) => (this.categoriesList = response.data.cuisines.data));
   },
 

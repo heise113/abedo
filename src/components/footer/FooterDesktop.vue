@@ -23,7 +23,7 @@
         </div>
         <div class="footer__container__top__contact">
           <a href="#" class="footer__container__top__contact__email">
-            pismo@abedo.ru
+            pismo@admin.abedo.ru
           </a>
           <div class="footer__container__top__contact__sentence">
             Для жалоб и предложений
