@@ -16,7 +16,7 @@
 
 import Header from "@/components/headers/HeaderMainItem.vue"
 import Footer from "@/components/footer/Item.vue"
-import StocksStocksItem from "@/components/stocks/StocksStocksItem.vue"
+import StocksStocksItem from "@/components/stocks/stocks-page/Settings.vue"
 
 export default {
   components: {

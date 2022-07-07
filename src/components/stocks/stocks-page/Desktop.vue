@@ -9,7 +9,14 @@
       </div>
       <div class="ssd-wrapper__container__stocks-list">
 
-        <div class="ssd-wrapper__container__stocks-list__item ssd-wrapper__container__stocks-list__item-1">
+        <StocksBlock
+          v-for="item in stocksList"
+          :item="item"
+          :key="item.id"
+        />
+
+
+        <!-- <div class="ssd-wrapper__container__stocks-list__item ssd-wrapper__container__stocks-list__item-1">
 
           <div class="ssd-wrapper__container__stocks-list__item-1__logo">
             <img src="@/assets/images/stocks-logo.png" alt="#">
@@ -141,9 +148,10 @@
             Получайте 1% бонусами и скидку до 99% 
           </span>
 
-        </div>
+        </div> -->
 
       </div>
+
     </div>
   </div>
 
@@ -151,6 +159,91 @@
 
 <script>
 
+import StocksBlock from "@/components/stocks/StocksBlock.vue"
+
+export default {
+  data() {
+    return {
+      stocksList: [
+        {
+          id: 1,
+          title: 'Кафе “Лимончелло”',
+          description: 'Получайте 1% бонусами и скидку до 99% ',
+          backgroundColor: 'blue',
+          backgroundImage: 'stocks-background.png',
+          logo: 'stocks-logo.png',
+        },
+        {
+          id: 2,
+          title: 'Кафе “Лимончелло”',
+          description: 'Получайте 1% бонусами и скидку до 99% ',
+          backgroundColor: 'red',
+          backgroundImage: 'stocks-background.png',
+          logo: '',
+        },
+        {
+          id: 3,
+          title: 'Кафе “Лимончелло”',
+          description: 'Получайте 1% бонусами и скидку до 99% ',
+          backgroundColor: 'blue',
+          backgroundImage: 'stocks-background.png',
+          logo: 'stocks-logo.png',
+        },
+        {
+          id: 4,
+          title: 'Кафе “Лимончелло”',
+          description: 'Получайте 1% бонусами и скидку до 99% ',
+          backgroundColor: 'red',
+          backgroundImage: 'stocks-background.png',
+          logo: '',
+        },
+        {
+          id: 5,
+          title: 'Кафе “Лимончелло”',
+          description: 'Получайте 1% бонусами и скидку до 99% ',
+          backgroundColor: 'blue',
+          backgroundImage: 'stocks-background.png',
+          logo: 'stocks-logo.png',
+        },
+        {
+          id: 6,
+          title: 'Кафе “Лимончелло”',
+          description: 'Получайте 1% бонусами и скидку до 99% ',
+          backgroundColor: 'yellow',
+          backgroundImage: 'stocks-background.png',
+          logo: 'stocks-logo.png',
+        },
+        {
+          id: 7,
+          title: 'Кафе “Лимончелло”',
+          description: 'Получайте 1% бонусами и скидку до 99% ',
+          backgroundColor: 'green',
+          backgroundImage: 'stocks-background.png',
+          logo: 'stocks-logo.png',
+        },
+        {
+          id: 8,
+          title: 'Кафе “Лимончелло”',
+          description: 'Получайте 1% бонусами и скидку до 99% ',
+          backgroundColor: 'yellow',
+          backgroundImage: '',
+          logo: 'stocks-logo.png',
+        },
+        {
+          id: 9,
+          title: 'Кафе “Лимончелло”',
+          description: 'Получайте 1% бонусами и скидку до 99% ',
+          backgroundColor: 'yellow',
+          backgroundImage: '',
+          logo: 'stocks-logo.png',
+        },
+      ]
+    }
+  },
+  components: {
+    StocksBlock,
+  }
+}
 
 </script>
 

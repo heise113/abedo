@@ -29,7 +29,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 // Import all styles
 import "swiper/css/bundle";
 
-import StocksSliderDesktop from "@/components/stocks/StocksSliderDesktop.vue"
+import StocksSliderDesktop from "@/components/stocks/slider/Desktop.vue"
 
 export default {
   components: {

@@ -19,7 +19,7 @@
 
 import Header from '@/components/headers/HeaderMainItem'
 import Categories from '@/components/categories/Item'
-import Stocks from "@/components/stocks/StocksMainItem.vue"
+import Stocks from "@/components/stocks/main-page/Settings.vue"
 import Cafe from "@/components/cafe/Item"
 import Footer from "@/components/footer/Item"
 import InfoText from "@/components/infotext/Item.vue"

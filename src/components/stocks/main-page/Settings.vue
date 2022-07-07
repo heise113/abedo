@@ -1,20 +1,23 @@
 <template>
-  <StocksStocksDesktop
+  <!-- <Desktop
       v-if="width > 768"
   />
-  <StocksStocksMobile
+  <Mobile
       v-else
+  /> -->
+  <Mobile
+      v-if="width < 768"
   />
 </template>
 
 <script>
-import StocksStocksMobile from "@/components/stocks/StocksStocksMobile";
-import StocksStocksDesktop from "@/components/stocks/StocksStocksDesktop";
+import Mobile from "@/components/stocks/main-page/Mobile.vue";
+import Desktop from "@/components/stocks/main-page/Desktop.vue";
 
 export default {
   components: {
-    StocksStocksMobile,
-    StocksStocksDesktop,
+    Mobile,
+    Desktop,
   },
 
   data() {

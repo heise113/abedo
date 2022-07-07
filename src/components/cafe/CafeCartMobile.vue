@@ -52,7 +52,7 @@
         <div class="cart-wrapper__container__stocks__title">
           Акции
         </div>
-        <Slider/>
+        <StocksSliderMobile/>
       </div>
       <div class="cart-wrapper__container__food">
         <FoodSlider/>
@@ -87,7 +87,7 @@
 <script>
 
 import FoodCart from "@/components/FoodCart.vue"
-import Slider from "@/components/stocks/StocksSliderMobile.vue"
+import StocksSliderMobile from "@/components/stocks/slider/Mobile.vue"
 import FoodSlider from "@/components/FoodSlider.vue"
 
 export default {
@@ -156,7 +156,7 @@ export default {
     }
   },
   components: {
-    Slider,
+    StocksSliderMobile,
     FoodSlider,
     FoodCart,
   }

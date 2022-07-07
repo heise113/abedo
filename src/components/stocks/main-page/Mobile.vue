@@ -38,7 +38,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 // Import all styles
 import "swiper/css/bundle";
 
-import StocksSliderMobile from "@/components/stocks/StocksSliderMobile.vue"
+import StocksSliderMobile from "@/components/stocks/slider/Mobile.vue"
 
 export default {
   components: {

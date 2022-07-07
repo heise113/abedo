@@ -89,6 +89,9 @@
             </div>
           </div>
         </div>
+        <div class="cart-wrapper__container__cafe__stocks">
+
+        </div>
       </div>
       <div class="cart-wrapper__container__basket">
         <div class="cart-wrapper__container__basket__header">
@@ -114,9 +117,9 @@
         </div>
         <div class="cart-wrapper__container__basket__shop-product">
           <div class="cart-wrapper__container__basket__shop-product__top">
-            <div class="cart-wrapper__container__basket__shop-product__about">
-              <img class="cart-wrapper__container__basket__shop-product__about__image" src="@/assets/images/basket-image.png" alt="#">
-              <div class="cart-wrapper__container__basket__shop-product__about__title">
+            <div class="cart-wrapper__container__basket__shop-product__top__about">
+              <img class="cart-wrapper__container__basket__shop-product__top__about__image" src="@/assets/images/basket-image.png" alt="#">
+              <div class="cart-wrapper__container__basket__shop-product__top__about__title">
                 Сырное ассорти
               </div>
             </div>
@@ -127,31 +130,44 @@
             </div>
           </div>
           <div class="cart-wrapper__container__basket__shop-product__bottom">
-            <div class="cart-wrapper__container__basket__shop-product__top__count">
-              <div class="cart-wrapper__container__basket__shop-product__top__count__plus">
+            <div class="cart-wrapper__container__basket__shop-product__bottom__count">
+              <div class="cart-wrapper__container__basket__shop-product__bottom__count__plus">
                 <svg height="2" width="12">
                   <use xlink:href="@/assets/images/icons.svg#cafe-cart-minus"></use>
                 </svg>
               </div>
-              <div class="cart-wrapper__container__basket__shop-product__top__count__counter">
+              <div class="cart-wrapper__container__basket__shop-product__bottom__count__counter">
                 1000
               </div>
-              <div class="cart-wrapper__container__basket__shop-product__top__count__minus">
+              <div class="cart-wrapper__container__basket__shop-product__bottom__count__minus">
                 <svg height="2" width="12">
                   <use xlink:href="@/assets/images/icons.svg#cafe-cart-minus"></use>
                 </svg>
               </div>
             </div>
-            <div class="cart-wrapper__container__basket__shop-product__top__price">
+            <div class="cart-wrapper__container__basket__shop-product__bottom__price">
               790 ₽ 
             </div>
           </div>
         </div>
         <div class="cart-wrapper__container__basket__delivery">
-
+          <div class="cart-wrapper__container__basket__delivery__type">
+            Доставка
+          </div>
+          <div class="cart-wrapper__container__basket__delivery__price">
+            Бесплатно
+          </div>
         </div>
         <div class="cart-wrapper__container__basket__total">
-
+          <div class="cart-wrapper__container__basket__total__title">
+            ИТОГО:
+          </div>
+          <div class="cart-wrapper__container__basket__total__price">
+            330 ₽ 
+          </div>
+        </div>
+        <div class="cart-wrapper__container__basket__button">
+          Оформить заказ
         </div>
       </div>
     </div>
@@ -414,18 +430,142 @@
         }
       }
 
-      &__product {
+      &__shop-product {
         &__top {
+          margin-top: 22px;
           display: flex;
-          align-items: center;
+          align-items: start;
           justify-content: space-between;
-          border: 2px solid black;
 
           &__about {
             display: flex;
             align-items: center;
+
+            &__title {
+              font-family: 'SF';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 20px;
+              color: $MACHINE-GUN-METAL;
+              margin-left: 10px;
+            }
+
           }
         }
+
+        &__bottom {
+          padding-bottom: 20px;
+          border-bottom: 1px solid $VAGUELY-VIOLET;
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          &__count {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__counter {
+              margin-left: 10px;
+              margin-right: 10px;
+              font-family: 'SF';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 19px;
+              color: $BLACK;
+            }
+
+            &__plus, &__minus {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 26px;
+              height: 26px;
+              border: 1px solid $SPACEMAN;
+              border-radius: 50%;
+            }
+          }
+
+          &__price {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            color: $MACHINE-GUN-METAL;
+          }
+        }
+      }
+
+      &__delivery {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid $VAGUELY-VIOLET;
+
+        &__type {
+          font-family: 'SF';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 17px;
+          color: $MACHINE-GUN-METAL;
+        }
+
+        &__price {
+          font-family: 'SF';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          color: $MACHINE-GUN-METAL;
+        }
+      }
+
+      &__total {
+        margin-top: 22px;
+        margin-bottom: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__title {
+          font-family: 'SF';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 20px;
+          color: $MACHINE-GUN-METAL;
+
+        }
+
+        &__price {
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 22px;
+          color: $MACHINE-GUN-METAL;
+        }
+      }
+
+      &__button {
+        background: $SPACEMAN;
+        border-radius: 50px;
+        padding: 15px;
+        text-align: center;
+        
+        font-family: 'SF';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: $WHITE;
       }
     }
   }
