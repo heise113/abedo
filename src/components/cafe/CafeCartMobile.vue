@@ -284,7 +284,8 @@ export default {
       &__food-list {
         margin-top: 30px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        grid-template-columns: 156px 156px;
         grid-gap: 15px;
       }
     }
@@ -303,10 +304,27 @@ export default {
       &__snack-list {
         margin-top: 30px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 156px 156px;
+        justify-content: center;
         grid-gap: 15px;
       }
     }
+  }
+}
+
+@media (min-width: 550px) {
+  .cart-wrapper__container__food__food-list, .cart-wrapper__container__snack__snack-list {
+    
+    grid-template-columns: 156px 156px 156px;
+
+  }
+}
+
+@media (min-width: 700px) {
+  .cart-wrapper__container__food__food-list, .cart-wrapper__container__snack__snack-list {
+    
+    grid-template-columns: 156px 156px 156px 156px;
+
   }
 }
 

@@ -42,6 +42,7 @@ export default {
   border-radius: 20px;
   overflow: hidden;
   height: 172px;
+  min-width: 403px;
   cursor: pointer;
 
   &.blue {
@@ -58,47 +59,47 @@ export default {
     }
   }
 
-  // &.red {
-  //   &::before {
-  //     content: "";
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     width: 100%;
-  //     height: 100%;
-  //     background: $ORANGE-SODA;
-  //     opacity: 0.9;
-  //     z-index: 2;
-  //   }
-  // }
+  &.red {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $ORANGE-SODA;
+      opacity: 0.9;
+      z-index: 2;
+    }
+  }
 
-  // &.yellow {
-  //   &::before {
-  //     content: "";
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     width: 100%;
-  //     height: 100%;
-  //     background: $PHYSALIS;
-  //     opacity: 0.9;
-  //     z-index: 2;
-  //   }    
-  // }
+  &.yellow {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $PHYSALIS;
+      opacity: 0.9;
+      z-index: 2;
+    }    
+  }
 
-  // &.green {
-  //   &::before {
-  //     content: "";
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     width: 100%;
-  //     height: 100%;
-  //     background: $BLUISH-GREEN;
-  //     opacity: 0.9;
-  //     z-index: 2;
-  //   }    
-  // }
+  &.green {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $BLUISH-GREEN;
+      opacity: 0.9;
+      z-index: 2;
+    }    
+  }
 
   &__title {
     position: absolute;

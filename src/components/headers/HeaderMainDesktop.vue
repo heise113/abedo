@@ -1,5 +1,4 @@
 <template>
-
   <header class="header-desktop">
     <div class="header-desktop__container">
       <router-link to="/" class="header-desktop__container__logo" href="#">
@@ -8,7 +7,10 @@
         </svg>
       </router-link>
 
-      <div @click="$router.push('/partners')" class="header-desktop__container__button">
+      <div
+        @click="$router.push('/partners')"
+        class="header-desktop__container__button"
+      >
         <svg height="24" width="24">
           <use xlink:href="@/assets/images/icons.svg#header-shop"></use>
         </svg>
@@ -20,7 +22,10 @@
           <svg height="28" width="28">
             <use xlink:href="@/assets/images/icons.svg#profile"></use>
           </svg>
-          <a class="header-desktop__container__profile-stocks__profile__text" href="#">
+          <a
+            class="header-desktop__container__profile-stocks__profile__text"
+            href="#"
+          >
             Кабинет
           </a>
         </div>
@@ -28,8 +33,19 @@
           <svg height="24" width="24">
             <use xlink:href="@/assets/images/icons.svg#header-msg"></use>
           </svg>
-          <router-link to="/stocks" class="header-desktop__container__profile-stocks__stocks__text" href="#">
+          <router-link
+            to="/stocks"
+            class="header-desktop__container__profile-stocks__stocks__text"
+            href="#"
+          >
             Акции магазинов
+          </router-link>
+          <router-link
+            to="/stocks"
+            class="header-desktop__container__profile-stocks__stocks__text_over"
+            href="#"
+          >
+            Акции
           </router-link>
         </div>
       </div>
@@ -56,13 +72,10 @@
   </header>
 </template>
 
-<script>
-
-</script>
+<script></script>
 
 <style lang="scss" scoped>
-
-@import '@/assets/styles.scss';
+@import "@/assets/styles.scss";
 
 .header-desktop {
   background-color: $WHITE;
@@ -91,7 +104,7 @@
       }
 
       &__text {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
         margin-left: 10px;
         font-weight: 400;
         font-size: 16px;
@@ -113,7 +126,7 @@
         cursor: pointer;
 
         &__text {
-          font-family: 'Montserrat';
+          font-family: "Montserrat";
           margin-left: 10px;
           font-weight: 400;
           font-size: 16px;
@@ -132,8 +145,8 @@
         align-items: center;
         cursor: pointer;
 
-        &__text {
-          font-family: 'Montserrat';
+        &__text, &__text_over {
+          font-family: "Montserrat";
           margin-left: 10px;
           font-weight: 400;
           font-size: 16px;
@@ -144,6 +157,10 @@
           &:hover {
             text-decoration: underline;
           }
+        }
+
+        &__text_over {
+          display: none;
         }
       }
     }
@@ -187,8 +204,26 @@
   }
 }
 
-//@media (max-width: 900px) {
-//
-//}
+@media (max-width: 900px) {
+  .header-desktop__container__button {
+    padding: 10px 20px 10px 20px;
 
+    &__text {
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+    }
+  }
+
+  .header-desktop__container__icons__search, .header-desktop__container__icons__likes {
+    margin-right: 8px;
+  }
+
+  .header-desktop__container__profile-stocks__stocks__text {
+    display: none;
+  }
+
+  .header-desktop__container__profile-stocks__stocks__text_over {
+    display: block;
+  }
+}
 </style>

@@ -1,66 +1,110 @@
 <template>
-
   <div class="cart-wrapper">
     <div class="cart-wrapper__container">
       <div class="cart-wrapper__container__cafe">
         <div class="cart-wrapper__container__cafe__cart">
           <div class="cart-wrapper__container__cafe__cart__top">
             <div class="cart-wrapper__container__cafe__cart__top__image">
-              <img src="@/assets/images/cafe-cart-desktop.png" alt="#">
+              <img src="@/assets/images/cafe-cart-desktop.png" alt="#" />
             </div>
             <div class="cart-wrapper__container__cafe__cart__top__description">
-              <div class="cart-wrapper__container__cafe__cart__top__description__about"> 
-                <div class="cart-wrapper__container__cafe__cart__top__description__about__title">
+              <div
+                class="cart-wrapper__container__cafe__cart__top__description__about"
+              >
+                <div
+                  class="cart-wrapper__container__cafe__cart__top__description__about__title"
+                >
                   Кафе “Лимончелло”
                 </div>
-                <div class="cart-wrapper__container__cafe__cart__top__description__about__category">
-                  Европейская, Кавказская, Японская кухня, Детское меню, Фаст-Фуд
+                <div
+                  class="cart-wrapper__container__cafe__cart__top__description__about__category"
+                >
+                  Европейская, Кавказская, Японская кухня, Детское меню,
+                  Фаст-Фуд
                 </div>
-                <div class="cart-wrapper__container__cafe__cart__top__description__about__contact">
-                  <div class="cart-wrapper__container__cafe__cart__top__description__about__contact__number">
-                    <div class="cart-wrapper__container__cafe__cart__top__description__about__contact__number__logo">
+                <div
+                  class="cart-wrapper__container__cafe__cart__top__description__about__contact"
+                >
+                  <div
+                    class="cart-wrapper__container__cafe__cart__top__description__about__contact__number"
+                  >
+                    <div
+                      class="cart-wrapper__container__cafe__cart__top__description__about__contact__number__logo"
+                    >
                       <svg height="15" width="15">
-                        <use xlink:href="@/assets/images/icons.svg#cafe-cart-number"></use>
+                        <use
+                          xlink:href="@/assets/images/icons.svg#cafe-cart-number"
+                        ></use>
                       </svg>
                     </div>
-                    <div class="cart-wrapper__container__cafe__cart__top__description__about__contact__number__text">
+                    <div
+                      class="cart-wrapper__container__cafe__cart__top__description__about__contact__number__text"
+                    >
                       +790 000 000 00
                     </div>
                   </div>
-                  <div class="cart-wrapper__container__cafe__cart__top__description__about__contact__social">
-                    <div class="cart-wrapper__container__cafe__cart__top__description__about__contact__social__whatsapp">
+                  <div
+                    class="cart-wrapper__container__cafe__cart__top__description__about__contact__social"
+                  >
+                    <div
+                      class="cart-wrapper__container__cafe__cart__top__description__about__contact__social__whatsapp"
+                    >
                       <svg height="30" width="30">
-                        <use xlink:href="@/assets/images/icons.svg#cafe-cart-whatsapp"></use>
+                        <use
+                          xlink:href="@/assets/images/icons.svg#cafe-cart-whatsapp"
+                        ></use>
                       </svg>
                     </div>
-                    <div class="cart-wrapper__container__cafe__cart__top__description__about__contact__social__telegram">
+                    <div
+                      class="cart-wrapper__container__cafe__cart__top__description__about__contact__social__telegram"
+                    >
                       <svg height="30" width="30">
-                        <use xlink:href="@/assets/images/icons.svg#cafe-cart-telegram"></use>
+                        <use
+                          xlink:href="@/assets/images/icons.svg#cafe-cart-telegram"
+                        ></use>
                       </svg>
                     </div>
                   </div>
                 </div>
-                <div class="cart-wrapper__container__cafe__cart__top__description__about__more">
-                  <div class="cart-wrapper__container__cafe__cart__top__description__about__more__text">
+                <div
+                  class="cart-wrapper__container__cafe__cart__top__description__about__more"
+                >
+                  <div
+                    class="cart-wrapper__container__cafe__cart__top__description__about__more__text"
+                  >
                     Подробнее
                   </div>
-                  <div class="cart-wrapper__container__cafe__cart__top__description__about__more__logo">
+                  <div
+                    class="cart-wrapper__container__cafe__cart__top__description__about__more__logo"
+                  >
                     <svg height="10" width="6">
-                      <use xlink:href="@/assets/images/icons.svg#cafe-cart-arrow"></use>
+                      <use
+                        xlink:href="@/assets/images/icons.svg#cafe-cart-arrow"
+                      ></use>
                     </svg>
                   </div>
                 </div>
               </div>
-              <div class="cart-wrapper__container__cafe__cart__top__description__rating">
-                <div class="cart-wrapper__container__cafe__cart__top__description__rating__logo">
+              <div
+                class="cart-wrapper__container__cafe__cart__top__description__rating"
+              >
+                <div
+                  class="cart-wrapper__container__cafe__cart__top__description__rating__logo"
+                >
                   <svg height="15" width="15">
-                    <use xlink:href="@/assets/images/icons.svg#cafe-cart-star"></use>
+                    <use
+                      xlink:href="@/assets/images/icons.svg#cafe-cart-star"
+                    ></use>
                   </svg>
                 </div>
-                <div class="cart-wrapper__container__cafe__cart__top__description__rating__text">
+                <div
+                  class="cart-wrapper__container__cafe__cart__top__description__rating__text"
+                >
                   Рейтинг:
                 </div>
-                <div class="cart-wrapper__container__cafe__cart__top__description__rating__number">
+                <div
+                  class="cart-wrapper__container__cafe__cart__top__description__rating__number"
+                >
                   4,7
                 </div>
               </div>
@@ -68,22 +112,34 @@
           </div>
           <div class="cart-wrapper__container__cafe__cart__bottom">
             <div class="cart-wrapper__container__cafe__cart__bottom__delivery">
-              <div class="cart-wrapper__container__cafe__cart__bottom__delivery__logo">
+              <div
+                class="cart-wrapper__container__cafe__cart__bottom__delivery__logo"
+              >
                 <svg height="20" width="20">
-                  <use xlink:href="@/assets/images/icons.svg#cafe-cart-delivery"></use>
+                  <use
+                    xlink:href="@/assets/images/icons.svg#cafe-cart-delivery"
+                  ></use>
                 </svg>
               </div>
-              <div class="cart-wrapper__container__cafe__cart__bottom__delivery__text">
+              <div
+                class="cart-wrapper__container__cafe__cart__bottom__delivery__text"
+              >
                 Бесплатная доставка при заказе от 1000 ₽
               </div>
             </div>
             <div class="cart-wrapper__container__cafe__cart__bottom__surprise">
-              <div class="cart-wrapper__container__cafe__cart__bottom__surprise__logo">
+              <div
+                class="cart-wrapper__container__cafe__cart__bottom__surprise__logo"
+              >
                 <svg height="20" width="20">
-                  <use xlink:href="@/assets/images/icons.svg#cafe-cart-surprise"></use>
+                  <use
+                    xlink:href="@/assets/images/icons.svg#cafe-cart-surprise"
+                  ></use>
                 </svg>
               </div>
-              <div class="cart-wrapper__container__cafe__cart__bottom__surprise__text">
+              <div
+                class="cart-wrapper__container__cafe__cart__bottom__surprise__text"
+              >
                 Подарок “Чизбургер” при заказе от 1000 ₽
               </div>
             </div>
@@ -91,6 +147,33 @@
         </div>
         <div class="cart-wrapper__container__cafe__stocks">
 
+          <StocksBlock
+            v-for="item in stocksList"
+            :item="item"
+            :key="item.id"
+          />
+
+        </div>
+        <div class="cart-wrapper__container__cafe__sections">
+          <div class="cart-wrapper__container__cafe__sections__title">
+            Разделы каталога “Лимончелло”
+          </div>
+          <div class="cart-wrapper__container__cafe__sections__list">
+
+            <SectionItem
+              v-for="item in sectionsList"
+              :item="item"
+              :key="item.id"
+            />
+
+          </div>
+        </div>
+        <div class="cart-wrapper__container__cafe__food-list">
+          <FoodCartDesktop
+              v-for="item in foodList"
+              :item="item"
+              :key="item.id"
+            />
         </div>
       </div>
       <div class="cart-wrapper__container__basket">
@@ -112,41 +195,71 @@
             </div>
           </div>
           <div class="cart-wrapper__container__basket__shop__right">
-            <img class="cart-wrapper__container__basket__shop__right__image" src="@/assets/images/cafe-cart-desktop.png" alt="#">
+            <img
+              class="cart-wrapper__container__basket__shop__right__image"
+              src="@/assets/images/cafe-cart-desktop.png"
+              alt="#"
+            />
           </div>
         </div>
         <div class="cart-wrapper__container__basket__shop-product">
           <div class="cart-wrapper__container__basket__shop-product__top">
-            <div class="cart-wrapper__container__basket__shop-product__top__about">
-              <img class="cart-wrapper__container__basket__shop-product__top__about__image" src="@/assets/images/basket-image.png" alt="#">
-              <div class="cart-wrapper__container__basket__shop-product__top__about__title">
+            <div
+              class="cart-wrapper__container__basket__shop-product__top__about"
+            >
+              <img
+                class="cart-wrapper__container__basket__shop-product__top__about__image"
+                src="@/assets/images/basket-image.png"
+                alt="#"
+              />
+              <div
+                class="cart-wrapper__container__basket__shop-product__top__about__title"
+              >
                 Сырное ассорти
               </div>
             </div>
-            <div class="cart-wrapper__container__basket__shop-product__top__close">
+            <div
+              class="cart-wrapper__container__basket__shop-product__top__close"
+            >
               <svg height="15" width="15">
-                <use xlink:href="@/assets/images/icons.svg#cafe-cart-close"></use>
+                <use
+                  xlink:href="@/assets/images/icons.svg#cafe-cart-close"
+                ></use>
               </svg>
             </div>
           </div>
           <div class="cart-wrapper__container__basket__shop-product__bottom">
-            <div class="cart-wrapper__container__basket__shop-product__bottom__count">
-              <div class="cart-wrapper__container__basket__shop-product__bottom__count__plus">
+            <div
+              class="cart-wrapper__container__basket__shop-product__bottom__count"
+            >
+              <div
+                class="cart-wrapper__container__basket__shop-product__bottom__count__plus"
+              >
                 <svg height="2" width="12">
-                  <use xlink:href="@/assets/images/icons.svg#cafe-cart-minus"></use>
+                  <use
+                    xlink:href="@/assets/images/icons.svg#cafe-cart-minus"
+                  ></use>
                 </svg>
               </div>
-              <div class="cart-wrapper__container__basket__shop-product__bottom__count__counter">
+              <div
+                class="cart-wrapper__container__basket__shop-product__bottom__count__counter"
+              >
                 1000
               </div>
-              <div class="cart-wrapper__container__basket__shop-product__bottom__count__minus">
+              <div
+                class="cart-wrapper__container__basket__shop-product__bottom__count__minus"
+              >
                 <svg height="2" width="12">
-                  <use xlink:href="@/assets/images/icons.svg#cafe-cart-minus"></use>
+                  <use
+                    xlink:href="@/assets/images/icons.svg#cafe-cart-minus"
+                  ></use>
                 </svg>
               </div>
             </div>
-            <div class="cart-wrapper__container__basket__shop-product__bottom__price">
-              790 ₽ 
+            <div
+              class="cart-wrapper__container__basket__shop-product__bottom__price"
+            >
+              790 ₽
             </div>
           </div>
         </div>
@@ -162,9 +275,7 @@
           <div class="cart-wrapper__container__basket__total__title">
             ИТОГО:
           </div>
-          <div class="cart-wrapper__container__basket__total__price">
-            330 ₽ 
-          </div>
+          <div class="cart-wrapper__container__basket__total__price">330 ₽</div>
         </div>
         <div class="cart-wrapper__container__basket__button">
           Оформить заказ
@@ -172,20 +283,186 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
+import StocksBlock from "@/components/stocks/StocksBlock.vue"
+import SectionItem from "@/components/SectionItem.vue"
+import FoodCartDesktop from "@/components/FoodCartDesktop.vue"
 
-
-
+export default {
+  components: {
+    StocksBlock,
+    SectionItem,
+    FoodCartDesktop,
+  },
+  data() {
+    return {
+      stocksList: [
+        {
+          id: 1,
+          title: "Кафе “Лимончелло”",
+          description: "Получайте 1% бонусами и скидку до 99% ",
+          backgroundColor: "blue",
+          backgroundImage: "stocks-background.png",
+          logo: "stocks-logo.png",
+        },
+        {
+          id: 2,
+          title: "Кафе “Лимончелло”",
+          description: "Получайте 1% бонусами и скидку до 99% ",
+          backgroundColor: "red",
+          backgroundImage: "stocks-background.png",
+          logo: "",
+        },
+      ],
+      sectionsList: [
+        {name: 'Салаты'},
+        {name: 'Горячие блюда'},
+        {name: 'Холодные блюда'},
+        {name: 'Закуски'},
+        {name: 'Десерты'},
+        {name: 'Напитки'},
+        {name: 'Блюда из рыбы'},
+        {name: 'Пицца'},
+        {name: 'Паста'},
+        {name: 'Бургеры'},
+        {name: 'Гарниры'},
+        {name: 'Сендвичи'},
+        {name: 'Ризотто'},
+      ],
+      foodList: [
+        {
+          id: 1,
+          description: 'Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd ',
+          image: 'food-image-desktop.png',
+          newPrice: '3 500 ₽',
+          oldPrice: '450 ₽',
+          weight: '/ 150 г',
+          count: '',
+          logoStocks: 'logo-stocks',
+        },
+        {
+          id: 2,
+          description: 'Сырное ассорasdasd asd asd ное',
+          image: 'food-image-desktop.png',
+          newPrice: '3 500 ₽',
+          oldPrice: '',
+          weight: '',
+          count: '/ 1 шт',
+          logoStocks: 'logo-stocks',
+        },
+        {
+          id: 3,
+          description: 'Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd',
+          image: 'food-image-desktop.png',
+          newPrice: '3 500 ₽',
+          oldPrice: '450 ₽',
+          weight: '/ 150 г',
+          count: '',
+          logoStocks: 'logo-stocks',
+        },
+        {
+          id: 4,
+          description: 'Сырное ассорasdasd asd asd ное',
+          image: 'food-image-desktop.png',
+          newPrice: '3 500 ₽',
+          oldPrice: '',
+          weight: '',
+          count: '/ 1 шт',
+          logoStocks: 'logo-stocks',
+        },
+        {
+          id: 5,
+          description: 'Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd',
+          image: 'food-image-desktop.png',
+          newPrice: '3 500 ₽',
+          oldPrice: '450 ₽',
+          weight: '/ 150 г',
+          count: '',
+          logoStocks: 'logo-stocks',
+        },
+        {
+          id: 6,
+          description: 'Сырное ассорasdasd asd asd ное',
+          image: 'food-image-desktop.png',
+          newPrice: '3 500 ₽',
+          oldPrice: '',
+          weight: '',
+          count: '/ 1 шт',
+          logoStocks: 'logo-stocks',
+        },
+        {
+          id: 7,
+          description: 'Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd',
+          image: 'food-image-desktop.png',
+          newPrice: '3 500 ₽',
+          oldPrice: '450 ₽',
+          weight: '/ 150 г',
+          count: '',
+          logoStocks: 'logo-stocks',
+        },
+        {
+          id: 8,
+          description: 'Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd',
+          image: '',
+          newPrice: '3 500 ₽',
+          oldPrice: '450 ₽',
+          weight: '/ 150 г',
+          count: '',
+          logoStocks: 'logo-stocks',
+        },
+        {
+          id: 9,
+          description: 'Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd',
+          image: 'food-image-desktop.png',
+          newPrice: '3 500 ₽',
+          oldPrice: '450 ₽',
+          weight: '/ 150 г',
+          count: '',
+          logoStocks: 'logo-stocks',
+        },
+        {
+          id: 10,
+          description: 'Сырное ассорasdasd asd asd ное',
+          image: 'food-image-desktop.png',
+          newPrice: '3 500 ₽',
+          oldPrice: '',
+          weight: '',
+          count: '/ 1 шт',
+          logoStocks: 'logo-stocks',
+        },
+        {
+          id: 11,
+          description: 'Сырное ассорasdasd asd asd ное',
+          image: 'food-image-desktop.png',
+          newPrice: '3 500 ₽',
+          oldPrice: '',
+          weight: '',
+          count: '/ 1 шт',
+          logoStocks: 'logo-stocks',
+        },
+        {
+          id: 12,
+          description: 'Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd',
+          image: 'food-image-desktop.png',
+          newPrice: '3 500 ₽',
+          oldPrice: '450 ₽',
+          weight: '/ 150 г',
+          count: '',
+          logoStocks: 'logo-stocks',
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped lang="scss">
-
 @import "@/assets/styles.scss";
 
 .cart-wrapper {
+  background-color: $PEARL;
   padding-top: 40px;
 
   &__container {
@@ -199,13 +476,15 @@
     align-items: start;
 
     &__cafe {
-      border: 1px solid $MA-WHITE;
-      border-radius: 20px;
       flex: 1 0 auto;
-      padding: 30px 20px 14px 20px;
-      background-color: $WHITE;
+      max-width: 945px;
 
       &__cart {
+        border: 1px solid $MA-WHITE;
+        border-radius: 20px;
+        background-color: $WHITE;
+        padding: 30px 20px 14px 20px;
+
         &__top {
           display: flex;
           align-items: start;
@@ -228,9 +507,8 @@
             width: 100%;
 
             &__about {
-
               &__title {
-                font-family: 'Montserrat';
+                font-family: "Montserrat";
                 font-style: normal;
                 font-weight: 600;
                 font-size: 24px;
@@ -240,7 +518,7 @@
               }
 
               &__category {
-                font-family: 'SF';
+                font-family: "SF";
                 font-style: normal;
                 font-weight: 400;
                 font-size: 16px;
@@ -256,13 +534,13 @@
 
                 &__number {
                   display: flex;
-                  align-items: center,;
+                  align-items: center;
                   &__logo {
                     margin-right: 10px;
                   }
 
                   &__text {
-                    font-family: 'SF';
+                    font-family: "SF";
                     font-style: normal;
                     font-weight: 500;
                     font-size: 16px;
@@ -287,7 +565,7 @@
                 align-items: center;
 
                 &__text {
-                  font-family: 'SF';
+                  font-family: "SF";
                   font-style: normal;
                   font-weight: 400;
                   font-size: 16px;
@@ -303,7 +581,7 @@
               display: flex;
 
               &__text {
-                font-family: 'Montserrat';
+                font-family: "Montserrat";
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -313,7 +591,7 @@
               }
 
               &__number {
-                font-family: 'Montserrat';
+                font-family: "Montserrat";
                 font-style: normal;
                 font-weight: 400;
                 font-size: 14px;
@@ -325,7 +603,8 @@
           }
         }
         &__bottom {
-          &__delivery, &__surprise {
+          &__delivery,
+          &__surprise {
             display: flex;
             align-items: center;
 
@@ -343,7 +622,7 @@
             }
 
             &__text {
-              font-family: 'SF';
+              font-family: "SF";
               font-style: normal;
               font-weight: 400;
               font-size: 16px;
@@ -352,6 +631,42 @@
             }
           }
         }
+      }
+
+      &__stocks {
+        margin-top: 70px;
+        margin-bottom: 90px;
+        display: grid;
+        grid-template-columns: 403px 403px;
+        gap: 30px;
+        
+      }
+
+      &__sections {
+        margin-bottom: 50px;
+        
+        &__title {
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 29px;
+          color: $MACHINE-GUN-METAL;
+          margin-bottom: 30px;
+        }
+
+        &__list {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
+
+      &__food-list {
+        background-color: $PEARL;
+        display: grid;
+        grid-template-columns: 295px 295px 295px;
+        gap: 30px;
+        padding-bottom: 290px;
       }
     }
 
@@ -370,7 +685,7 @@
         justify-content: space-between;
 
         &__title {
-          font-family: 'Montserrat';
+          font-family: "Montserrat";
           font-style: normal;
           font-weight: 700;
           font-size: 18px;
@@ -379,7 +694,7 @@
         }
 
         &__clear {
-          font-family: 'SF';
+          font-family: "SF";
           font-style: normal;
           font-weight: 400;
           font-size: 14px;
@@ -399,7 +714,7 @@
 
         &__left {
           &__type {
-            font-family: 'SF';
+            font-family: "SF";
             font-style: normal;
             font-weight: 500;
             font-size: 14px;
@@ -409,7 +724,7 @@
           }
 
           &__name {
-            font-family: 'SF';
+            font-family: "SF";
             font-style: normal;
             font-weight: 400;
             font-size: 16px;
@@ -442,7 +757,7 @@
             align-items: center;
 
             &__title {
-              font-family: 'SF';
+              font-family: "SF";
               font-style: normal;
               font-weight: 400;
               font-size: 14px;
@@ -450,7 +765,6 @@
               color: $MACHINE-GUN-METAL;
               margin-left: 10px;
             }
-
           }
         }
 
@@ -470,7 +784,7 @@
             &__counter {
               margin-left: 10px;
               margin-right: 10px;
-              font-family: 'SF';
+              font-family: "SF";
               font-style: normal;
               font-weight: 400;
               font-size: 16px;
@@ -478,7 +792,8 @@
               color: $BLACK;
             }
 
-            &__plus, &__minus {
+            &__plus,
+            &__minus {
               display: flex;
               align-items: center;
               justify-content: center;
@@ -490,7 +805,7 @@
           }
 
           &__price {
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-style: normal;
             font-weight: 600;
             font-size: 16px;
@@ -509,7 +824,7 @@
         border-bottom: 1px solid $VAGUELY-VIOLET;
 
         &__type {
-          font-family: 'SF';
+          font-family: "SF";
           font-style: normal;
           font-weight: 400;
           font-size: 14px;
@@ -518,7 +833,7 @@
         }
 
         &__price {
-          font-family: 'SF';
+          font-family: "SF";
           font-style: normal;
           font-weight: 600;
           font-size: 14px;
@@ -535,17 +850,16 @@
         justify-content: space-between;
 
         &__title {
-          font-family: 'SF';
+          font-family: "SF";
           font-style: normal;
           font-weight: 700;
           font-size: 14px;
           line-height: 20px;
           color: $MACHINE-GUN-METAL;
-
         }
 
         &__price {
-          font-family: 'Montserrat';
+          font-family: "Montserrat";
           font-style: normal;
           font-weight: 600;
           font-size: 18px;
@@ -559,8 +873,8 @@
         border-radius: 50px;
         padding: 15px;
         text-align: center;
-        
-        font-family: 'SF';
+
+        font-family: "SF";
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
@@ -571,4 +885,26 @@
   }
 }
 
+@media (max-width: 1350px) {
+
+  .cart-wrapper__container {
+    display: block;
+  }
+
+  .cart-wrapper__container__basket {
+    display: none;
+  }
+}
+
+@media (max-width: 990px) {
+  .cart-wrapper__container__cafe__food-list {
+    grid-template-columns: 295px 295px;
+    justify-content: center;
+  }
+
+  .cart-wrapper__container__cafe__stocks {
+    grid-template-columns: 403px;
+    justify-content: center;
+  }
+}
 </style>
