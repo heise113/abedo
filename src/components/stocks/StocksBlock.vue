@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/styles.scss";
+@import "@/assets/styles/styles.scss";
 
 .sb-wrapper {
   position: relative;

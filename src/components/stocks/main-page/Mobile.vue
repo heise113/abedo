@@ -63,7 +63,7 @@ export default {
 
 <style lang="scss" scoped>
 
-@import "@/assets/styles.scss";
+@import "@/assets/styles/styles.scss";
 
 .stocks-mobile {
   padding-left: 20px;

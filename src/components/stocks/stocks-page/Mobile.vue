@@ -146,7 +146,7 @@
 
 <style scoped lang="scss">
 
-@import "@/assets/styles.scss";
+@import "@/assets/styles/styles.scss";
 
 .ssm-wrapper {
   padding: 50px 20px 100px 20px;

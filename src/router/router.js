@@ -3,6 +3,8 @@ import Main from "@/pages/Main";
 import Partners from "@/pages/Partners"
 import Stocks from "@/pages/Stocks"
 import CafeCart from "@/pages/CafeCart"
+import Basket from "@/pages/Basket"
+
 
 
 const routes = [
@@ -21,6 +23,10 @@ const routes = [
     {
         path: '/cafe-cart',
         component: CafeCart,
+    },
+    {
+        path: '/basket',
+        component: Basket,
     }
 ]
 

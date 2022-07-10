@@ -17,12 +17,12 @@
 
 <script>
 
-import Header from '@/components/headers/HeaderMainItem'
-import Categories from '@/components/categories/Item'
+import Header from '@/components/header/Settings'
+import Categories from '@/components/categories/main-page/Settings'
 import Stocks from "@/components/stocks/main-page/Settings.vue"
-import Cafe from "@/components/cafe/Item"
-import Footer from "@/components/footer/Item"
-import InfoText from "@/components/infotext/Item.vue"
+import Cafe from "@/components/cafe/main-page/Settings"
+import Footer from "@/components/footer/Settings"
+import InfoText from "@/components/infotext/Settings.vue"
 
 export default {
   components: {
@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 
-@import "@/assets/styles.scss";
+@import "@/assets/styles/styles.scss";
 
 .wrapper {
   height: 100%;

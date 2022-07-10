@@ -113,7 +113,7 @@ export default {
 
 <style scoped lang="scss">
 
-@import "@/assets/styles.scss";
+@import "@/assets/styles/styles.scss";
 
 @media (max-width: 1100px) {
   .ssd-wrapper__container__stocks-list {

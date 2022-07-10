@@ -14,8 +14,8 @@
 
 <script>
 
-import Header from "@/components/headers/HeaderMainItem.vue"
-import Footer from "@/components/footer/Item.vue"
+import Header from "@/components/header/Settings.vue"
+import Footer from "@/components/footer/Settings.vue"
 import StocksStocksItem from "@/components/stocks/stocks-page/Settings.vue"
 
 export default {
@@ -30,7 +30,7 @@ export default {
 
 <style scoped lang="scss">
 
-@import "@/assets/styles.scss";
+@import "@/assets/styles/styles.scss";
 
   .wrapper {
     height: 100%;

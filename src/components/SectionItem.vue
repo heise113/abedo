@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/styles.scss";
+@import "@/assets/styles/styles.scss";
 
 .section-wrapper {
   font-family: 'SF';

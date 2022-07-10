@@ -16,9 +16,9 @@
 
 <script>
 
-import Header from "@/components/headers/HeaderMainItem.vue"
-import CafeCart from "@/components/cafe/CafeCartItem.vue"
-import Footer from "@/components/footer/Item.vue"
+import Header from "@/components/header/Settings.vue"
+import CafeCart from "@/components/cafe/cafe-cart/Settings.vue"
+import Footer from "@/components/footer/Settings.vue"
 
 export default {
   components: {
@@ -32,7 +32,7 @@ export default {
 
 <style scoped lang="scss">
 
-@import "@/assets/styles.scss";
+@import "@/assets/styles/styles.scss";
 
 .wrapper {
   background-color: $PEARL;

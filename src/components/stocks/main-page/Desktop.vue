@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/styles.scss";
+@import "@/assets/styles/styles.scss";
 
 .stocks-wrapper {
   margin-top: 70px;

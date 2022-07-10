@@ -2,12 +2,7 @@
   <div class="wrapper">
 
     <header class="wrapper__header">
-      <HeaderMainDesktop
-        v-if="width > 768"
-      />
-      <HeaderPartnersMobile
-        v-else
-      />
+      <Header/>
     </header>
 
     <div class="wrapper__content">
@@ -22,16 +17,14 @@
 </template>
 
 <script>
-import HeaderPartnersMobile from "@/components/headers/HeaderPartnersMobile"
-import HeaderMainDesktop  from "@/components/headers/HeaderMainDesktop"
-import CafeMobile from "@/components/cafe/CafeMobile.vue"
-import CafePartnersDesktop from "@/components/cafe/CafePartnersDesktop"
-import Footer from "@/components/footer/Item"
+import Header  from "@/components/header/Settings"
+import CafeMobile from "@/components/cafe/main-page/Mobile.vue"
+import CafePartnersDesktop from "@/components/cafe/partners-page/Desktop"
+import Footer from "@/components/footer/Settings"
 
 export default {
   components: {
-    HeaderPartnersMobile,
-    HeaderMainDesktop,
+    Header,
     CafeMobile,
     CafePartnersDesktop,
     Footer,
@@ -60,7 +53,7 @@ export default {
 
 <style scoped lang="scss">
 
-@import "@/assets/styles.scss";
+@import "@/assets/styles/styles.scss";
 
 .wrapper {
   display: flex;

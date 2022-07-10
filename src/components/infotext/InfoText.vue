@@ -17,7 +17,7 @@
 
 <style scoped lang="scss">
 
-@import '@/assets/styles.scss';
+@import '@/assets/styles/styles.scss';
 
 .info-text {
   background-color: $MA-WHITE;
