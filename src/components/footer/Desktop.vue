@@ -20,6 +20,7 @@
           >
           <a href="#" class="footer__container__top__info__text">Контакты</a>
           <a href="#" class="footer__container__top__info__text">Контакты</a>
+         
         </div>
         <div class="footer__container__top__contact">
           <a href="#" class="footer__container__top__contact__email">

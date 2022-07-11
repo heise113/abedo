@@ -59,20 +59,37 @@ export default {
 @import "@/assets/styles/styles.scss";
 
 .food-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  
   width: 295px;
   border-radius: 20px;
-  overflow: hidden;
+  // overflow: hidden;
   background-color: $WHITE;
 
   &__image {
     height: 190px;
+    flex-shrink: 0;
   }
 
   &__info {
+    height: 100%;
+    // flex-grow: 1;
     padding: 15px 20px 25px 20px;
+    display: flex;
+    flex-direction: column;
 
     &__description {
       margin-bottom: 15px;
+
+      font-family: 'SF';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #454545;
     }
 
     &__price {
@@ -111,6 +128,7 @@ export default {
     }
 
     &__button {
+      justify-self: flex-end;
       background-color: $SPACEMAN;
       display: flex;
       align-items: center;
