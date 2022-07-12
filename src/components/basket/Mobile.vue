@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import ElementItem from "@/components/basket/ElementItem.vue";
+import ElementItem from "@/components/basket/ElementItemMobile.vue";
 
 export default {
   data() {

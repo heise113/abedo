@@ -80,6 +80,7 @@
 .header-desktop {
   background-color: $WHITE;
 
+
   &__container {
     max-width: $CONTAINER-WIDTH;
     width: 100%;

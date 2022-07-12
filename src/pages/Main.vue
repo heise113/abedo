@@ -47,6 +47,12 @@ export default {
   flex-direction: column;
   background-color: $PEARL;
 
+  &__header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+
   &__content {
     background-color: $PEARL;
     flex: 1 0 auto;

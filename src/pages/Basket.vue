@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <Header
+    <Header class="wrapper__header"
         v-if="width > 768"
     />
     <div class="wrapper__content">
@@ -54,6 +54,12 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+
+  &__header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
 
   &__content {
     background-color: $PEARL;
