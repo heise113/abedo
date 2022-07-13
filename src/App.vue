@@ -1,20 +1,8 @@
 <template>
-  <!-- <Main/> -->
-  <!-- <AllCafe/> -->
   <router-view></router-view>
 </template>
 
 <script>
-
-import AllCafe from "./pages/Partners"
-import Main from "./pages/Main"
-
-export default {
-  components: {
-    Main,
-    AllCafe,
-  }
-}
 
 </script>
 

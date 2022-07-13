@@ -61,12 +61,11 @@ export default {
 .food-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  
+
+  overflow: hidden;
   width: 295px;
   border-radius: 20px;
-  // overflow: hidden;
   background-color: $WHITE;
 
   &__image {
@@ -75,11 +74,11 @@ export default {
   }
 
   &__info {
-    height: 100%;
-    // flex-grow: 1;
-    padding: 15px 20px 25px 20px;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    padding: 15px 20px 25px 20px;
 
     &__description {
       margin-bottom: 15px;
@@ -94,7 +93,8 @@ export default {
 
     &__price {
       display: flex;
-      align-items: center;
+      align-items: start;
+      flex: 1;
 
       &__new {
         font-family: 'Montserrat';
@@ -128,7 +128,7 @@ export default {
     }
 
     &__button {
-      justify-self: flex-end;
+      align-self: flex-end;
       background-color: $SPACEMAN;
       display: flex;
       align-items: center;

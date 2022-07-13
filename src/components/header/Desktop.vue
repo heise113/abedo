@@ -8,8 +8,8 @@
       </router-link>
 
       <div
-        @click="$router.push('/partners')"
-        class="header-desktop__container__button"
+          @click="$router.push('/partners')"
+          class="header-desktop__container__button"
       >
         <svg height="24" width="24">
           <use xlink:href="@/assets/images/icons.svg#header-shop"></use>
@@ -23,8 +23,8 @@
             <use xlink:href="@/assets/images/icons.svg#profile"></use>
           </svg>
           <a
-            class="header-desktop__container__profile-stocks__profile__text"
-            href="#"
+              class="header-desktop__container__profile-stocks__profile__text"
+              href="#"
           >
             Кабинет
           </a>
@@ -34,16 +34,16 @@
             <use xlink:href="@/assets/images/icons.svg#header-msg"></use>
           </svg>
           <router-link
-            to="/stocks"
-            class="header-desktop__container__profile-stocks__stocks__text"
-            href="#"
+              to="/stocks"
+              class="header-desktop__container__profile-stocks__stocks__text"
+              href="#"
           >
             Акции магазинов
           </router-link>
           <router-link
-            to="/stocks"
-            class="header-desktop__container__profile-stocks__stocks__text_over"
-            href="#"
+              to="/stocks"
+              class="header-desktop__container__profile-stocks__stocks__text_over"
+              href="#"
           >
             Акции
           </router-link>
@@ -64,9 +64,14 @@
       </div>
 
       <div class="header-desktop__container__basket" @click="$router.push('/basket')">
-        <svg height="20" width="20">
-          <use xlink:href="@/assets/images/icons.svg#header-basket"></use>
-        </svg>
+        <div class="header-desktop__container__basket__logo">
+          <svg height="20" width="20">
+            <use xlink:href="@/assets/images/icons.svg#header-basket"></use>
+          </svg>
+        </div>
+        <span class="header-desktop__container__basket__text">
+          Корзина
+        </span>
       </div>
     </div>
   </header>
@@ -176,7 +181,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 15px;
+        height: 50px;
+        width: 50px;
         border: 1px solid $MITHRIL;
         border-radius: 50px;
         cursor: pointer;
@@ -185,8 +191,8 @@
         &:hover {
           border-color: $SPACEMAN;
 
-          & svg {
-            //fill: $SPACEMAN;
+          & svg use {
+            fill: $SPACEMAN;
             stroke: $SPACEMAN;
           }
         }
@@ -196,16 +202,41 @@
     &__basket {
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 15px;
-      border: 1px solid $MITHRIL;
-      border-radius: 50px;
       cursor: pointer;
+
+      &__logo {
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border: 1px solid $MITHRIL;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+
+      &__text {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: $LEAD;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .header-desktop__container__basket__text {
+    display: none;
+  }
+
   .header-desktop__container__button {
     padding: 10px 20px 10px 20px;
 
@@ -214,6 +245,9 @@
       font-size: 14px;
     }
   }
+}
+
+@media (max-width: 900px) {
 
   .header-desktop__container__icons__search, .header-desktop__container__icons__likes {
     margin-right: 8px;

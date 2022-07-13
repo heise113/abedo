@@ -177,6 +177,11 @@
         </div>
       </div>
       <div class="cart-wrapper__container__basket">
+        <div class="cart-wrapper__container__basket__logo">
+          <svg height="20" width="20">
+            <use xlink:href="@/assets/images/icons.svg#basket-basket"></use>
+          </svg>
+        </div>
         <div class="cart-wrapper__container__basket__header">
           <div class="cart-wrapper__container__basket__header__title">
             Корзина
@@ -671,13 +676,27 @@ export default {
     }
 
     &__basket {
-      border: 1px solid $MA-WHITE;
+      border: 1px solid #EEEEEE;
+      position: relative;
       border-radius: 20px;
       width: 292px;
       background-color: $WHITE;
       padding: 50px 20px 40px 20px;
       margin-left: 30px;
       flex-shrink: 0;
+
+      &__logo {
+        position: absolute;
+        top: -30px;
+        width: 60px;
+        height: 60px;
+        background-color: $ORANGE-SODA;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 4px solid $PEARL;
+      }
 
       &__header {
         display: flex;

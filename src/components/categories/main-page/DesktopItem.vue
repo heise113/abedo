@@ -34,6 +34,7 @@ export default {
 
   &:hover {
     background-color: $PHYSALIS;
+    border-color: $PHYSALIS;
 
     .desktop-item-block__text {
       color: $WHITE;

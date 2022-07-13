@@ -13,31 +13,31 @@
         <div class="footer__container__top__info">
           <a href="#" class="footer__container__top__info__text">О сервисе</a>
           <a href="#" class="footer__container__top__info__text"
-            >Добавить заведение</a
+          >Добавить заведение</a
           >
           <a href="#" class="footer__container__top__info__text"
-            >Новости сервиса</a
+          >Новости сервиса</a
           >
           <a href="#" class="footer__container__top__info__text">Контакты</a>
           <a href="#" class="footer__container__top__info__text">Контакты</a>
-         
+
         </div>
         <div class="footer__container__top__contact">
           <a href="#" class="footer__container__top__contact__email">
-            pismo@admin.abedo.ru
+            pismo@abedo.ru
           </a>
           <div class="footer__container__top__contact__sentence">
             Для жалоб и предложений
           </div>
         </div>
       </div>
-      <div class="footer__container__bottom">
-        <div class="footer__container__bottom__terms">
-          <a href="#">Условия использования</a>
-        </div>
-        <div class="footer__container__bottom__policies">
-          <a href="#">Политика конфиденциальности</a>
-        </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__bottom__terms">
+        <a href="#">Условия использования</a>
+      </div>
+      <div class="footer__bottom__policies">
+        <a href="#">Политика конфиденциальности</a>
       </div>
     </div>
   </div>
@@ -50,12 +50,13 @@
 
 .footer {
   background-color: $LEAD;
-  padding: 0 20px 0 20px;
 
   &__container {
     max-width: $CONTAINER-WIDTH;
     width: 100%;
     margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 
     &__top {
       padding-top: 60px;
@@ -75,6 +76,7 @@
       }
 
       &__info {
+
         display: flex;
         flex-wrap: wrap;
 
@@ -117,46 +119,47 @@
         }
       }
     }
+  }
 
-    &__bottom {
-      padding-top: 20px;
-      padding-bottom: 20px;
-      display: flex;
-      justify-content: center;
+  &__bottom {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #454545;;
 
-      &__terms a{
-        font-family: 'Montserrat';
-        text-decoration: none;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
-        color: $PEARL;
+    &__terms a {
+      font-family: 'Montserrat';
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: $PEARL;
 
-        &:hover a {
-          text-decoration: underline;
-        }
+      &:hover a {
+        text-decoration: underline;
       }
+    }
 
-      &__policies a{
-        font-family: 'Montserrat';
-        text-decoration: none;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
-        color: $PEARL;
+    &__policies a {
+      font-family: 'Montserrat';
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: $PEARL;
 
-        &:hover a {
-          text-decoration: underline;
-        }
+      &:hover a {
+        text-decoration: underline;
       }
+    }
 
-      &__terms, &__policies {
-        margin-right: 20px;
-        margin-left: 20px;
+    &__terms, &__policies {
+      margin-right: 20px;
+      margin-left: 20px;
 
-        &:hover {
-          text-decoration: underline;
-        }
+      &:hover {
+        text-decoration: underline;
       }
     }
   }

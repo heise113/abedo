@@ -7,6 +7,11 @@
           :src="`https://admin.abedo.ru${cafeItem.image[0].original}`"
           alt="#"
       />
+      <img
+          v-else
+          class="item-desktop__image__background"
+          src="@/assets/images/bili.webp" alt="#"
+      >
       <div class="item-desktop__image__shadow"></div>
       <img
           v-if="cafeItem.logo"
@@ -14,7 +19,7 @@
           :src="`https://admin.abedo.ru${cafeItem.logo.original}`"
           alt=""
       />
-      <div class="item-desktop__image__likes">
+      <div class="item-desktop__image__likes" @click="stop">
         <svg class="item-desktop__image__likes__svg" height="23" width="23">
           <use xlink:href="@/assets/images/icons.svg#likes-cafe-item"></use>
         </svg>
@@ -38,6 +43,11 @@ export default {
       type: Object,
     },
   },
+  methods: {
+    stop(event) {
+      event.stopPropagation()
+    }
+  }
 };
 </script>
 
@@ -71,7 +81,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: fill;
       transition-duration: 0.4s;
     }
 

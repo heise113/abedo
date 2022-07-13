@@ -41,9 +41,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   cursor: pointer;
+  border-bottom: 1px solid $VAGUELY-VIOLET;
+
+
 
   &__left {
     display: flex;

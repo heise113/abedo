@@ -137,11 +137,17 @@ export default {
           color: $MACHINE-GUN-METAL;
           margin-bottom: 14px;
         }
+
+        &__list-categories {
+          & div:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+        }
       }
 
       &__list-partners {
-        //border: 2px solid black;
-
+        flex: 1;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         row-gap: 40px;

@@ -239,9 +239,9 @@ export default {
     }
 
     &__applied {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-
+      width: 258px;
       background: $VAGUELY-VIOLET;
       border-radius: 20px;
       padding: 10px 30px;
