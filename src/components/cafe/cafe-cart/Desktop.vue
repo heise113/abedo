@@ -1,4 +1,8 @@
 <template>
+  <AboutCafe
+    @offModal="aboutCafeActive"
+    v-if="modalAboutCafe"
+  />
   <div class="cart-wrapper">
     <div class="cart-wrapper__container">
       <div class="cart-wrapper__container__cafe">
@@ -70,6 +74,7 @@
                   class="cart-wrapper__container__cafe__cart__top__description__about__more"
                 >
                   <div
+                    @click="aboutCafeActive"
                     class="cart-wrapper__container__cafe__cart__top__description__about__more__text"
                   >
                     Подробнее
@@ -294,12 +299,14 @@
 import StocksBlock from "@/components/stocks/StocksBlock.vue"
 import SectionItem from "@/components/SectionItem.vue"
 import FoodCartDesktop from "@/components/food/CartDesktop.vue"
+import AboutCafe from "@/components/modals-window/AboutCafe.vue"
 
 export default {
   components: {
     StocksBlock,
     SectionItem,
     FoodCartDesktop,
+    AboutCafe,
   },
   data() {
     return {
@@ -458,8 +465,14 @@ export default {
           logoStocks: 'logo-stocks',
         },
       ],
+      modalAboutCafe: false,
     };
   },
+  methods: {
+    aboutCafeActive() {
+      this.modalAboutCafe ? this.modalAboutCafe = false : this.modalAboutCafe = true 
+    }
+  }
 };
 </script>
 
@@ -576,8 +589,12 @@ export default {
                   font-size: 16px;
                   line-height: 19px;
                   color: $MACHINE-GUN-METAL;
-
+                  cursor: pointer;
                   margin-right: 7px;
+
+                  &:hover {
+                    text-decoration: underline;
+                  }
                 }
               }
             }

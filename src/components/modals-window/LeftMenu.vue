@@ -1,6 +1,9 @@
 <template>
+  <Auth
+    @offModal="authModalActive"
+    v-if="authModal"
+  />
   <div @click="offModal" class="wrapper-modal">
-
   </div>
   <div class="content">
     <div class="content__logo">
@@ -25,7 +28,7 @@
             <use xlink:href="@/assets/images/icons.svg#left-menu-profile"></use>
           </svg>
         </div>
-        <div class="content__links__my-data__text">
+        <div @click="authModalActive" class="content__links__my-data__text">
           Мои данные
         </div>
       </div>
@@ -73,11 +76,24 @@
 
 <script>
 
+import Auth from "@/components/modals-window/Auth.vue"
+
 export default {
+  components: {
+    Auth,
+  },
+  data() {
+    return {
+      authModal: false,
+    }
+  },
   methods: {
     offModal() {
       this.$emit('offModal')
-    }
+    },
+    authModalActive() {
+      this.authModal ? this.authModal = false : this.authModal = true
+    },
   },
 }
 
@@ -144,6 +160,7 @@ export default {
       display: flex;
       align-items: center;
       margin-bottom: 20px;
+      cursor: pointer;
 
       &__logo {
         margin-right: 14px;

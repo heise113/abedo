@@ -1,4 +1,8 @@
 <template>
+  <Auth
+    @offModal="authModalActive"
+    v-if="authModal"
+  />
   <header class="header-desktop">
     <div class="header-desktop__container">
       <router-link to="/" class="header-desktop__container__logo" href="#">
@@ -18,7 +22,7 @@
       </div>
 
       <div class="header-desktop__container__profile-stocks">
-        <div class="header-desktop__container__profile-stocks__profile">
+        <div @click="authModalActive" class="header-desktop__container__profile-stocks__profile">
           <svg height="28" width="28">
             <use xlink:href="@/assets/images/icons.svg#profile"></use>
           </svg>
@@ -77,7 +81,27 @@
   </header>
 </template>
 
-<script></script>
+<script>
+
+import Auth from "@/components/modals-window/Auth.vue"
+
+export default {
+  components: {
+    Auth,
+  },
+  data() {
+    return {
+      authModal: false,
+    }
+  },
+  methods: {
+    authModalActive() {
+      this.authModal ? this.authModal = false : this.authModal = true
+    }
+  },
+}
+
+</script>
 
 <style lang="scss" scoped>
 @import "@/assets/styles/styles.scss";
