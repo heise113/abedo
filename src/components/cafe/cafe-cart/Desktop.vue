@@ -181,7 +181,8 @@
             />
         </div>
       </div>
-      <div class="cart-wrapper__container__basket">
+      <BasketWindow/>
+      <!-- <div class="cart-wrapper__container__basket">
         <div class="cart-wrapper__container__basket__logo">
           <svg height="20" width="20">
             <use xlink:href="@/assets/images/icons.svg#basket-basket"></use>
@@ -290,7 +291,7 @@
         <div class="cart-wrapper__container__basket__button">
           Оформить заказ
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -300,6 +301,7 @@ import StocksBlock from "@/components/stocks/StocksBlock.vue"
 import SectionItem from "@/components/SectionItem.vue"
 import FoodCartDesktop from "@/components/food/CartDesktop.vue"
 import AboutCafe from "@/components/modals-window/AboutCafe.vue"
+import BasketWindow from "@/components/basket/BasketWindow.vue"
 
 export default {
   components: {
@@ -307,6 +309,7 @@ export default {
     SectionItem,
     FoodCartDesktop,
     AboutCafe,
+    BasketWindow,
   },
   data() {
     return {
@@ -692,232 +695,232 @@ export default {
       }
     }
 
-    &__basket {
-      border: 1px solid #EEEEEE;
-      position: relative;
-      border-radius: 20px;
-      width: 292px;
-      background-color: $WHITE;
-      padding: 50px 20px 40px 20px;
-      margin-left: 30px;
-      flex-shrink: 0;
+    // &__basket {
+    //   border: 1px solid #EEEEEE;
+    //   position: relative;
+    //   border-radius: 20px;
+    //   width: 292px;
+    //   background-color: $WHITE;
+    //   padding: 50px 20px 40px 20px;
+    //   margin-left: 30px;
+    //   flex-shrink: 0;
 
-      &__logo {
-        position: absolute;
-        top: -30px;
-        width: 60px;
-        height: 60px;
-        background-color: $ORANGE-SODA;
-        border-radius: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 4px solid $PEARL;
-      }
+    //   &__logo {
+    //     position: absolute;
+    //     top: -30px;
+    //     width: 60px;
+    //     height: 60px;
+    //     background-color: $ORANGE-SODA;
+    //     border-radius: 50px;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     border: 4px solid $PEARL;
+    //   }
 
-      &__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    //   &__header {
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: space-between;
 
-        &__title {
-          font-family: "Montserrat";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 18px;
-          line-height: 22px;
-          color: $MACHINE-GUN-METAL;
-        }
+    //     &__title {
+    //       font-family: "Montserrat";
+    //       font-style: normal;
+    //       font-weight: 700;
+    //       font-size: 18px;
+    //       line-height: 22px;
+    //       color: $MACHINE-GUN-METAL;
+    //     }
 
-        &__clear {
-          font-family: "SF";
-          font-style: normal;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 20px;
-          text-decoration-line: underline;
-          color: $ORANGE-SODA;
-        }
-      }
+    //     &__clear {
+    //       font-family: "SF";
+    //       font-style: normal;
+    //       font-weight: 400;
+    //       font-size: 14px;
+    //       line-height: 20px;
+    //       text-decoration-line: underline;
+    //       color: $ORANGE-SODA;
+    //     }
+    //   }
 
-      &__shop {
-        margin-top: 15px;
-        padding-bottom: 19px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid $VAGUELY-VIOLET;
+    //   &__shop {
+    //     margin-top: 15px;
+    //     padding-bottom: 19px;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: space-between;
+    //     border-bottom: 1px solid $VAGUELY-VIOLET;
 
-        &__left {
-          &__type {
-            font-family: "SF";
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 20px;
-            color: $SPACEMAN;
-            margin-bottom: 6px;
-          }
+    //     &__left {
+    //       &__type {
+    //         font-family: "SF";
+    //         font-style: normal;
+    //         font-weight: 500;
+    //         font-size: 14px;
+    //         line-height: 20px;
+    //         color: $SPACEMAN;
+    //         margin-bottom: 6px;
+    //       }
 
-          &__name {
-            font-family: "SF";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 20px;
-            color: $MACHINE-GUN-METAL;
-          }
-        }
+    //       &__name {
+    //         font-family: "SF";
+    //         font-style: normal;
+    //         font-weight: 400;
+    //         font-size: 16px;
+    //         line-height: 20px;
+    //         color: $MACHINE-GUN-METAL;
+    //       }
+    //     }
 
-        &__right {
-          display: flex;
-          align-items: center;
-          justify-items: center;
+    //     &__right {
+    //       display: flex;
+    //       align-items: center;
+    //       justify-items: center;
 
-          &__image {
-            width: 55px;
-            height: 40px;
-          }
-        }
-      }
+    //       &__image {
+    //         width: 55px;
+    //         height: 40px;
+    //       }
+    //     }
+    //   }
 
-      &__shop-product {
-        &__top {
-          margin-top: 22px;
-          display: flex;
-          align-items: start;
-          justify-content: space-between;
+    //   &__shop-product {
+    //     &__top {
+    //       margin-top: 22px;
+    //       display: flex;
+    //       align-items: start;
+    //       justify-content: space-between;
 
-          &__about {
-            display: flex;
-            align-items: center;
+    //       &__about {
+    //         display: flex;
+    //         align-items: center;
 
-            &__title {
-              font-family: "SF";
-              font-style: normal;
-              font-weight: 400;
-              font-size: 14px;
-              line-height: 20px;
-              color: $MACHINE-GUN-METAL;
-              margin-left: 10px;
-            }
-          }
-        }
+    //         &__title {
+    //           font-family: "SF";
+    //           font-style: normal;
+    //           font-weight: 400;
+    //           font-size: 14px;
+    //           line-height: 20px;
+    //           color: $MACHINE-GUN-METAL;
+    //           margin-left: 10px;
+    //         }
+    //       }
+    //     }
 
-        &__bottom {
-          padding-bottom: 20px;
-          border-bottom: 1px solid $VAGUELY-VIOLET;
-          margin-top: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+    //     &__bottom {
+    //       padding-bottom: 20px;
+    //       border-bottom: 1px solid $VAGUELY-VIOLET;
+    //       margin-top: 10px;
+    //       display: flex;
+    //       align-items: center;
+    //       justify-content: space-between;
 
-          &__count {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+    //       &__count {
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: space-between;
 
-            &__counter {
-              margin-left: 10px;
-              margin-right: 10px;
-              font-family: "SF";
-              font-style: normal;
-              font-weight: 400;
-              font-size: 16px;
-              line-height: 19px;
-              color: $BLACK;
-            }
+    //         &__counter {
+    //           margin-left: 10px;
+    //           margin-right: 10px;
+    //           font-family: "SF";
+    //           font-style: normal;
+    //           font-weight: 400;
+    //           font-size: 16px;
+    //           line-height: 19px;
+    //           color: $BLACK;
+    //         }
 
-            &__plus,
-            &__minus {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              width: 26px;
-              height: 26px;
-              border: 1px solid $SPACEMAN;
-              border-radius: 50%;
-            }
-          }
+    //         &__plus,
+    //         &__minus {
+    //           display: flex;
+    //           align-items: center;
+    //           justify-content: center;
+    //           width: 26px;
+    //           height: 26px;
+    //           border: 1px solid $SPACEMAN;
+    //           border-radius: 50%;
+    //         }
+    //       }
 
-          &__price {
-            font-family: "Montserrat";
-            font-style: normal;
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 20px;
-            color: $MACHINE-GUN-METAL;
-          }
-        }
-      }
+    //       &__price {
+    //         font-family: "Montserrat";
+    //         font-style: normal;
+    //         font-weight: 600;
+    //         font-size: 16px;
+    //         line-height: 20px;
+    //         color: $MACHINE-GUN-METAL;
+    //       }
+    //     }
+    //   }
 
-      &__delivery {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 16px;
-        padding-bottom: 16px;
-        border-bottom: 1px solid $VAGUELY-VIOLET;
+    //   &__delivery {
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: space-between;
+    //     margin-top: 16px;
+    //     padding-bottom: 16px;
+    //     border-bottom: 1px solid $VAGUELY-VIOLET;
 
-        &__type {
-          font-family: "SF";
-          font-style: normal;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 17px;
-          color: $MACHINE-GUN-METAL;
-        }
+    //     &__type {
+    //       font-family: "SF";
+    //       font-style: normal;
+    //       font-weight: 400;
+    //       font-size: 14px;
+    //       line-height: 17px;
+    //       color: $MACHINE-GUN-METAL;
+    //     }
 
-        &__price {
-          font-family: "SF";
-          font-style: normal;
-          font-weight: 600;
-          font-size: 14px;
-          line-height: 17px;
-          color: $MACHINE-GUN-METAL;
-        }
-      }
+    //     &__price {
+    //       font-family: "SF";
+    //       font-style: normal;
+    //       font-weight: 600;
+    //       font-size: 14px;
+    //       line-height: 17px;
+    //       color: $MACHINE-GUN-METAL;
+    //     }
+    //   }
 
-      &__total {
-        margin-top: 22px;
-        margin-bottom: 34px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    //   &__total {
+    //     margin-top: 22px;
+    //     margin-bottom: 34px;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: space-between;
 
-        &__title {
-          font-family: "SF";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 14px;
-          line-height: 20px;
-          color: $MACHINE-GUN-METAL;
-        }
+    //     &__title {
+    //       font-family: "SF";
+    //       font-style: normal;
+    //       font-weight: 700;
+    //       font-size: 14px;
+    //       line-height: 20px;
+    //       color: $MACHINE-GUN-METAL;
+    //     }
 
-        &__price {
-          font-family: "Montserrat";
-          font-style: normal;
-          font-weight: 600;
-          font-size: 18px;
-          line-height: 22px;
-          color: $MACHINE-GUN-METAL;
-        }
-      }
+    //     &__price {
+    //       font-family: "Montserrat";
+    //       font-style: normal;
+    //       font-weight: 600;
+    //       font-size: 18px;
+    //       line-height: 22px;
+    //       color: $MACHINE-GUN-METAL;
+    //     }
+    //   }
 
-      &__button {
-        background: $SPACEMAN;
-        border-radius: 50px;
-        padding: 15px;
-        text-align: center;
+    //   &__button {
+    //     background: $SPACEMAN;
+    //     border-radius: 50px;
+    //     padding: 15px;
+    //     text-align: center;
 
-        font-family: "SF";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 19px;
-        color: $WHITE;
-      }
-    }
+    //     font-family: "SF";
+    //     font-style: normal;
+    //     font-weight: 500;
+    //     font-size: 16px;
+    //     line-height: 19px;
+    //     color: $WHITE;
+    //   }
+    // }
   }
 }
 
