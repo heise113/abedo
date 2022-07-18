@@ -22,7 +22,9 @@
         />
       </div>
     </div>
-    <div class="basket__shop-product">
+
+    
+    <div v-for="item in $store.state.basketItems" :key="item.id" class="basket__shop-product">
       <div class="basket__shop-product__top">
         <div class="basket__shop-product__top__about">
           <img
@@ -57,6 +59,7 @@
         <div class="basket__shop-product__bottom__price">790 ₽</div>
       </div>
     </div>
+
     <div class="basket__delivery">
       <div class="basket__delivery__type">Доставка</div>
       <div class="basket__delivery__price">Бесплатно</div>
@@ -69,7 +72,13 @@
   </div>
 </template>
 
-<script></script>
+<script>
+
+export default {
+  
+}
+
+</script>
 
 <style scoped lang="scss">
 @import "@/assets/styles/styles.scss";

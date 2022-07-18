@@ -28,7 +28,7 @@
           <use xlink:href="@/assets/images/icons.svg#cafe-cart-basket"></use>
         </svg>
       </div>
-      <div class="food-wrapper__info__button__title">
+      <div @click="addItemInBasket" class="food-wrapper__info__button__title">
         В корзину
       </div>
     </div>
@@ -50,6 +50,9 @@ export default {
       var images = require.context("../../assets/images/", false, /\.png$/);
       return images("./" + image);
     },
+    addItemInBasket() {
+      this.$store.commit('addIteminBasket', this.item)
+    }
   },
 };
 
