@@ -1,8 +1,5 @@
 <template>
-  <AboutCafe
-    @offModal="aboutCafeActive"
-    v-if="modalAboutCafe"
-  />
+  <AboutCafe @offModal="aboutCafeActive" v-if="modalAboutCafe" />
   <div class="cart-wrapper">
     <div class="cart-wrapper__container">
       <div class="cart-wrapper__container__cafe">
@@ -129,7 +126,7 @@
               <div
                 class="cart-wrapper__container__cafe__cart__bottom__delivery__text"
               >
-                Бесплатная доставка при заказе от 1000 ₽
+                Бесплатная доставка при заказе от 1000
               </div>
             </div>
             <div class="cart-wrapper__container__cafe__cart__bottom__surprise">
@@ -145,163 +142,45 @@
               <div
                 class="cart-wrapper__container__cafe__cart__bottom__surprise__text"
               >
-                Подарок “Чизбургер” при заказе от 1000 ₽
+                Подарок “Чизбургер” при заказе от 1000
               </div>
             </div>
           </div>
         </div>
         <div class="cart-wrapper__container__cafe__stocks">
-
-          <StocksBlock
-            v-for="item in stocksList"
-            :item="item"
-            :key="item.id"
-          />
-
+          <StocksBlock v-for="item in stocksList" :item="item" :key="item.id" />
         </div>
         <div class="cart-wrapper__container__cafe__sections">
           <div class="cart-wrapper__container__cafe__sections__title">
             Разделы каталога “Лимончелло”
           </div>
           <div class="cart-wrapper__container__cafe__sections__list">
-
             <SectionItem
               v-for="item in sectionsList"
               :item="item"
               :key="item.id"
             />
-
           </div>
         </div>
         <div class="cart-wrapper__container__cafe__food-list">
           <FoodCartDesktop
-              v-for="item in foodList"
-              :item="item"
-              :key="item.id"
-            />
+            v-for="item in foodList"
+            :item="item"
+            :key="item.id"
+          />
         </div>
       </div>
-      <BasketWindow/>
-      <!-- <div class="cart-wrapper__container__basket">
-        <div class="cart-wrapper__container__basket__logo">
-          <svg height="20" width="20">
-            <use xlink:href="@/assets/images/icons.svg#basket-basket"></use>
-          </svg>
-        </div>
-        <div class="cart-wrapper__container__basket__header">
-          <div class="cart-wrapper__container__basket__header__title">
-            Корзина
-          </div>
-          <div class="cart-wrapper__container__basket__header__clear">
-            Очистить
-          </div>
-        </div>
-        <div class="cart-wrapper__container__basket__shop">
-          <div class="cart-wrapper__container__basket__shop__left">
-            <div class="cart-wrapper__container__basket__shop__left__type">
-              Магазин
-            </div>
-            <div class="cart-wrapper__container__basket__shop__left__name">
-              Кафе “Лимончелло”
-            </div>
-          </div>
-          <div class="cart-wrapper__container__basket__shop__right">
-            <img
-              class="cart-wrapper__container__basket__shop__right__image"
-              src="@/assets/images/cafe-cart-desktop.png"
-              alt="#"
-            />
-          </div>
-        </div>
-        <div class="cart-wrapper__container__basket__shop-product">
-          <div class="cart-wrapper__container__basket__shop-product__top">
-            <div
-              class="cart-wrapper__container__basket__shop-product__top__about"
-            >
-              <img
-                class="cart-wrapper__container__basket__shop-product__top__about__image"
-                src="@/assets/images/basket-image.png"
-                alt="#"
-              />
-              <div
-                class="cart-wrapper__container__basket__shop-product__top__about__title"
-              >
-                Сырное ассорти
-              </div>
-            </div>
-            <div
-              class="cart-wrapper__container__basket__shop-product__top__close"
-            >
-              <svg height="15" width="15">
-                <use
-                  xlink:href="@/assets/images/icons.svg#cafe-cart-close"
-                ></use>
-              </svg>
-            </div>
-          </div>
-          <div class="cart-wrapper__container__basket__shop-product__bottom">
-            <div
-              class="cart-wrapper__container__basket__shop-product__bottom__count"
-            >
-              <div
-                class="cart-wrapper__container__basket__shop-product__bottom__count__plus"
-              >
-                <svg height="2" width="12">
-                  <use
-                    xlink:href="@/assets/images/icons.svg#cafe-cart-minus"
-                  ></use>
-                </svg>
-              </div>
-              <div
-                class="cart-wrapper__container__basket__shop-product__bottom__count__counter"
-              >
-                1000
-              </div>
-              <div
-                class="cart-wrapper__container__basket__shop-product__bottom__count__minus"
-              >
-                <svg height="2" width="12">
-                  <use
-                    xlink:href="@/assets/images/icons.svg#cafe-cart-minus"
-                  ></use>
-                </svg>
-              </div>
-            </div>
-            <div
-              class="cart-wrapper__container__basket__shop-product__bottom__price"
-            >
-              790 ₽
-            </div>
-          </div>
-        </div>
-        <div class="cart-wrapper__container__basket__delivery">
-          <div class="cart-wrapper__container__basket__delivery__type">
-            Доставка
-          </div>
-          <div class="cart-wrapper__container__basket__delivery__price">
-            Бесплатно
-          </div>
-        </div>
-        <div class="cart-wrapper__container__basket__total">
-          <div class="cart-wrapper__container__basket__total__title">
-            ИТОГО:
-          </div>
-          <div class="cart-wrapper__container__basket__total__price">330 ₽</div>
-        </div>
-        <div class="cart-wrapper__container__basket__button">
-          Оформить заказ
-        </div>
-      </div> -->
+      <BasketWindow class="cart-wrapper__container__basket-window" />
     </div>
   </div>
 </template>
 
 <script>
-import StocksBlock from "@/components/stocks/StocksBlock.vue"
-import SectionItem from "@/components/SectionItem.vue"
-import FoodCartDesktop from "@/components/food/CartDesktop.vue"
-import AboutCafe from "@/components/modals-window/AboutCafe.vue"
-import BasketWindow from "@/components/basket/BasketWindow.vue"
+import StocksBlock from "@/components/stocks/StocksBlock.vue";
+import SectionItem from "@/components/SectionItem.vue";
+import FoodCartDesktop from "@/components/food/CartDesktop.vue";
+import AboutCafe from "@/components/modals-window/AboutCafe.vue";
+import BasketWindow from "@/components/basket/BasketWindow.vue";
 
 export default {
   components: {
@@ -332,150 +211,152 @@ export default {
         },
       ],
       sectionsList: [
-        {name: 'Салаты'},
-        {name: 'Горячие блюда'},
-        {name: 'Холодные блюда'},
-        {name: 'Закуски'},
-        {name: 'Десерты'},
-        {name: 'Напитки'},
-        {name: 'Блюда из рыбы'},
-        {name: 'Пицца'},
-        {name: 'Паста'},
-        {name: 'Бургеры'},
-        {name: 'Гарниры'},
-        {name: 'Сендвичи'},
-        {name: 'Ризотто'},
+        { name: "Салаты" },
+        { name: "Горячие блюда" },
+        { name: "Холодные блюда" },
+        { name: "Закуски" },
+        { name: "Десерты" },
+        { name: "Напитки" },
+        { name: "Блюда из рыбы" },
+        { name: "Пицца" },
+        { name: "Паста" },
+        { name: "Бургеры" },
+        { name: "Гарниры" },
+        { name: "Сендвичи" },
+        { name: "Ризотто" },
       ],
       foodList: [
         {
           id: 1,
-          description: 'Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd ',
-          image: 'food-image-desktop.png',
-          newPrice: '3 500 ₽',
-          oldPrice: '450 ₽',
-          weight: '/ 150 г',
-          count: '',
-          logoStocks: 'logo-stocks',
+          description:
+            "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd ",
+          image: "food-image-desktop.png",
+          oldPrice: "450",
+          weight: "/ 150 г",
+          count: "",
+          logoStocks: "logo-stocks",
         },
         {
           id: 2,
-          description: 'Сырное ассорasdasd asd asd ное',
-          image: 'food-image-desktop.png',
-          newPrice: '3 500 ₽',
-          oldPrice: '',
-          weight: '',
-          count: '/ 1 шт',
-          logoStocks: 'logo-stocks',
+          description: "Сырное ассорasdasd asd asd ное",
+          image: "food-image-desktop.png",
+          oldPrice: "",
+          weight: "",
+          count: "/ 1 шт",
+          logoStocks: "logo-stocks",
         },
         {
           id: 3,
-          description: 'Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd',
-          image: 'food-image-desktop.png',
-          newPrice: '3 500 ₽',
-          oldPrice: '450 ₽',
-          weight: '/ 150 г',
-          count: '',
-          logoStocks: 'logo-stocks',
+          description:
+            "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
+          image: "food-image-desktop.png",
+          oldPrice: "450",
+          weight: "/ 150 г",
+          count: "",
+          logoStocks: "logo-stocks",
         },
         {
           id: 4,
-          description: 'Сырное ассорasdasd asd asd ное',
-          image: 'food-image-desktop.png',
-          newPrice: '3 500 ₽',
-          oldPrice: '',
-          weight: '',
-          count: '/ 1 шт',
-          logoStocks: 'logo-stocks',
+          description: "Сырное ассорasdasd asd asd ное",
+          image: "food-image-desktop.png",
+          oldPrice: "",
+          weight: "",
+          count: "/ 1 шт",
+          logoStocks: "logo-stocks",
         },
         {
           id: 5,
-          description: 'Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd',
-          image: 'food-image-desktop.png',
-          newPrice: '3 500 ₽',
-          oldPrice: '450 ₽',
-          weight: '/ 150 г',
-          count: '',
-          logoStocks: 'logo-stocks',
+          description:
+            "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
+          image: "food-image-desktop.png",
+          oldPrice: "450",
+          weight: "/ 150 г",
+          count: "",
+          logoStocks: "logo-stocks",
         },
         {
           id: 6,
-          description: 'Сырное ассорasdasd asd asd ное',
-          image: 'food-image-desktop.png',
-          newPrice: '3 500 ₽',
-          oldPrice: '',
-          weight: '',
-          count: '/ 1 шт',
-          logoStocks: 'logo-stocks',
+          description: "Сырное ассорasdasd asd asd ное",
+          image: "food-image-desktop.png",
+          oldPrice: "",
+          weight: "",
+          count: "/ 1 шт",
+          logoStocks: "logo-stocks",
         },
         {
           id: 7,
-          description: 'Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd',
-          image: 'food-image-desktop.png',
-          newPrice: '3 500 ₽',
-          oldPrice: '450 ₽',
-          weight: '/ 150 г',
-          count: '',
-          logoStocks: 'logo-stocks',
+          description:
+            "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
+          image: "food-image-desktop.png",
+          oldPrice: "450",
+          weight: "/ 150 г",
+          count: "",
+          logoStocks: "logo-stocks",
         },
         {
           id: 8,
-          description: 'Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd',
-          image: '',
-          newPrice: '3 500 ₽',
-          oldPrice: '450 ₽',
-          weight: '/ 150 г',
-          count: '',
-          logoStocks: 'logo-stocks',
+          description:
+            "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
+          image: "",
+          oldPrice: "450",
+          weight: "/ 150 г",
+          count: "",
+          logoStocks: "logo-stocks",
         },
         {
           id: 9,
-          description: 'Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd',
-          image: 'food-image-desktop.png',
-          newPrice: '3 500 ₽',
-          oldPrice: '450 ₽',
-          weight: '/ 150 г',
-          count: '',
-          logoStocks: 'logo-stocks',
+          description:
+            "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
+          image: "food-image-desktop.png",
+          oldPrice: "450",
+          weight: "/ 150 г",
+          count: "",
+          logoStocks: "logo-stocks",
         },
         {
           id: 10,
-          description: 'Сырное ассорasdasd asd asd ное',
-          image: 'food-image-desktop.png',
-          newPrice: '3 500 ₽',
-          oldPrice: '',
-          weight: '',
-          count: '/ 1 шт',
-          logoStocks: 'logo-stocks',
+          description: "Сырное ассорasdasd asd asd ное",
+          image: "food-image-desktop.png",
+          oldPrice: "",
+          weight: "",
+          count: "/ 1 шт",
+          logoStocks: "logo-stocks",
         },
         {
           id: 11,
-          description: 'Сырное ассорasdasd asd asd ное',
-          image: 'food-image-desktop.png',
-          newPrice: '3 500 ₽',
-          oldPrice: '',
-          weight: '',
-          count: '/ 1 шт',
-          logoStocks: 'logo-stocks',
+          description: "Сырное ассорasdasd asd asd ное",
+          image: "food-image-desktop.png",
+          oldPrice: "",
+          weight: "",
+          count: "/ 1 шт",
+          logoStocks: "logo-stocks",
         },
         {
           id: 12,
-          description: 'Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd',
-          image: 'food-image-desktop.png',
-          newPrice: '3 500 ₽',
-          oldPrice: '450 ₽',
-          weight: '/ 150 г',
-          count: '',
-          logoStocks: 'logo-stocks',
+          description:
+            "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
+          image: "food-image-desktop.png",
+          oldPrice: "450",
+          weight: "/ 150 г",
+          count: "",
+          logoStocks: "logo-stocks",
         },
       ],
       modalAboutCafe: false,
     };
   },
+  created() {
+    this.foodList.forEach((el, index) => {
+      el.newPrice = 100 * (index + 1);
+    });
+  },
   methods: {
     aboutCafeActive() {
-      this.modalAboutCafe ? this.modalAboutCafe = false : this.modalAboutCafe = true 
-    }
-  }
+      this.modalAboutCafe
+        ? (this.modalAboutCafe = false)
+        : (this.modalAboutCafe = true);
+    },
+  },
 };
 </script>
 
@@ -664,14 +545,13 @@ export default {
         display: grid;
         grid-template-columns: 403px 403px;
         gap: 30px;
-        
       }
 
       &__sections {
         margin-bottom: 50px;
-        
+
         &__title {
-          font-family: 'Montserrat';
+          font-family: "Montserrat";
           font-style: normal;
           font-weight: 600;
           font-size: 24px;
@@ -694,238 +574,14 @@ export default {
         padding-bottom: 290px;
       }
     }
-
-    // &__basket {
-    //   border: 1px solid #EEEEEE;
-    //   position: relative;
-    //   border-radius: 20px;
-    //   width: 292px;
-    //   background-color: $WHITE;
-    //   padding: 50px 20px 40px 20px;
-    //   margin-left: 30px;
-    //   flex-shrink: 0;
-
-    //   &__logo {
-    //     position: absolute;
-    //     top: -30px;
-    //     width: 60px;
-    //     height: 60px;
-    //     background-color: $ORANGE-SODA;
-    //     border-radius: 50px;
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: center;
-    //     border: 4px solid $PEARL;
-    //   }
-
-    //   &__header {
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: space-between;
-
-    //     &__title {
-    //       font-family: "Montserrat";
-    //       font-style: normal;
-    //       font-weight: 700;
-    //       font-size: 18px;
-    //       line-height: 22px;
-    //       color: $MACHINE-GUN-METAL;
-    //     }
-
-    //     &__clear {
-    //       font-family: "SF";
-    //       font-style: normal;
-    //       font-weight: 400;
-    //       font-size: 14px;
-    //       line-height: 20px;
-    //       text-decoration-line: underline;
-    //       color: $ORANGE-SODA;
-    //     }
-    //   }
-
-    //   &__shop {
-    //     margin-top: 15px;
-    //     padding-bottom: 19px;
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: space-between;
-    //     border-bottom: 1px solid $VAGUELY-VIOLET;
-
-    //     &__left {
-    //       &__type {
-    //         font-family: "SF";
-    //         font-style: normal;
-    //         font-weight: 500;
-    //         font-size: 14px;
-    //         line-height: 20px;
-    //         color: $SPACEMAN;
-    //         margin-bottom: 6px;
-    //       }
-
-    //       &__name {
-    //         font-family: "SF";
-    //         font-style: normal;
-    //         font-weight: 400;
-    //         font-size: 16px;
-    //         line-height: 20px;
-    //         color: $MACHINE-GUN-METAL;
-    //       }
-    //     }
-
-    //     &__right {
-    //       display: flex;
-    //       align-items: center;
-    //       justify-items: center;
-
-    //       &__image {
-    //         width: 55px;
-    //         height: 40px;
-    //       }
-    //     }
-    //   }
-
-    //   &__shop-product {
-    //     &__top {
-    //       margin-top: 22px;
-    //       display: flex;
-    //       align-items: start;
-    //       justify-content: space-between;
-
-    //       &__about {
-    //         display: flex;
-    //         align-items: center;
-
-    //         &__title {
-    //           font-family: "SF";
-    //           font-style: normal;
-    //           font-weight: 400;
-    //           font-size: 14px;
-    //           line-height: 20px;
-    //           color: $MACHINE-GUN-METAL;
-    //           margin-left: 10px;
-    //         }
-    //       }
-    //     }
-
-    //     &__bottom {
-    //       padding-bottom: 20px;
-    //       border-bottom: 1px solid $VAGUELY-VIOLET;
-    //       margin-top: 10px;
-    //       display: flex;
-    //       align-items: center;
-    //       justify-content: space-between;
-
-    //       &__count {
-    //         display: flex;
-    //         align-items: center;
-    //         justify-content: space-between;
-
-    //         &__counter {
-    //           margin-left: 10px;
-    //           margin-right: 10px;
-    //           font-family: "SF";
-    //           font-style: normal;
-    //           font-weight: 400;
-    //           font-size: 16px;
-    //           line-height: 19px;
-    //           color: $BLACK;
-    //         }
-
-    //         &__plus,
-    //         &__minus {
-    //           display: flex;
-    //           align-items: center;
-    //           justify-content: center;
-    //           width: 26px;
-    //           height: 26px;
-    //           border: 1px solid $SPACEMAN;
-    //           border-radius: 50%;
-    //         }
-    //       }
-
-    //       &__price {
-    //         font-family: "Montserrat";
-    //         font-style: normal;
-    //         font-weight: 600;
-    //         font-size: 16px;
-    //         line-height: 20px;
-    //         color: $MACHINE-GUN-METAL;
-    //       }
-    //     }
-    //   }
-
-    //   &__delivery {
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: space-between;
-    //     margin-top: 16px;
-    //     padding-bottom: 16px;
-    //     border-bottom: 1px solid $VAGUELY-VIOLET;
-
-    //     &__type {
-    //       font-family: "SF";
-    //       font-style: normal;
-    //       font-weight: 400;
-    //       font-size: 14px;
-    //       line-height: 17px;
-    //       color: $MACHINE-GUN-METAL;
-    //     }
-
-    //     &__price {
-    //       font-family: "SF";
-    //       font-style: normal;
-    //       font-weight: 600;
-    //       font-size: 14px;
-    //       line-height: 17px;
-    //       color: $MACHINE-GUN-METAL;
-    //     }
-    //   }
-
-    //   &__total {
-    //     margin-top: 22px;
-    //     margin-bottom: 34px;
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: space-between;
-
-    //     &__title {
-    //       font-family: "SF";
-    //       font-style: normal;
-    //       font-weight: 700;
-    //       font-size: 14px;
-    //       line-height: 20px;
-    //       color: $MACHINE-GUN-METAL;
-    //     }
-
-    //     &__price {
-    //       font-family: "Montserrat";
-    //       font-style: normal;
-    //       font-weight: 600;
-    //       font-size: 18px;
-    //       line-height: 22px;
-    //       color: $MACHINE-GUN-METAL;
-    //     }
-    //   }
-
-    //   &__button {
-    //     background: $SPACEMAN;
-    //     border-radius: 50px;
-    //     padding: 15px;
-    //     text-align: center;
-
-    //     font-family: "SF";
-    //     font-style: normal;
-    //     font-weight: 500;
-    //     font-size: 16px;
-    //     line-height: 19px;
-    //     color: $WHITE;
-    //   }
-    // }
+    &__basket-window {
+      position: sticky;
+      top: 150px;
+    }
   }
 }
 
 @media (max-width: 1350px) {
-
   .cart-wrapper__container {
     display: block;
   }
