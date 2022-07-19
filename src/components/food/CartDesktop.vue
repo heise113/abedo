@@ -22,13 +22,13 @@
         {{ item.oldPrice }}
       </div>
     </div>
-    <div class="food-wrapper__info__button">
+    <div class="food-wrapper__info__button" @click="addItemInBasket">
       <div class="food-wrapper__info__button__logo">
         <svg height="16" width="18">
           <use xlink:href="@/assets/images/icons.svg#cafe-cart-basket"></use>
         </svg>
       </div>
-      <div @click="addItemInBasket" class="food-wrapper__info__button__title">
+      <div class="food-wrapper__info__button__title">
         В корзину
       </div>
     </div>
@@ -51,7 +51,7 @@ export default {
       return images("./" + image);
     },
     addItemInBasket() {
-      this.$store.commit('addIteminBasket', this.item)
+      this.$store.commit('addItemInBasket', this.item)
     }
   },
 };
@@ -140,6 +140,7 @@ export default {
       padding: 11px 0;
       border-radius: 50px;
       margin: 17px auto 0 auto;
+      cursor: pointer;
 
       &__title {
         font-family: 'SF';

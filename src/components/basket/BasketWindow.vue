@@ -7,36 +7,42 @@
     </div>
     <div class="basket__header">
       <div class="basket__header__title">Корзина</div>
-      <div class="basket__header__clear">Очистить</div>
+      <div @click="clearBasket" class="basket__header__clear">Очистить</div>
     </div>
-    <div class="basket__shop">
+    <div class="basket__shop" v-if="$store.state.basketItems.length !== 0">
       <div class="basket__shop__left">
         <div class="basket__shop__left__type">Магазин</div>
         <div class="basket__shop__left__name">Кафе “Лимончелло”</div>
       </div>
       <div class="basket__shop__right">
         <img
-          class="basket__shop__right__image"
-          src="@/assets/images/cafe-cart-desktop.png"
-          alt="#"
+            class="basket__shop__right__image"
+            src="@/assets/images/cafe-cart-desktop.png"
+            alt="#"
         />
       </div>
     </div>
+    <div v-else class="basket__empty">
+      корзина пуста
+    </div>
 
-    
-    <div v-for="item in $store.state.basketItems" :key="item.id" class="basket__shop-product">
+
+    <div
+        v-for="item in $store.state.basketItems"
+        :key=item.id
+    >
       <div class="basket__shop-product__top">
         <div class="basket__shop-product__top__about">
           <img
-            class="basket__shop-product__top__about__image"
-            src="@/assets/images/basket-image.png"
-            alt="#"
+              class="basket__shop-product__top__about__image"
+              src="@/assets/images/basket-image.png"
+              alt="#"
           />
           <div class="basket__shop-product__top__about__title">
-            Сырное ассорти
+            {{ item.description }}
           </div>
         </div>
-        <div class="basket__shop-product__top__close">
+        <div @click="deleteItemBasket" class="basket__shop-product__top__close">
           <svg height="15" width="15">
             <use xlink:href="@/assets/images/icons.svg#cafe-cart-close"></use>
           </svg>
@@ -49,33 +55,53 @@
               <use xlink:href="@/assets/images/icons.svg#cafe-cart-minus"></use>
             </svg>
           </div>
-          <div class="basket__shop-product__bottom__count__counter">1000</div>
+          <div class="basket__shop-product__bottom__count__counter">0</div>
           <div class="basket__shop-product__bottom__count__minus">
             <svg height="2" width="12">
               <use xlink:href="@/assets/images/icons.svg#cafe-cart-minus"></use>
             </svg>
           </div>
         </div>
-        <div class="basket__shop-product__bottom__price">790 ₽</div>
+        <div class="basket__shop-product__bottom__price"> {{ item.newPrice }}</div>
       </div>
     </div>
 
-    <div class="basket__delivery">
+    <div class="basket__delivery" v-if="$store.state.basketItems.length !== 0">
       <div class="basket__delivery__type">Доставка</div>
       <div class="basket__delivery__price">Бесплатно</div>
     </div>
-    <div class="basket__total">
+    <div class="basket__total" v-if="$store.state.basketItems.length !== 0">
       <div class="basket__total__title">ИТОГО:</div>
-      <div class="basket__total__price">330 ₽</div>
+      <div class="basket__total__price">{{ totalPrice }}</div>
     </div>
-    <div class="basket__button">Оформить заказ</div>
+    <div class="basket__button" v-if="$store.state.basketItems.length !== 0">Оформить заказ</div>
   </div>
 </template>
 
 <script>
 
 export default {
-  
+  data() {
+    return {
+      totalPrice: this.countTotalPrice(),
+    }
+  },
+  methods: {
+    clearBasket() {
+      this.$store.commit('clearBasket')
+    },
+    deleteItemBasket() {
+      this.$store.commit('deleteItemBasket',)
+    },
+    countTotalPrice() {
+      let price = 0
+      this.$store.state.basketItems.forEach((el) => {
+            price += +el.newPrice
+          }
+      )
+      return price
+    },
+  },
 }
 
 </script>
@@ -92,6 +118,18 @@ export default {
   padding: 50px 20px 40px 20px;
   margin-left: 30px;
   flex-shrink: 0;
+
+  &__empty {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: $MACHINE-GUN-METAL;
+    text-align: center;
+    margin-top: 30px;
+
+  }
 
   &__logo {
     position: absolute;
@@ -128,6 +166,7 @@ export default {
       line-height: 20px;
       text-decoration-line: underline;
       color: $ORANGE-SODA;
+      cursor: pointer;
     }
   }
 

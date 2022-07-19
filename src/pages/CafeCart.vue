@@ -43,7 +43,7 @@ export default {
   &__header {
     position: sticky;
     top: 0;
-    z-index: 5;
+    z-index: 5000;
   }
 
   &__content {

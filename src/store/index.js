@@ -7,8 +7,11 @@ export default createStore({
     ] 
   },
   mutations: {
-    addIteminBasket(state, itemBasket) {
+    addItemInBasket(state, itemBasket) {
       state.basketItems.push(itemBasket)
+    },
+    clearBasket(state) {
+      state.basketItems.splice(0)
     }
   },
   getters: {
