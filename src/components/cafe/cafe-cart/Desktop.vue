@@ -233,7 +233,7 @@ export default {
           image: "food-image-desktop.png",
           oldPrice: "450",
           weight: "/ 150 г",
-          count: "",
+          count: 1,
           logoStocks: "logo-stocks",
         },
         {
@@ -242,7 +242,7 @@ export default {
           image: "food-image-desktop.png",
           oldPrice: "",
           weight: "",
-          count: "/ 1 шт",
+          count: 1,
           logoStocks: "logo-stocks",
         },
         {
@@ -252,7 +252,7 @@ export default {
           image: "food-image-desktop.png",
           oldPrice: "450",
           weight: "/ 150 г",
-          count: "",
+          count: 1,
           logoStocks: "logo-stocks",
         },
         {
@@ -261,7 +261,7 @@ export default {
           image: "food-image-desktop.png",
           oldPrice: "",
           weight: "",
-          count: "/ 1 шт",
+          count: 1,
           logoStocks: "logo-stocks",
         },
         {
@@ -271,7 +271,7 @@ export default {
           image: "food-image-desktop.png",
           oldPrice: "450",
           weight: "/ 150 г",
-          count: "",
+          count: 1,
           logoStocks: "logo-stocks",
         },
         {
@@ -280,7 +280,7 @@ export default {
           image: "food-image-desktop.png",
           oldPrice: "",
           weight: "",
-          count: "/ 1 шт",
+          count: 1,
           logoStocks: "logo-stocks",
         },
         {
@@ -290,7 +290,7 @@ export default {
           image: "food-image-desktop.png",
           oldPrice: "450",
           weight: "/ 150 г",
-          count: "",
+          count: 1,
           logoStocks: "logo-stocks",
         },
         {
@@ -300,7 +300,7 @@ export default {
           image: "",
           oldPrice: "450",
           weight: "/ 150 г",
-          count: "",
+          count: 1,
           logoStocks: "logo-stocks",
         },
         {
@@ -310,7 +310,7 @@ export default {
           image: "food-image-desktop.png",
           oldPrice: "450",
           weight: "/ 150 г",
-          count: "",
+          count: 1,
           logoStocks: "logo-stocks",
         },
         {
@@ -319,7 +319,7 @@ export default {
           image: "food-image-desktop.png",
           oldPrice: "",
           weight: "",
-          count: "/ 1 шт",
+          count: 1,
           logoStocks: "logo-stocks",
         },
         {
@@ -328,7 +328,7 @@ export default {
           image: "food-image-desktop.png",
           oldPrice: "",
           weight: "",
-          count: "/ 1 шт",
+          count: 1,
           logoStocks: "logo-stocks",
         },
         {
@@ -338,7 +338,7 @@ export default {
           image: "food-image-desktop.png",
           oldPrice: "450",
           weight: "/ 150 г",
-          count: "",
+          count: 1,
           logoStocks: "logo-stocks",
         },
       ],
@@ -347,7 +347,7 @@ export default {
   },
   created() {
     this.foodList.forEach((el, index) => {
-      el.newPrice = 100 * (index + 1);
+      el.price = 100 * (index + 1);
     });
   },
   methods: {

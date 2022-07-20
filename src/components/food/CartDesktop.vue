@@ -10,7 +10,7 @@
     </div>
     <div class="food-wrapper__info__price">
       <div class="food-wrapper__info__price__new">
-        {{ item.newPrice }}₽
+        {{ item.price }}₽
       </div>
       <div class="food-wrapper__info__price__weight" v-if="item.weight">
         {{ item.weight }}

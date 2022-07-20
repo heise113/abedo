@@ -4,6 +4,12 @@
 
 <script>
 
+export default {
+  created() {
+    this.$store.commit('getLocalStorage')
+  }
+}
+
 </script>
 
 <style lang="scss">

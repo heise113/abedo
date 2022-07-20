@@ -16,33 +16,30 @@
       </div>
       <div class="basket__shop__right">
         <img
-            class="basket__shop__right__image"
-            src="@/assets/images/cafe-cart-desktop.png"
-            alt="#"
+          class="basket__shop__right__image"
+          src="@/assets/images/cafe-cart-desktop.png"
+          alt="#"
         />
       </div>
     </div>
-    <div v-else class="basket__empty">
-      корзина пуста
-    </div>
+    <div v-else class="basket__empty">корзина пуста</div>
 
-
-    <div
-        v-for="item in $store.state.basketItems"
-        :key=item.id
-    >
+    <div v-for="(item, index) in $store.state.basketItems" :key="item.id">
       <div class="basket__shop-product__top">
         <div class="basket__shop-product__top__about">
           <img
-              class="basket__shop-product__top__about__image"
-              src="@/assets/images/basket-image.png"
-              alt="#"
+            class="basket__shop-product__top__about__image"
+            src="@/assets/images/basket-image.png"
+            alt="#"
           />
           <div class="basket__shop-product__top__about__title">
-            {{ item.description }}
+            {{ item.description }}{{ item.id }}
           </div>
         </div>
-        <div @click="deleteItemBasket" class="basket__shop-product__top__close">
+        <div
+          @click="removeItemBasket(index)"
+          class="basket__shop-product__top__close"
+        >
           <svg height="15" width="15">
             <use xlink:href="@/assets/images/icons.svg#cafe-cart-close"></use>
           </svg>
@@ -50,19 +47,29 @@
       </div>
       <div class="basket__shop-product__bottom">
         <div class="basket__shop-product__bottom__count">
-          <div class="basket__shop-product__bottom__count__plus">
+          <button
+            @click="counterMinus(index)"
+            class="basket__shop-product__bottom__count__minus"
+          >
             <svg height="2" width="12">
               <use xlink:href="@/assets/images/icons.svg#cafe-cart-minus"></use>
             </svg>
+          </button>
+          <div class="basket__shop-product__bottom__count__counter">
+            {{ item.count }}
           </div>
-          <div class="basket__shop-product__bottom__count__counter">0</div>
-          <div class="basket__shop-product__bottom__count__minus">
-            <svg height="2" width="12">
-              <use xlink:href="@/assets/images/icons.svg#cafe-cart-minus"></use>
+          <button
+            @click="counterPlus(index)"
+            class="basket__shop-product__bottom__count__plus"
+          >
+            <svg height="10" width="10">
+              <use xlink:href="@/assets/images/icons.svg#plus-plus"></use>
             </svg>
-          </div>
+          </button>
         </div>
-        <div class="basket__shop-product__bottom__price"> {{ item.newPrice }}</div>
+        <div class="basket__shop-product__bottom__price">
+          {{ item.count === 1 ? item.price : item.newPrice }}
+        </div>
       </div>
     </div>
 
@@ -74,36 +81,56 @@
       <div class="basket__total__title">ИТОГО:</div>
       <div class="basket__total__price">{{ totalPrice }}</div>
     </div>
-    <div class="basket__button" v-if="$store.state.basketItems.length !== 0">Оформить заказ</div>
+    <div class="basket__button" v-if="$store.state.basketItems.length !== 0">
+      Оформить заказ
+    </div>
+    <!-- <BlueButton class="basket__button">
+      <span class="blue-button__text">Оформить заказ</span>
+    </BlueButton> -->
   </div>
 </template>
 
 <script>
+import BlueButton from "@/components/buttons/BlueButton.vue";
 
 export default {
   data() {
     return {
-      totalPrice: this.countTotalPrice(),
-    }
+      totalPrice: 0,
+    };
+  },
+  components: {
+    BlueButton,
+  },
+  updated() {
+    this.totalPrice = this.countTotalPrice();
   },
   methods: {
     clearBasket() {
-      this.$store.commit('clearBasket')
+      this.$store.commit("clearBasket");
     },
-    deleteItemBasket() {
-      this.$store.commit('deleteItemBasket',)
+    removeItemBasket(index) {
+      this.$store.commit("removeItemBasket", index);
     },
     countTotalPrice() {
-      let price = 0
+      let price = 0;
       this.$store.state.basketItems.forEach((el) => {
-            price += +el.newPrice
-          }
-      )
-      return price
+        if (el.count > 1) {
+          price += el.newPrice;
+        } else {
+          price += el.price;
+        }
+      });
+      return price;
+    },
+    counterPlus(index) {
+      this.$store.commit("counterPlus", index);
+    },
+    counterMinus(index) {
+      this.$store.commit("counterMinus", index);
     },
   },
-}
-
+};
 </script>
 
 <style scoped lang="scss">
@@ -128,7 +155,6 @@ export default {
     color: $MACHINE-GUN-METAL;
     text-align: center;
     margin-top: 30px;
-
   }
 
   &__logo {
@@ -218,6 +244,10 @@ export default {
       align-items: start;
       justify-content: space-between;
 
+      &__close {
+        cursor: pointer;
+      }
+
       &__about {
         display: flex;
         align-items: center;
@@ -267,6 +297,8 @@ export default {
           height: 26px;
           border: 1px solid $SPACEMAN;
           border-radius: 50%;
+          background-color: $WHITE;
+          cursor: pointer;
         }
       }
 
@@ -335,6 +367,12 @@ export default {
   }
 
   &__button {
+    // max-width: 228px;
+    // width: 100%;
+    // height: 50px;
+    // margin: 0 auto;
+
+    cursor: pointer;
     background: $SPACEMAN;
     border-radius: 50px;
     padding: 15px;
