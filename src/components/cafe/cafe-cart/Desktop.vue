@@ -164,8 +164,9 @@
         </div>
         <div class="cart-wrapper__container__cafe__food-list">
           <FoodCartDesktop
-              v-for="item in foodList"
+              v-for="(item, index) in foodList"
               :item="item"
+              :index="index"
               :key="item.id"
           />
         </div>
@@ -351,10 +352,18 @@ export default {
     };
   },
   created() {
-    let tempData = JSON.parse(localStorage.getItem('basketData'))
-    localStorage.getItem('basketData') !== null
-        ? this.foodList = JSON.parse(localStorage.getItem('basketData'))
-        : null
+    if (localStorage.getItem('basketData') !== null) {
+      let tempData = this.$store.state.basketItems
+      this.foodList.forEach((el, index, array) => {
+        tempData.forEach((el2) => {
+          if (el.id === el2.id) {
+            array[index] = el2
+          }
+        })
+      })
+    }
+        // ? this.foodList = JSON.parse(localStorage.getItem('basketData'))
+        // : null
 
     this.foodList.forEach((el, index) => {
       el.price = 100 * (index + 1);

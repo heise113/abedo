@@ -46,7 +46,6 @@ export default createStore({
     },
     getLocalStorage(state) {
       state.basketItems = JSON.parse(localStorage.getItem('basketData')) || []
-
     } 
   },
   getters: {

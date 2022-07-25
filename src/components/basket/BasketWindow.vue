@@ -33,7 +33,7 @@
             alt="#"
           />
           <div class="basket__shop-product__top__about__title">
-            {{ item.description }}{{ item.id }}
+            {{ item.description }}
           </div>
         </div>
         <div
@@ -367,12 +367,6 @@ export default {
   }
 
   &__button {
-    // max-width: 228px;
-    // width: 100%;
-    // height: 50px;
-    // margin: 0 auto;
-
-    cursor: pointer;
     background: $SPACEMAN;
     border-radius: 50px;
     padding: 15px;
@@ -384,6 +378,13 @@ export default {
     font-size: 16px;
     line-height: 19px;
     color: $WHITE;
+
+    cursor: pointer;
+    transition-duration: 0.3s;
+
+    &:hover {
+      background-color: $PHYSALIS;
+    }
   }
 }
 </style>
