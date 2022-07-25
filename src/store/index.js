@@ -8,21 +8,24 @@ export default createStore({
     addItemInBasket(state, itemBasket) {
       let x = state.basketItems.findIndex((el) => itemBasket.id === el.id);
       if (x === -1) {
-        state.basketItems.push(itemBasket);
+        state.basketItems.push(itemBasket)
+        itemBasket.active = true
       }
       localStorage.setItem("basketData", JSON.stringify(state.basketItems));
     },
     clearBasket(state) {
       state.basketItems.forEach((el) => {
-        el.count = 1;
+        el.count = 1
+        el.active = false
       });
-      state.basketItems.splice(0);
+      state.basketItems.splice(0)
       localStorage.setItem("basketData", JSON.stringify(state.basketItems));
     },
     removeItemBasket(state, index) {
-      state.basketItems[index].count = 1;
-      state.basketItems.splice(index, 1);
-      localStorage.setItem("basketData", JSON.stringify(state.basketItems));
+      state.basketItems[index].count = 1
+      state.basketItems[index].active = false
+      state.basketItems.splice(index, 1)
+      localStorage.setItem("basketData", JSON.stringify(state.basketItems))
     },
     counterPlus(state, index) {
       state.basketItems[index].count++;
@@ -42,8 +45,8 @@ export default createStore({
       localStorage.setItem("basketData", JSON.stringify(state.basketItems));
     },
     getLocalStorage(state) {
-      // state.basketItems = localStorage.getItem('basketData') === null ? [] : JSON.parse(localStorage.getItem('basketData'))
       state.basketItems = JSON.parse(localStorage.getItem('basketData')) || []
+
     } 
   },
   getters: {

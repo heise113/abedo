@@ -28,8 +28,11 @@
           <use xlink:href="@/assets/images/icons.svg#cafe-cart-basket"></use>
         </svg>
       </div>
-      <div class="food-wrapper__info__button__title">
+      <div class="food-wrapper__info__button__title" v-if="item.active === false">
         В корзину
+      </div>
+      <div class="food-wrapper__info__button__title" v-else>
+        Добавлено
       </div>
     </div>
   </div>
@@ -52,7 +55,7 @@ export default {
     },
     addItemInBasket() {
       this.$store.commit('addItemInBasket', this.item)
-    }
+    },
   },
 };
 

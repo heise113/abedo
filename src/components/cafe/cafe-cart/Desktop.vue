@@ -1,111 +1,111 @@
 <template>
-  <AboutCafe @offModal="aboutCafeActive" v-if="modalAboutCafe" />
+  <AboutCafe @offModal="aboutCafeActive" v-if="modalAboutCafe"/>
   <div class="cart-wrapper">
     <div class="cart-wrapper__container">
       <div class="cart-wrapper__container__cafe">
         <div class="cart-wrapper__container__cafe__cart">
           <div class="cart-wrapper__container__cafe__cart__top">
             <div class="cart-wrapper__container__cafe__cart__top__image">
-              <img src="@/assets/images/cafe-cart-desktop.png" alt="#" />
+              <img src="@/assets/images/cafe-cart-desktop.png" alt="#"/>
             </div>
             <div class="cart-wrapper__container__cafe__cart__top__description">
               <div
-                class="cart-wrapper__container__cafe__cart__top__description__about"
+                  class="cart-wrapper__container__cafe__cart__top__description__about"
               >
                 <div
-                  class="cart-wrapper__container__cafe__cart__top__description__about__title"
+                    class="cart-wrapper__container__cafe__cart__top__description__about__title"
                 >
                   Кафе “Лимончелло”
                 </div>
                 <div
-                  class="cart-wrapper__container__cafe__cart__top__description__about__category"
+                    class="cart-wrapper__container__cafe__cart__top__description__about__category"
                 >
                   Европейская, Кавказская, Японская кухня, Детское меню,
                   Фаст-Фуд
                 </div>
                 <div
-                  class="cart-wrapper__container__cafe__cart__top__description__about__contact"
+                    class="cart-wrapper__container__cafe__cart__top__description__about__contact"
                 >
                   <div
-                    class="cart-wrapper__container__cafe__cart__top__description__about__contact__number"
+                      class="cart-wrapper__container__cafe__cart__top__description__about__contact__number"
                   >
                     <div
-                      class="cart-wrapper__container__cafe__cart__top__description__about__contact__number__logo"
+                        class="cart-wrapper__container__cafe__cart__top__description__about__contact__number__logo"
                     >
                       <svg height="15" width="15">
                         <use
-                          xlink:href="@/assets/images/icons.svg#cafe-cart-number"
+                            xlink:href="@/assets/images/icons.svg#cafe-cart-number"
                         ></use>
                       </svg>
                     </div>
                     <div
-                      class="cart-wrapper__container__cafe__cart__top__description__about__contact__number__text"
+                        class="cart-wrapper__container__cafe__cart__top__description__about__contact__number__text"
                     >
                       +790 000 000 00
                     </div>
                   </div>
                   <div
-                    class="cart-wrapper__container__cafe__cart__top__description__about__contact__social"
+                      class="cart-wrapper__container__cafe__cart__top__description__about__contact__social"
                   >
                     <div
-                      class="cart-wrapper__container__cafe__cart__top__description__about__contact__social__whatsapp"
+                        class="cart-wrapper__container__cafe__cart__top__description__about__contact__social__whatsapp"
                     >
                       <svg height="30" width="30">
                         <use
-                          xlink:href="@/assets/images/icons.svg#cafe-cart-whatsapp"
+                            xlink:href="@/assets/images/icons.svg#cafe-cart-whatsapp"
                         ></use>
                       </svg>
                     </div>
                     <div
-                      class="cart-wrapper__container__cafe__cart__top__description__about__contact__social__telegram"
+                        class="cart-wrapper__container__cafe__cart__top__description__about__contact__social__telegram"
                     >
                       <svg height="30" width="30">
                         <use
-                          xlink:href="@/assets/images/icons.svg#cafe-cart-telegram"
+                            xlink:href="@/assets/images/icons.svg#cafe-cart-telegram"
                         ></use>
                       </svg>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="cart-wrapper__container__cafe__cart__top__description__about__more"
+                    class="cart-wrapper__container__cafe__cart__top__description__about__more"
                 >
                   <div
-                    @click="aboutCafeActive"
-                    class="cart-wrapper__container__cafe__cart__top__description__about__more__text"
+                      @click="aboutCafeActive"
+                      class="cart-wrapper__container__cafe__cart__top__description__about__more__text"
                   >
                     Подробнее
                   </div>
                   <div
-                    class="cart-wrapper__container__cafe__cart__top__description__about__more__logo"
+                      class="cart-wrapper__container__cafe__cart__top__description__about__more__logo"
                   >
                     <svg height="10" width="6">
                       <use
-                        xlink:href="@/assets/images/icons.svg#cafe-cart-arrow"
+                          xlink:href="@/assets/images/icons.svg#cafe-cart-arrow"
                       ></use>
                     </svg>
                   </div>
                 </div>
               </div>
               <div
-                class="cart-wrapper__container__cafe__cart__top__description__rating"
+                  class="cart-wrapper__container__cafe__cart__top__description__rating"
               >
                 <div
-                  class="cart-wrapper__container__cafe__cart__top__description__rating__logo"
+                    class="cart-wrapper__container__cafe__cart__top__description__rating__logo"
                 >
                   <svg height="15" width="15">
                     <use
-                      xlink:href="@/assets/images/icons.svg#cafe-cart-star"
+                        xlink:href="@/assets/images/icons.svg#cafe-cart-star"
                     ></use>
                   </svg>
                 </div>
                 <div
-                  class="cart-wrapper__container__cafe__cart__top__description__rating__text"
+                    class="cart-wrapper__container__cafe__cart__top__description__rating__text"
                 >
                   Рейтинг:
                 </div>
                 <div
-                  class="cart-wrapper__container__cafe__cart__top__description__rating__number"
+                    class="cart-wrapper__container__cafe__cart__top__description__rating__number"
                 >
                   4,7
                 </div>
@@ -115,32 +115,32 @@
           <div class="cart-wrapper__container__cafe__cart__bottom">
             <div class="cart-wrapper__container__cafe__cart__bottom__delivery">
               <div
-                class="cart-wrapper__container__cafe__cart__bottom__delivery__logo"
+                  class="cart-wrapper__container__cafe__cart__bottom__delivery__logo"
               >
                 <svg height="20" width="20">
                   <use
-                    xlink:href="@/assets/images/icons.svg#cafe-cart-delivery"
+                      xlink:href="@/assets/images/icons.svg#cafe-cart-delivery"
                   ></use>
                 </svg>
               </div>
               <div
-                class="cart-wrapper__container__cafe__cart__bottom__delivery__text"
+                  class="cart-wrapper__container__cafe__cart__bottom__delivery__text"
               >
                 Бесплатная доставка при заказе от 1000
               </div>
             </div>
             <div class="cart-wrapper__container__cafe__cart__bottom__surprise">
               <div
-                class="cart-wrapper__container__cafe__cart__bottom__surprise__logo"
+                  class="cart-wrapper__container__cafe__cart__bottom__surprise__logo"
               >
                 <svg height="20" width="20">
                   <use
-                    xlink:href="@/assets/images/icons.svg#cafe-cart-surprise"
+                      xlink:href="@/assets/images/icons.svg#cafe-cart-surprise"
                   ></use>
                 </svg>
               </div>
               <div
-                class="cart-wrapper__container__cafe__cart__bottom__surprise__text"
+                  class="cart-wrapper__container__cafe__cart__bottom__surprise__text"
               >
                 Подарок “Чизбургер” при заказе от 1000
               </div>
@@ -148,7 +148,7 @@
           </div>
         </div>
         <div class="cart-wrapper__container__cafe__stocks">
-          <StocksBlock v-for="item in stocksList" :item="item" :key="item.id" />
+          <StocksBlock v-for="item in stocksList" :item="item" :key="item.id"/>
         </div>
         <div class="cart-wrapper__container__cafe__sections">
           <div class="cart-wrapper__container__cafe__sections__title">
@@ -156,21 +156,21 @@
           </div>
           <div class="cart-wrapper__container__cafe__sections__list">
             <SectionItem
-              v-for="item in sectionsList"
-              :item="item"
-              :key="item.id"
+                v-for="item in sectionsList"
+                :item="item"
+                :key="item.id"
             />
           </div>
         </div>
         <div class="cart-wrapper__container__cafe__food-list">
           <FoodCartDesktop
-            v-for="item in foodList"
-            :item="item"
-            :key="item.id"
+              v-for="item in foodList"
+              :item="item"
+              :key="item.id"
           />
         </div>
       </div>
-      <BasketWindow class="cart-wrapper__container__basket-window" />
+      <BasketWindow class="cart-wrapper__container__basket-window"/>
     </div>
   </div>
 </template>
@@ -211,30 +211,30 @@ export default {
         },
       ],
       sectionsList: [
-        { name: "Салаты" },
-        { name: "Горячие блюда" },
-        { name: "Холодные блюда" },
-        { name: "Закуски" },
-        { name: "Десерты" },
-        { name: "Напитки" },
-        { name: "Блюда из рыбы" },
-        { name: "Пицца" },
-        { name: "Паста" },
-        { name: "Бургеры" },
-        { name: "Гарниры" },
-        { name: "Сендвичи" },
-        { name: "Ризотто" },
+        {name: "Салаты"},
+        {name: "Горячие блюда"},
+        {name: "Холодные блюда"},
+        {name: "Закуски"},
+        {name: "Десерты"},
+        {name: "Напитки"},
+        {name: "Блюда из рыбы"},
+        {name: "Пицца"},
+        {name: "Паста"},
+        {name: "Бургеры"},
+        {name: "Гарниры"},
+        {name: "Сендвичи"},
+        {name: "Ризотто"},
       ],
       foodList: [
         {
           id: 1,
-          description:
-            "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd ",
+          description: "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd ",
           image: "food-image-desktop.png",
           oldPrice: "450",
           weight: "/ 150 г",
           count: 1,
           logoStocks: "logo-stocks",
+          active: false,
         },
         {
           id: 2,
@@ -244,16 +244,17 @@ export default {
           weight: "",
           count: 1,
           logoStocks: "logo-stocks",
+          active: false,
         },
         {
           id: 3,
-          description:
-            "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
+          description: "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
           image: "food-image-desktop.png",
           oldPrice: "450",
           weight: "/ 150 г",
           count: 1,
           logoStocks: "logo-stocks",
+          active: false,
         },
         {
           id: 4,
@@ -263,16 +264,17 @@ export default {
           weight: "",
           count: 1,
           logoStocks: "logo-stocks",
+          active: false,
         },
         {
           id: 5,
-          description:
-            "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
+          description: "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
           image: "food-image-desktop.png",
           oldPrice: "450",
           weight: "/ 150 г",
           count: 1,
           logoStocks: "logo-stocks",
+          active: false,
         },
         {
           id: 6,
@@ -282,36 +284,37 @@ export default {
           weight: "",
           count: 1,
           logoStocks: "logo-stocks",
+          active: false,
         },
         {
           id: 7,
-          description:
-            "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
+          description: "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
           image: "food-image-desktop.png",
           oldPrice: "450",
           weight: "/ 150 г",
           count: 1,
           logoStocks: "logo-stocks",
+          active: false,
         },
         {
           id: 8,
-          description:
-            "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
+          description: "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
           image: "",
           oldPrice: "450",
           weight: "/ 150 г",
           count: 1,
           logoStocks: "logo-stocks",
+          active: false,
         },
         {
           id: 9,
-          description:
-            "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
+          description: "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
           image: "food-image-desktop.png",
           oldPrice: "450",
           weight: "/ 150 г",
           count: 1,
           logoStocks: "logo-stocks",
+          active: false,
         },
         {
           id: 10,
@@ -321,6 +324,7 @@ export default {
           weight: "",
           count: 1,
           logoStocks: "logo-stocks",
+          active: false,
         },
         {
           id: 11,
@@ -330,22 +334,28 @@ export default {
           weight: "",
           count: 1,
           logoStocks: "logo-stocks",
+          active: false,
         },
         {
           id: 12,
-          description:
-            "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
+          description: "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
           image: "food-image-desktop.png",
           oldPrice: "450",
           weight: "/ 150 г",
           count: 1,
           logoStocks: "logo-stocks",
+          active: false,
         },
       ],
       modalAboutCafe: false,
     };
   },
   created() {
+    let tempData = JSON.parse(localStorage.getItem('basketData'))
+    localStorage.getItem('basketData') !== null
+        ? this.foodList = JSON.parse(localStorage.getItem('basketData'))
+        : null
+
     this.foodList.forEach((el, index) => {
       el.price = 100 * (index + 1);
     });
@@ -353,8 +363,8 @@ export default {
   methods: {
     aboutCafeActive() {
       this.modalAboutCafe
-        ? (this.modalAboutCafe = false)
-        : (this.modalAboutCafe = true);
+          ? (this.modalAboutCafe = false)
+          : (this.modalAboutCafe = true);
     },
   },
 };
@@ -437,6 +447,7 @@ export default {
                 &__number {
                   display: flex;
                   align-items: center;
+
                   &__logo {
                     margin-right: 10px;
                   }
@@ -508,6 +519,7 @@ export default {
             }
           }
         }
+
         &__bottom {
           &__delivery,
           &__surprise {
@@ -574,6 +586,7 @@ export default {
         padding-bottom: 290px;
       }
     }
+
     &__basket-window {
       position: sticky;
       top: 150px;
