@@ -164,7 +164,7 @@
         </div>
         <div class="cart-wrapper__container__cafe__food-list">
           <FoodCartDesktop
-              v-for="(item, index) in foodList"
+              v-for="(item, index) in $store.state.foodList"
               :item="item"
               :index="index"
               :key="item.id"
@@ -226,135 +226,13 @@ export default {
         {name: "Сендвичи"},
         {name: "Ризотто"},
       ],
-      foodList: [
-        {
-          id: 1,
-          description: "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd ",
-          image: "food-image-desktop.png",
-          oldPrice: "450",
-          weight: "/ 150 г",
-          count: 1,
-          logoStocks: "logo-stocks",
-          active: false,
-        },
-        {
-          id: 2,
-          description: "Сырное ассорasdasd asd asd ное",
-          image: "food-image-desktop.png",
-          oldPrice: "",
-          weight: "",
-          count: 1,
-          logoStocks: "logo-stocks",
-          active: false,
-        },
-        {
-          id: 3,
-          description: "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
-          image: "food-image-desktop.png",
-          oldPrice: "450",
-          weight: "/ 150 г",
-          count: 1,
-          logoStocks: "logo-stocks",
-          active: false,
-        },
-        {
-          id: 4,
-          description: "Сырное ассорasdasd asd asd ное",
-          image: "food-image-desktop.png",
-          oldPrice: "",
-          weight: "",
-          count: 1,
-          logoStocks: "logo-stocks",
-          active: false,
-        },
-        {
-          id: 5,
-          description: "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
-          image: "food-image-desktop.png",
-          oldPrice: "450",
-          weight: "/ 150 г",
-          count: 1,
-          logoStocks: "logo-stocks",
-          active: false,
-        },
-        {
-          id: 6,
-          description: "Сырное ассорasdasd asd asd ное",
-          image: "food-image-desktop.png",
-          oldPrice: "",
-          weight: "",
-          count: 1,
-          logoStocks: "logo-stocks",
-          active: false,
-        },
-        {
-          id: 7,
-          description: "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
-          image: "food-image-desktop.png",
-          oldPrice: "450",
-          weight: "/ 150 г",
-          count: 1,
-          logoStocks: "logo-stocks",
-          active: false,
-        },
-        {
-          id: 8,
-          description: "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
-          image: "",
-          oldPrice: "450",
-          weight: "/ 150 г",
-          count: 1,
-          logoStocks: "logo-stocks",
-          active: false,
-        },
-        {
-          id: 9,
-          description: "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
-          image: "food-image-desktop.png",
-          oldPrice: "450",
-          weight: "/ 150 г",
-          count: 1,
-          logoStocks: "logo-stocks",
-          active: false,
-        },
-        {
-          id: 10,
-          description: "Сырное ассорasdasd asd asd ное",
-          image: "food-image-desktop.png",
-          oldPrice: "",
-          weight: "",
-          count: 1,
-          logoStocks: "logo-stocks",
-          active: false,
-        },
-        {
-          id: 11,
-          description: "Сырное ассорasdasd asd asd ное",
-          image: "food-image-desktop.png",
-          oldPrice: "",
-          weight: "",
-          count: 1,
-          logoStocks: "logo-stocks",
-          active: false,
-        },
-        {
-          id: 12,
-          description: "Сырное ассорasdasd asd asd ное ассор asdasd asd asd Сырное ассорasdasd asd asd",
-          image: "food-image-desktop.png",
-          oldPrice: "450",
-          weight: "/ 150 г",
-          count: 1,
-          logoStocks: "logo-stocks",
-          active: false,
-        },
-      ],
       modalAboutCafe: false,
     };
   },
   created() {
     if (localStorage.getItem('basketData') !== null) {
       let tempData = this.$store.state.basketItems
-      this.foodList.forEach((el, index, array) => {
+      this.$store.state.foodList.forEach((el, index, array) => {
         tempData.forEach((el2) => {
           if (el.id === el2.id) {
             array[index] = el2
@@ -362,10 +240,8 @@ export default {
         })
       })
     }
-        // ? this.foodList = JSON.parse(localStorage.getItem('basketData'))
-        // : null
 
-    this.foodList.forEach((el, index) => {
+    this.$store.state.foodList.forEach((el, index) => {
       el.price = 100 * (index + 1);
     });
   },

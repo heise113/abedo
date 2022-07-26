@@ -34,7 +34,7 @@
 
       <div class="food-wrapper__info__count" v-else>
         <button
-          @click="counterMinus(index)"
+          @click="counterMinus(item.id)"
           class="food-wrapper__info__count__minus"
         >
           <svg height="2" width="12">
@@ -45,7 +45,7 @@
           {{ item.count }}
         </div>
         <button
-          @click="counterPlus(index)"
+          @click="counterPlus(item.id)"
           class="food-wrapper__info__count__plus"
         >
           <svg height="10" width="10">
@@ -75,11 +75,11 @@ export default {
     addItemInBasket() {
       this.$store.commit("addItemInBasket", this.item);
     },
-    counterPlus(index) {
-      this.$store.commit("counterPlus", index);
+    counterPlus(id) {
+      this.$store.commit("counterPlus", id);
     },
-    counterMinus(index) {
-      this.$store.commit("counterMinus", index);
+    counterMinus(id) {
+      this.$store.commit("counterMinus", id);
     },
   },
 };

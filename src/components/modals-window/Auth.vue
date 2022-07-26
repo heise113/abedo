@@ -89,6 +89,7 @@ export default {
         })
         .then(() => {
           this.offModal()
+          this.$store.commit('login', true)
         })
         .catch((error) => {
           this.status = error.response.data.errors.phone[0];
