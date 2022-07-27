@@ -4,6 +4,7 @@ import Partners from "@/pages/Partners"
 import Stocks from "@/pages/Stocks"
 import CafeCart from "@/pages/CafeCart"
 import Basket from "@/pages/Basket"
+import Registration from "@/pages/Registration"
 
 
 
@@ -27,7 +28,11 @@ const routes = [
     {
         path: '/basket',
         component: Basket,
-    }
+    },
+    {
+        path: '/registration',
+        component: Registration,
+    },
 ]
 
 const router = createRouter({
