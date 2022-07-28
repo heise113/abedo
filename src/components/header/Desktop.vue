@@ -211,13 +211,23 @@ export default {
         border-radius: 50px;
         cursor: pointer;
         margin-right: 15px;
+        transition-duration: 0.3s;
+
+        svg use {
+          fill: #878787;
+          transition-duration: 0.3s;
+
+        }
 
         &:hover {
           border-color: $SPACEMAN;
+          transition-duration: 0.3s;
+
 
           & svg use {
             fill: $SPACEMAN;
-            stroke: $SPACEMAN;
+            transition-duration: 0.3s;
+
           }
         }
       }

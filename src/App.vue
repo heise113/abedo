@@ -13,6 +13,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/styles/styles.scss";
 
 html, body{
   height: 100%;
@@ -22,6 +23,11 @@ html, body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  &::selection {
+    background-color: #f95738;
+    color: $WHITE;
+  }
 }
 
 </style>

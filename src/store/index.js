@@ -127,6 +127,7 @@ export default createStore({
     ],
     user: {
       authorized: false,
+      phone: null,
     }
   },
   mutations: {
@@ -179,6 +180,9 @@ export default createStore({
     login(state, auth_state) {
       auth_state === true ? state.user.authorized = true : state.user.authorized = false
       console.log(`Пользователь авторизовался  ${state.user.authorized}`)
+    },
+    setPhone(state, phone) {
+      state.user.phone = phone
     }
   },
   getters: {

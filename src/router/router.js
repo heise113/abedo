@@ -5,6 +5,8 @@ import Stocks from "@/pages/Stocks"
 import CafeCart from "@/pages/CafeCart"
 import Basket from "@/pages/Basket"
 import Registration from "@/pages/Registration"
+import Confirmation from "@/pages/Confirmation";
+import forgetPass from "@/pages/forgetPass";
 
 
 
@@ -33,6 +35,14 @@ const routes = [
         path: '/registration',
         component: Registration,
     },
+    {
+        path: '/confirmation',
+        component: Confirmation,
+    },
+    {
+        path: '/remind',
+        component: forgetPass,
+    }
 ]
 
 const router = createRouter({

@@ -42,31 +42,36 @@
         />
       </div>
       <div class="modal-wrapper__content__register-block">
-        <a
-          href="#"
+        <router-link
+          to="remind"
           class="modal-wrapper__content__register-block__forget-password"
         >
           Забыли пароль?
-        </a>
-        <a
-          href="#"
+        </router-link>
+        <router-link
+          to="/registration"
           class="modal-wrapper__content__register-block__registration"
         >
           Регистрация
-        </a>
+        </router-link>
       </div>
       <button class="modal-wrapper__content__button">Войти</button>
-      <div v-if="status" class="modal-wrapper__content__error">
+      <ValidateMessage v-if="status">
         {{ status }}
-      </div>
+      </ValidateMessage>
     </form>
   </div>
 </template>
 
 <script>
+
+import ValidateMessage from "@/components/ValidateMessage"
 import axios from "axios";
 
 export default {
+  components: {
+    ValidateMessage,
+  },
   data() {
     return {
       password: null,
@@ -92,8 +97,9 @@ export default {
           this.$store.commit('login', true)
         })
         .catch((error) => {
+          console.log(`запрос завершился ошибкой ${error.response.data.errors.phone[0]}`)
           this.status = error.response.data.errors.phone[0];
-          setTimeout(() => (this.status = null), 6000);
+          setTimeout(() => (this.status = null), 3000);
         });
     },
   },
@@ -237,37 +243,6 @@ export default {
       justify-content: center;
       cursor: pointer;
       background-color: $WHITE;
-    }
-
-    &__error {
-      border: 1px solid #f95738;
-      border-radius: 20px;
-      background: #dde2f2;
-
-      font-family: "Montserrat";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 20px;
-      color: #f95738;
-      margin-top: 30px;
-      padding: 20px 30px;
-
-      animation: show 6.1s;
-
-      @keyframes show {
-        0%, 100% {
-          opacity: 0;
-          padding-top: 0;
-          padding-bottom: 0;
-        }
-
-        25%, 50% {
-          opacity: 1;
-          padding-top: 20px;
-          padding-bottom: 20px;
-        }
-      }
     }
   }
 }

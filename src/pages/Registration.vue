@@ -6,7 +6,7 @@
     <div class="wrapper__content">
       <div class="wrapper__content__container">
         <div class="wrapper__content__container__title">Регистрация</div>
-        <form class="wrapper__content__container__form" @submit.prevent="register">
+        <form class="wrapper__content__container__form" @submit.prevent="validateData">
           <div class="wrapper__content__container__form__number-block">
             <label for="phone">
               <div class="wrapper__content__container__form__number-block__text">Телефон</div>
@@ -73,6 +73,11 @@
           <button class="wrapper__content__container__form__button" :disabled="!active">
             Зарегистрироваться
           </button>
+
+          <ValidateMessage v-if="error_message">
+            {{ error_message }}
+          </ValidateMessage>
+
         </form>
       </div>
     </div>
@@ -85,6 +90,7 @@
 <script>
 import Header from "@/components/header/Settings.vue";
 import Footer from "@/components/footer/Settings.vue";
+import ValidateMessage from "@/components/ValidateMessage"
 
 import axios from "axios"
 
@@ -92,11 +98,12 @@ export default {
   components: {
     Header,
     Footer,
-    // StocksStocksItem,
+    ValidateMessage,
   },
   data() {
     return {
       active: false,
+      error_message: null,
       user: {
         phone: null,
         password: null,
@@ -105,8 +112,25 @@ export default {
     }
   },
   methods: {
-    async register() {
+    validateData() {
+      if (this.user.password !== this.user.password_confirmation) {
+        this.error_message = 'Пароли не равны!'
+        setTimeout(() => {
+          this.error_message = null
+        }, 3000)
+      }
+      else if (this.user.password.length < 8 || this.user.password_confirmation.length < 8) {
+        this.error_message = 'Пароль должен быть не менее 8 символов!'
+        setTimeout(() => {
+          this.error_message = null
+        }, 3000)
+      }
+      else {
+        this.register()
+      }
+    },
 
+    async register() {
       await axios.post("https://admin.abedo.ru/api/register", {
         phone: this.user.phone,
         password: this.user.password,
@@ -114,9 +138,14 @@ export default {
       })
           .then(() => {
             console.log("Регистрация прошла успешна")
+            this.$store.commit('setPhone', this.user.phone)
+            this.$router.push('/confirmation')
           })
           .catch((error) => {
-            console.log(`Регистрация завершилась ошибкой ${error}`)
+            this.error_message = error.response.data.errors.phone[0]
+            setTimeout(() => {
+              this.error_message = null
+            }, 3000)
           });
     }
   }
@@ -291,8 +320,9 @@ svg path {
           border: none;
           height: 50px;
           cursor: pointer;
+          transition-duration: 0.3s;
 
-          color: #5c6784;
+          color: $SPACEMAN;
           font-family: "Montserrat";
           font-style: normal;
           font-weight: 400;
@@ -300,8 +330,15 @@ svg path {
           line-height: 17px;
           padding: 0 4px;
 
-          &:disabled {
+          &:enabled {
             border: 1px solid $SPACEMAN;
+            background-color: $WHITE;
+
+            &:hover {
+              transition-duration: 0.3s;
+              background-color: $SPACEMAN;
+              color: $WHITE;
+            }
           }
         }
 
