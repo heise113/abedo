@@ -5,7 +5,7 @@
     </div>
     <div class="wrapper__content">
       <div class="wrapper__content__container">
-        <form class="wrapper__content__container__form">
+        <form @submit.prevent class="wrapper__content__container__form">
           <h2 class="wrapper__content__container__form__title">
             Звонок
           </h2>
@@ -30,9 +30,56 @@
             />
           </div>
 
+          <p class="wrapper__content__container__form__text" v-if="active">
+            Код подтверждения
+          </p>
+
+          <input
+              v-model="code"
+              required
+              class="wrapper__content__container__form__input" v-if="active"
+              placeholder="Введите код"
+          />
+
+          <p class="wrapper__content__container__form__text" v-if="active">
+            Пароль
+          </p>
+
+          <input
+              v-if="active"
+              v-model="password"
+              minlenght="8"
+              type="password"
+              required
+              class="wrapper__content__container__form__input"
+              placeholder="Введите пароль"
+          />
+
+          <p class="wrapper__content__container__form__text" v-if="active">
+            Повтор пароля
+          </p>
+
+          <input
+              v-if="active"
+              v-model="password_confirmation"
+              minlenght="8"
+              type="password"
+              required
+              class="wrapper__content__container__form__input"
+              placeholder="Введите пароль"
+          />
+
+          <button @click="send" style="margin-bottom: 20px;" class="wrapper__content__container__form__button" v-if="active">
+            Восстановить
+          </button>
+
+
           <button @click="setPhone" class="wrapper__content__container__form__button">
             Позвонить
           </button>
+<!--          <ValidateMessage>-->
+<!--            {{ error }}-->
+<!--          </ValidateMessage>-->
         </form>
       </div>
     </div>
@@ -45,6 +92,7 @@
 <script>
 import Header from "@/components/header/Settings.vue";
 import Footer from "@/components/footer/Settings.vue";
+import ValidateMessage from "@/components/ValidateMessage"
 
 import axios from "axios"
 
@@ -52,10 +100,15 @@ export default {
   components: {
     Header,
     Footer,
+    ValidateMessage,
   },
   data() {
     return {
       phone: null,
+      code: null,
+      password: null,
+      password_confirmation: null,
+      active: false,
     }
   },
   methods: {
@@ -64,9 +117,32 @@ export default {
       this.call()
     },
     async call() {
-      await axios.post('https://admin.abedo.ru/api/restore/password', {
-        phone: this.$store.state.user.phone
+      await axios.post('https://admin.abedo.ru/api/confirm/phone', {
+        phone: this.$store.state.user.phone,
       })
+          .then(() => {
+            console.log('Запрос на звонок...')
+            this.active = true
+
+          })
+          .catch(error => {
+            console.log(`Что-то пошло не так... ${error}`)
+          })
+    },
+    async send() {
+      await axios.post('https://admin.abedo.ru/api/restore/password', {
+        phone: this.phone,
+        code: this.code,
+        password: this.password,
+        password_confirmation: this.password_confirmation,
+      })
+          .then(() => {
+            console.log('Смена пароля прошла успешна!')
+            this.$router.push('/')
+          })
+          .catch(error => {
+            console.log(`Смена пароля завершилась ошибкой ${error}`)
+          })
     }
   }
 }
@@ -103,6 +179,24 @@ export default {
         padding: 20px;
         width: 100%;
         max-width: 450px;
+
+        &__input {
+          font-family: "SF";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          border: none;
+          outline: none;
+          height: 50px;
+          border: 1px solid #eef2ff;
+          width: 100%;
+          border-radius: 90px;
+          padding-left: 10px;
+          padding-right: 10px;
+
+          margin-bottom: 20px;
+
+        }
 
         &__title {
           font-family: "Montserrat";
@@ -149,6 +243,9 @@ export default {
         }
 
         &__button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           width: 100%;
           max-width: 200px;
           border-radius: 50px;

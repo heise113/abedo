@@ -18,11 +18,12 @@
             звонок. Прослушайте его и введите 4 названных символа в соответствующее поле.
           </p>
           <button class="wrapper__content__container__form__button">
-            Позвонить
+            {{ text_call_button }}
           </button>
         </form>
 
-        <form @submit.prevent="sendCode" v-if="active_confirm" class="wrapper__content__container__form" style="margin-top: 30px;">
+        <form @submit.prevent="sendCode" v-if="active_confirm" class="wrapper__content__container__form"
+              style="margin-top: 30px;">
           <h2 class="wrapper__content__container__form__title">
             Подтверждение
           </h2>
@@ -39,6 +40,9 @@
           <button class="wrapper__content__container__form__button" @click="sendCode">
             Отправить
           </button>
+          <ValidateMessage v-if="error_message">
+            {{ error_message }}
+          </ValidateMessage>
         </form>
 
       </div>
@@ -52,6 +56,7 @@
 <script>
 import Header from "@/components/header/Settings.vue";
 import Footer from "@/components/footer/Settings.vue";
+import ValidateMessage from "@/components/ValidateMessage"
 
 import axios from "axios"
 
@@ -59,6 +64,7 @@ export default {
   components: {
     Header,
     Footer,
+    ValidateMessage,
   },
   created() {
     this.$store.state.user.phone === null || this.$store.state.user.authorized === true ? this.$router.push('/') : null
@@ -66,7 +72,9 @@ export default {
   data() {
     return {
       active_confirm: false,
+      error_message: null,
       code: null,
+      text_call_button: 'Позвонить',
     }
   },
   methods: {
@@ -78,6 +86,14 @@ export default {
             console.log(`запрос завершился ошибкой ${error.response.data.errors.phone[0]}`)
           })
           .then(() => {
+            // let two_min = 20
+            // setInterval(() => {
+            //   while (two_min > 0) {
+            //     this.text_call_button = two_min
+            //     two_min--
+            //     console.log(two_min)
+            //   }
+            // }, 1000)
             this.active_confirm = true
           })
     },
@@ -88,9 +104,15 @@ export default {
       })
           .then(() => {
             console.log('Регистрация прошла успешна!!!')
+            this.$router.push('/')
           })
           .catch((error) => {
-            console.log(`запрос завершился ошибкой ${error.response.data.errors.phone[0]}`)
+            this.error_message = error.response.data.message
+            this.active_message = true
+            console.log(`запрос завершился ошибкой ${error.response.data.message}`)
+            setTimeout(() => {
+              this.error_message = null
+            }, 3000)
           })
     }
   }
@@ -116,6 +138,7 @@ export default {
   &__content {
     flex: 1 0 auto;
     padding: 100px 10px;
+    background-color: $PEARL;
 
     &__container {
       max-width: $CONTAINER-WIDTH;

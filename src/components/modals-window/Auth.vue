@@ -56,8 +56,8 @@
         </router-link>
       </div>
       <button class="modal-wrapper__content__button">Войти</button>
-      <ValidateMessage v-if="status">
-        {{ status }}
+      <ValidateMessage v-if="error_message">
+        {{ error_message }}
       </ValidateMessage>
     </form>
   </div>
@@ -67,8 +67,12 @@
 
 import ValidateMessage from "@/components/ValidateMessage"
 import axios from "axios";
+import validateErrors from "@/mixins/ValidateErrors"
 
 export default {
+  mixins: [
+    validateErrors,
+  ],
   components: {
     ValidateMessage,
   },
@@ -76,7 +80,6 @@ export default {
     return {
       password: null,
       phone: null,
-      status: null,
     };
   },
   methods: {
@@ -97,9 +100,7 @@ export default {
           this.$store.commit('login', true)
         })
         .catch((error) => {
-          console.log(`запрос завершился ошибкой ${error.response.data.errors.phone[0]}`)
-          this.status = error.response.data.errors.phone[0];
-          setTimeout(() => (this.status = null), 3000);
+          this.errorMessage(error)
         });
     },
   },
