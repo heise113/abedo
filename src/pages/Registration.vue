@@ -21,7 +21,9 @@
                   minlength="10"
                   maxlength="10"
                   type="text"
-                  required
+                  data-if-error-phone="false"
+
+
                   class="wrapper__content__container__form__number-block__number__input"
                   placeholder="(000) 000 000 00"
               />
@@ -35,9 +37,9 @@
             <input
                 id="password"
                 v-model="user.password"
-                minlenght="8"
+                data-if-error-password="false"
                 type="password"
-                required
+
                 class="wrapper__content__container__form__password-block__password"
                 placeholder="Введите пароль"
             />
@@ -52,7 +54,8 @@
                 v-model="user.password_confirmation"
                 minlenght="8"
                 type="password"
-                required
+                :error-oleg="error_type['password_confirmation']"
+
                 class="wrapper__content__container__form__password-block__password"
                 placeholder="Введите пароль"
             />
@@ -74,8 +77,8 @@
             Зарегистрироваться
           </button>
 
-          <ValidateMessage v-if="error_message">
-            {{ error_message }}
+          <ValidateMessage v-if="error_message.length !== 0" v-for="el in error_message">
+            {{ el[0] }}
           </ValidateMessage>
 
         </form>
@@ -93,8 +96,12 @@ import Footer from "@/components/footer/Settings.vue";
 import ValidateMessage from "@/components/ValidateMessage"
 
 import axios from "axios"
+import ValidateErrors from "@/mixins/ValidateErrors";
 
 export default {
+  mixins: [
+    ValidateErrors
+  ],
   components: {
     Header,
     Footer,
@@ -103,7 +110,7 @@ export default {
   data() {
     return {
       active: false,
-      error_message: null,
+      timeout_request: null,
       user: {
         phone: null,
         password: null,
@@ -113,40 +120,41 @@ export default {
   },
   methods: {
     validateData() {
-      if (this.user.password !== this.user.password_confirmation) {
-        this.error_message = 'Пароли не равны!'
-        setTimeout(() => {
-          this.error_message = null
-        }, 3000)
-      }
-      else if (this.user.password.length < 8 || this.user.password_confirmation.length < 8) {
-        this.error_message = 'Пароль должен быть не менее 8 символов!'
-        setTimeout(() => {
-          this.error_message = null
-        }, 3000)
-      }
-      else {
-        this.register()
-      }
+      // if (this.user.password !== this.user.password_confirmation) {
+      //   this.error_message = 'Пароли не равны!'
+      //   setTimeout(() => {
+      //     this.error_message = null
+      //   }, 3000)
+      // }
+      // else if (this.user.password.length < 8 || this.user.password_confirmation.length < 8) {
+      //   this.error_message = 'Пароль должен быть не менее 8 символов!'
+      //   setTimeout(() => {
+      //     this.error_message = null
+      //   }, 3000)
+      // }
+      // else {
+      //   this.register()
+      // }
+      this.register()
     },
 
     async register() {
-      await axios.post("https://admin.abedo.ru/api/register", {
-        phone: this.user.phone,
-        password: this.user.password,
-        password_confirmation: this.user.password_confirmation,
+      clearTimeout(this.timeout_request);
+      this.timeout_request = setTimeout(async() => {
+        await axios.post("https://admin.abedo.ru/api/register", {
+          phone: this.user.phone,
+          password: this.user.password,
+          password_confirmation: this.user.password_confirmation,
+        })
+            .then(() => {
+              console.log("Регистрация прошла успешна")
+              this.$store.commit('setPhone', this.user.phone)
+              this.$router.push('/confirmation')
+            })
+            .catch((error) => {
+              this.errorMessage(error)
       })
-          .then(() => {
-            console.log("Регистрация прошла успешна")
-            this.$store.commit('setPhone', this.user.phone)
-            this.$router.push('/confirmation')
-          })
-          .catch((error) => {
-            this.error_message = error.response.data.errors.phone[0]
-            setTimeout(() => {
-              this.error_message = null
-            }, 3000)
-          });
+          }, 300);
     }
   }
 };
@@ -155,8 +163,8 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/styles/styles.scss";
 
-svg path {
-  all: inherit;
+[data-if-error-password="true"] {
+  background-color: red;
 }
 
 .wrapper {

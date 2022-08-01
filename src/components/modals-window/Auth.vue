@@ -56,8 +56,8 @@
         </router-link>
       </div>
       <button class="modal-wrapper__content__button">Войти</button>
-      <ValidateMessage v-if="error_message">
-        {{ error_message }}
+      <ValidateMessage v-if="error_message.length !== 0" v-for="el in error_message">
+        {{ el[0] }}
       </ValidateMessage>
     </form>
   </div>
