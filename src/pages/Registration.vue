@@ -11,7 +11,8 @@
             <label for="phone">
               <div class="wrapper__content__container__form__number-block__text">Телефон</div>
             </label>
-            <div class="wrapper__content__container__form__number-block__number">
+            <div class="wrapper__content__container__form__number-block__number"
+                 :error-pole="error_type.includes('phone')">
               <div class="wrapper__content__container__form__number-block__number__hard-number">
                 +7
               </div>
@@ -21,7 +22,7 @@
                   minlength="10"
                   maxlength="10"
                   type="text"
-                  data-if-error-phone="false"
+                  :error-pole="error_type.includes('phone')"
 
 
                   class="wrapper__content__container__form__number-block__number__input"
@@ -37,7 +38,7 @@
             <input
                 id="password"
                 v-model="user.password"
-                data-if-error-password="false"
+                :error-pole="error_type.includes('password')"
                 type="password"
 
                 class="wrapper__content__container__form__password-block__password"
@@ -54,7 +55,7 @@
                 v-model="user.password_confirmation"
                 minlenght="8"
                 type="password"
-                :error-oleg="error_type['password_confirmation']"
+                :error-pole="error_type.includes('password_confirmation')"
 
                 class="wrapper__content__container__form__password-block__password"
                 placeholder="Введите пароль"
@@ -78,7 +79,7 @@
           </button>
 
           <ValidateMessage v-if="error_message.length !== 0" v-for="el in error_message">
-            {{ el[0] }}
+            {{ el }}
           </ValidateMessage>
 
         </form>
@@ -120,27 +121,26 @@ export default {
   },
   methods: {
     validateData() {
-      // if (this.user.password !== this.user.password_confirmation) {
-      //   this.error_message = 'Пароли не равны!'
-      //   setTimeout(() => {
-      //     this.error_message = null
-      //   }, 3000)
-      // }
-      // else if (this.user.password.length < 8 || this.user.password_confirmation.length < 8) {
-      //   this.error_message = 'Пароль должен быть не менее 8 символов!'
-      //   setTimeout(() => {
-      //     this.error_message = null
-      //   }, 3000)
-      // }
-      // else {
-      //   this.register()
-      // }
-      this.register()
+      if (this.user.password !== this.user.password_confirmation) {
+        this.error_message.push('Пароли не равны!')
+        setTimeout(() => {
+          this.error_message = []
+        }, 3000)
+      }
+      else if (this.user.password.length < 8 || this.user.password_confirmation.length < 8) {
+        this.error_message.push('Пароль должен быть не менее 8 символов!')
+        setTimeout(() => {
+          this.error_message = []
+        }, 3000)
+      }
+      else {
+        this.register()
+      }
     },
 
     async register() {
       clearTimeout(this.timeout_request);
-      this.timeout_request = setTimeout(async() => {
+      this.timeout_request = setTimeout(async () => {
         await axios.post("https://admin.abedo.ru/api/register", {
           phone: this.user.phone,
           password: this.user.password,
@@ -153,8 +153,8 @@ export default {
             })
             .catch((error) => {
               this.errorMessage(error)
-      })
-          }, 300);
+            })
+      }, 300);
     }
   }
 };
@@ -162,10 +162,6 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/styles/styles.scss";
-
-[data-if-error-password="true"] {
-  background-color: red;
-}
 
 .wrapper {
   height: 100%;
@@ -235,7 +231,7 @@ export default {
             }
 
             &__input {
-              height: 100%;
+              height: 85%;
               font-family: "SF";
               font-style: normal;
               font-weight: 400;
@@ -357,5 +353,9 @@ export default {
   &__footer {
     flex: 0 0 auto;
   }
+}
+
+[error-pole="true"] {
+  border-color: red;
 }
 </style>
